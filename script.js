@@ -122,8 +122,8 @@ function renderGames(list) {
         ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
       </div>
       <div class="card-actions">
-        <a class="play-button" href="${game.path}" target="_blank" rel="noopener">Play now</a>
-        <a class="play-link" href="${game.path}" target="_blank" rel="noopener">Open in new tab →</a>
+        <a class="play-button" href="${game.path}">Play now</a>
+        <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
       </div>
     `;
 

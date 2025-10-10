@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini JS Games Hub 🎮</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="backdrop" aria-hidden="true">
     <span class="backdrop__orb backdrop__orb--one"></span>
@@ -13,14 +15,16 @@
     <span class="backdrop__orb backdrop__orb--three"></span>
   </div>
 
-  <header class="hero" id="top">
+  <div class="container">
+    <header class="hero" id="top">
     <nav class="hero__nav">
       <a class="logo" href="#top" aria-label="Mini JavaScript Games Hub home">
         <span class="logo__icon">🎮</span>
         <span class="logo__text">Mini JS Games Hub</span>
       </a>
       <div class="hero__actions">
-        <a class="ghost-button" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">Contribute</a>
+        <a class="ghost-button" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank"
+          rel="noopener">Contribute</a>
         <a class="cta-button" href="#games">Browse Games</a>
       </div>
     </nav>
@@ -29,11 +33,15 @@
       <div class="hero__copy">
         <p class="hero__eyebrow">Open-source arcade for the web</p>
         <h1>Play. Learn. Ship your next mini-game.</h1>
-        <p class="hero__lead">Explore hand-crafted JavaScript games, peek under the hood, and add your own creations. Everything runs right in the browser.</p>
+        <p class="hero__lead">Explore hand-crafted JavaScript games, peek under the hood, and add your own creations.
+          Everything runs right in the browser.</p>
         <div class="hero__cta">
           <a class="cta-button" href="#games">Browse Games</a>
-          <a class="ghost-button" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="ghost-button" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank"
+            rel="noopener">View on GitHub</a>
         </div>
+        <p class="hero__note">Click "Play now" on any card to open the game in the same tab. Use "Open in new tab →" to
+          keep this hub open.</p>
         <dl class="hero__stats">
           <div>
             <dt>Total Games</dt>
@@ -65,13 +73,14 @@
         </div>
       </div>
     </div>
-  </header>
-
-  <main class="hub" id="games">
+    </header>
+  
+    <main class="hub" id="games">
     <section class="hub__controls" aria-label="Game filters">
       <div class="search">
         <label class="sr-only" for="game-search">Search games</label>
-        <input id="game-search" type="search" name="search" placeholder="Search games or tags" autocomplete="off" spellcheck="false" />
+        <input id="game-search" type="search" name="search" placeholder="Search games or tags" autocomplete="off"
+          spellcheck="false" />
         <span class="search__icon" aria-hidden="true">🔍</span>
       </div>
       <div class="hub__meta">
@@ -87,12 +96,15 @@
     </section>
 
     <section id="games-container" class="game-grid" aria-live="polite"></section>
-  </main>
+    </main>
 
-  <footer class="site-footer">
-    <p>Made with ❤️ by the community — <a href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">Contribute on GitHub</a></p>
-  </footer>
+    <footer class="site-footer">
+    <p>Made with ❤️ by the community — <a href="https://github.com/ritaban06/mini-js-games-hub" target="_blank"
+        rel="noopener">Contribute on GitHub</a></p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
