@@ -45,7 +45,7 @@ This project is open to everyone — from beginners to pros.
    ```
 8. Open a **Pull Request (PR)** and describe your game, referencing the issue number.
 
-> 🎉 **Hackathon Alert!** Join our college's 1 month long hackathon: [Open Odyssey](https://open-odyssey.samarthtmsl.in)
+> 🎉 **Hackathon Alert!** Join [Open Odyssey 2.0](https://open-odyssey.samarthtmsl.in) by Team Samarth, an official MLH event and flagship Hacktoberfest edition. From Oct 1-31, this global event unites developers and innovators on impactful projects.
 
 ---
 
