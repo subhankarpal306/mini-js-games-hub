@@ -7,15 +7,90 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>🎮 Mini JavaScript Games Hub</h1>
-    <p>Open-source collection of mini web games built with HTML, CSS & JS.</p>
+  <div class="backdrop" aria-hidden="true">
+    <span class="backdrop__orb backdrop__orb--one"></span>
+    <span class="backdrop__orb backdrop__orb--two"></span>
+    <span class="backdrop__orb backdrop__orb--three"></span>
+  </div>
+
+  <header class="hero" id="top">
+    <nav class="hero__nav">
+      <a class="logo" href="#top" aria-label="Mini JavaScript Games Hub home">
+        <span class="logo__icon">🎮</span>
+        <span class="logo__text">Mini JS Games Hub</span>
+      </a>
+      <div class="hero__actions">
+        <a class="ghost-button" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">Contribute</a>
+        <a class="cta-button" href="#games">Browse Games</a>
+      </div>
+    </nav>
+
+    <div class="hero__content">
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Open-source arcade for the web</p>
+        <h1>Play. Learn. Ship your next mini-game.</h1>
+        <p class="hero__lead">Explore hand-crafted JavaScript games, peek under the hood, and add your own creations. Everything runs right in the browser.</p>
+        <div class="hero__cta">
+          <a class="cta-button" href="#games">Browse Games</a>
+          <a class="ghost-button" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <dl class="hero__stats">
+          <div>
+            <dt>Total Games</dt>
+            <dd><span data-games-count>0</span> and counting</dd>
+          </div>
+          <div>
+            <dt>Latest Launch</dt>
+            <dd><span data-latest-game>--</span></dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>HTML • CSS • JS</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero__preview" aria-hidden="true">
+        <div class="preview-card">
+          <span class="preview-card__label">Live Leaderboard</span>
+          <div class="preview-card__stat">
+            <span class="preview-card__value" data-preview-count>00</span>
+            <span class="preview-card__hint">games ready to play</span>
+          </div>
+          <div class="preview-card__stack">
+            <span>⚡ Instant Load</span>
+            <span>📦 No Build Tools</span>
+            <span>🌐 Browser Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main id="games-container"></main>
+  <main class="hub" id="games">
+    <section class="hub__controls" aria-label="Game filters">
+      <div class="search">
+        <label class="sr-only" for="game-search">Search games</label>
+        <input id="game-search" type="search" name="search" placeholder="Search games or tags" autocomplete="off" spellcheck="false" />
+        <span class="search__icon" aria-hidden="true">🔍</span>
+      </div>
+      <div class="hub__meta">
+        <span><strong data-games-count>0</strong> games</span>
+        <span>Latest: <strong data-latest-game>--</strong></span>
+      </div>
+    </section>
 
-  <footer>
-    <p>Made with ❤️ by the community — <a href="https://github.com/ritaban06/mini-js-games-hub">Contribute on GitHub</a></p>
+    <section id="empty-state" class="empty" hidden>
+      <h2>No matches found</h2>
+      <p>Try a different search term or clear the filter to see every game.</p>
+      <button id="clear-search" type="button">Clear search</button>
+    </section>
+
+    <section id="games-container" class="game-grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ by the community — <a href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">Contribute on GitHub</a></p>
   </footer>
 
   <script src="script.js"></script>
