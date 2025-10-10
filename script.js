@@ -44,6 +44,24 @@ const games = [
     duration: "Quick burst",
     tags: ["speed", "focus", "solo"],
   },
+  {
+    name: "2048",
+    path: "games/2048/index.html",
+    icon: "🔢",
+    description: "Slide tiles to combine numbers and reach 2048. A relaxing puzzle of strategy and luck.",
+    category: "Puzzle",
+    duration: "10-20 min",
+    tags: ["puzzle", "singleplayer", "numbers"],
+  },
+  {
+    name: "15 Puzzle",
+    path: "games/15-puzzle/index.html",
+    icon: "🔳",
+    description: "Arrange the numbered tiles in order by sliding them into the empty space. Classic spatial puzzle.",
+    category: "Puzzle",
+    duration: "5-15 min",
+    tags: ["puzzle", "tiles", "spatial"],
+  },
 ];
 
 const container = document.getElementById("games-container");
