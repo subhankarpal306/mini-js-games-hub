@@ -45,6 +45,13 @@ const games = [
     tags: ["speed", "focus", "solo"],
   },
   {
+    name: "Space Shooter",
+    path: "games/space-shooter/index.html",
+    icon: "🚀",
+    description: "Fast-paced top-down shooter — dodge, weave and blast incoming waves.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "shooting", "keyboard"],
     name: "2048",
     path: "games/2048/index.html",
     icon: "🔢",
