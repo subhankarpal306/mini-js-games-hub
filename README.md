@@ -37,7 +37,11 @@ mini-js-games-hub/
     │   ├── index.html
     │   ├── style.css
     │   └── script.js
-    └── whack-a-mole/
+    ├── whack-a-mole/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    └── reaction-timer/
         ├── index.html
         ├── style.css
         └── script.js
@@ -50,6 +54,7 @@ mini-js-games-hub/
 - 🐍 **Snake Game** – grow without hitting the walls
 - � **Memory Game** – match all emoji pairs
 - 🔨 **Whack-a-Mole** – hit the mole before it vanishes
+- ⚡ **Reaction Timer** – tap as quickly as you can
 - ⏱️ *More coming soon! Add yours too...*
 
 ---

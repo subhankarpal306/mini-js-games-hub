@@ -15,6 +15,10 @@ const games = [
     name: "Whack-a-Mole",
     path: "games/whack-a-mole/index.html",
   },
+  {
+    name: "Reaction Timer",
+    path: "games/reaction-timer/index.html",
+  },
 ];
 
 const container = document.getElementById("games-container");
