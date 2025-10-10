@@ -52,6 +52,31 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "shooting", "keyboard"],
+    name: "2048",
+    path: "games/2048/index.html",
+    icon: "🔢",
+    description: "Slide tiles to combine numbers and reach 2048. A relaxing puzzle of strategy and luck.",
+    category: "Puzzle",
+    duration: "10-20 min",
+    tags: ["puzzle", "singleplayer", "numbers"],
+  },
+  {
+    name: "15 Puzzle",
+    path: "games/15-puzzle/index.html",
+    icon: "🔳",
+    description: "Arrange the numbered tiles in order by sliding them into the empty space. Classic spatial puzzle.",
+    category: "Puzzle",
+    duration: "5-15 min",
+    tags: ["puzzle", "tiles", "spatial"],
+  },
+  {
+    name: "Pong",
+    path: "games/pong/index.html",
+    icon: "🏓",
+    description: "A tiny Pong clone — play against the CPU or another player. Use W/S and ↑/↓ to move paddles.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
 ];
 
@@ -131,8 +156,8 @@ function renderGames(list) {
         ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
       </div>
       <div class="card-actions">
-        <a class="play-button" href="${game.path}" target="_blank" rel="noopener">Play now</a>
-        <a class="play-link" href="${game.path}" target="_blank" rel="noopener">Open in new tab →</a>
+        <a class="play-button" href="${game.path}">Play now</a>
+        <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
       </div>
     `;
 
