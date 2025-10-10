@@ -54,6 +54,11 @@ cd mini-js-games-hub
 ### 2. Run locally
 Simply open `index.html` in your browser — no setup needed!
 
+### 3. How it works
+The hub lists game cards from the `games` array in `script.js`. Each game entry includes:
+- `name`: The display name of your game
+- `path`: The relative path to your game's index.html file
+
 ---
 
 ## 💻 Tech Stack

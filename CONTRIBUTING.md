@@ -24,18 +24,22 @@ This project is open to everyone — from beginners to pros.
    style.css
    script.js
    ```
-4. Add your game details to the main `index.html` (the hub homepage).  
-   Example:
-   ```html
-   <div class="game-card">
-     <h3>Snake Game</h3>
-     <a href="./games/snake/index.html" target="_blank">Play</a>
-   </div>
+4. Add your game to the `games` array in `script.js`:
+   ```javascript
+   const games = [
+     // ... existing games ...
+     {
+       name: "Your Game Name",
+       path: "games/yourgame/index.html",
+     },
+   ];
    ```
-5. **Commit and push** your changes:
+
+5. Ensure your game appears automatically on the main page.
+6. **Commit and push** your changes:
    ```bash
    git add .
-   git commit -m "Added Snake game 🐍"
+   git commit -m "Added Your Game Name 🎮"
    git push origin main
    ```
 6. Open a **Pull Request (PR)** and describe your game.
