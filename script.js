@@ -44,6 +44,15 @@ const games = [
     duration: "Quick burst",
     tags: ["speed", "focus", "solo"],
   },
+  {
+    name: "Space Shooter",
+    path: "games/space-shooter/index.html",
+    icon: "🚀",
+    description: "Fast-paced top-down shooter — dodge, weave and blast incoming waves.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "shooting", "keyboard"],
+  },
 ];
 
 const container = document.getElementById("games-container");
