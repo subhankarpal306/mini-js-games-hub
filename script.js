@@ -62,6 +62,15 @@ const games = [
     duration: "5-15 min",
     tags: ["puzzle", "tiles", "spatial"],
   },
+  {
+    name: "Pong",
+    path: "games/pong/index.html",
+    icon: "🏓",
+    description: "A tiny Pong clone — play against the CPU or another player. Use W/S and ↑/↓ to move paddles.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "retro", "multiplayer", "cpu"],
+  },
 ];
 
 const container = document.getElementById("games-container");
