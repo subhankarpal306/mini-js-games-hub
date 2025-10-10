@@ -25,20 +25,36 @@ mini-js-games-hub/
 ├── script.js           # Handles navigation and game loading
 │
 └── games/
-    ├── tic-tac-toe/
+    ├── tictactoe/
     │   ├── index.html
     │   ├── style.css
     │   └── script.js
-    ├── rock-paper-scissors/
-    └── memory-flip/
+    ├── snake/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── memory/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── whack-a-mole/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    └── reaction-timer/
+        ├── index.html
+        ├── style.css
+        └── script.js
 ```
 
 ---
 
 ## 🧠 Games Included
-- 🎲 **Tic Tac Toe**
-- ✊ **Rock Paper Scissors**
-- 🧩 **Memory Flip**
+- 🎲 **Tic Tac Toe** – classic 3x3 strategy
+- 🐍 **Snake Game** – grow without hitting the walls
+- � **Memory Game** – match all emoji pairs
+- 🔨 **Whack-a-Mole** – hit the mole before it vanishes
+- ⚡ **Reaction Timer** – tap as quickly as you can
 - ⏱️ *More coming soon! Add yours too...*
 
 ---
