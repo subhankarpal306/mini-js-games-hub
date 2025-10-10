@@ -36,13 +36,16 @@ This project is open to everyone — from beginners to pros.
    ```
 
 5. Ensure your game appears automatically on the main page.
-6. **Commit and push** your changes:
+6. **Create an issue** first describing the game you want to add and wait for it to be assigned to you.
+7. **Commit and push** your changes:
    ```bash
    git add .
    git commit -m "Added Your Game Name 🎮"
    git push origin main
    ```
-6. Open a **Pull Request (PR)** and describe your game.
+8. Open a **Pull Request (PR)** and describe your game, referencing the issue number.
+
+> 🎉 **Hackathon Alert!** Join our college's 1 month long hackathon: [Open Odyssey](https://open-odyssey.samarthtmsl.in)
 
 ---
 
