@@ -75,7 +75,7 @@ To add your own game or fix an issue, please check the [CONTRIBUTING.md](CONTRIB
 ---
 
 ## 🪪 License
-This project is licensed under the **MIT License** — free to use and modify.  
+This project is licensed under the [**MIT License**](LICENSE) — free to use and modify.  
 
 ---
 
