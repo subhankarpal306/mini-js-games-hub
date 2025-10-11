@@ -104,6 +104,15 @@ const games = [
     duration: "1 min",
     tags: ["typing", "speed", "accuracy", "skill"],
   },
+  {
+    name: "Catch the Ball",
+    path: "games/catch-the-ball/index.html",
+    icon: "🎯",
+    description: "Click the moving balls before they disappear! Test your reflexes.",
+    category: "Arcade",
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker"],
+  },  
 ];
 
 const container = document.getElementById("games-container");
