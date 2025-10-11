@@ -96,6 +96,7 @@ const games = [
     duration: "Endless",
     tags: ["Fighting", "Special", "multiplayer", "computer"],
   },
+  {
     name: "Simon Says",
     path: "games/SimonSays/index.html",
     icon: "🧠",
