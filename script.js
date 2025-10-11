@@ -58,6 +58,8 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "shooting", "keyboard"],
+  },
+  {
     name: "2048",
     path: "games/2048/index.html",
     icon: "🔢",
@@ -95,6 +97,8 @@ const games = [
     category: "Memory",
     duration: "Progressive",
     tags:  ["memory", "focus", "puzzle", "challenge"],
+  },
+  {
     name: "Typing Test",
     path: "games/typing-test/index.html",
     icon: "⌨️",
@@ -105,15 +109,16 @@ const games = [
     tags: ["typing", "speed", "accuracy", "skill"],
   },
   {
-  name: "Balloon Pop",
-  path: "games/balloon-pop/index.html",
-  icon: "🎈",
-  description: "Click the balloons before they float away! Pop as many as you can.",
-  category: "Arcade",
-  duration: "Endless",
-  tags: ["arcade", "click", "fun", "score"],
-}
+    name: "Balloon Pop",
+    path: "games/balloon-pop/index.html",
+    icon: "🎈",
+    description: "Click the balloons before they float away! Pop as many as you can.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "click", "fun", "score"],
+  }
 ];
+
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
