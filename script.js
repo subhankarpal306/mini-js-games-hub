@@ -104,6 +104,15 @@ const games = [
     duration: "1 min",
     tags: ["typing", "speed", "accuracy", "skill"],
   },
+  {
+  name: "Balloon Pop",
+  path: "games/balloon-pop/index.html",
+  icon: "🎈",
+  description: "Click the balloons before they float away! Pop as many as you can.",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "click", "fun", "score"],
+}
 ];
 
 const container = document.getElementById("games-container");
