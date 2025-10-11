@@ -88,6 +88,15 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+  name: "Kong fights ",
+    path: "games/The Godzilla Fights game(html,css,js)/index.html",
+    icon: "&#129421",
+    description: "A exciting fighting game where two cartoon gorillas stand on opposite rooftops in a cityscape at sunset. The player (on the left) aims and throws a bomb at the computer opponent by dragging to set the angle and velocity",
+    category: "Fighting",
+    duration: "Endless",
+    tags: ["Fighting", "Special", "multiplayer", "computer"],
+  },
+  {
     name: "Simon Says",
     path: "games/SimonSays/index.html",
     icon: "🧠",
