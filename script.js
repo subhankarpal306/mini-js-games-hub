@@ -104,6 +104,15 @@ const games = [
     duration: "1 min",
     tags: ["typing", "speed", "accuracy", "skill"],
   },
+  {
+    name: "Tetris",
+    path: "games/tetris/index.html",
+    icon: "🧩",
+    description: "Hardcore Tetris with levels, ghost piece, hold, and advanced scoring — master the falling blocks!",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["puzzle", "arcade", "keyboard", "hardcore"],
+  },
 ];
 
 const container = document.getElementById("games-container");
