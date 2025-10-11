@@ -95,7 +95,20 @@
       <button id="clear-search" type="button">Clear search</button>
     </section>
 
-    <section id="games-container" class="game-grid" aria-live="polite"></section>
+    <section id="games-container" class="game-grid" aria-live="polite">
+      <!-- Flappy Bird -->
+      <article class="game-card" aria-labelledby="flappy-title">
+        <img class="game-card__thumb" src="games/flappy-bird/thumbnail.svg" alt="Flappy Bird thumbnail" width="320" height="180">
+        <div class="game-card__body">
+          <h3 id="flappy-title" class="game-card__title">Flappy Bird</h3>
+          <p class="game-card__meta">A tiny Flappy Bird clone. Click Play to open.</p>
+          <div class="game-card__actions">
+            <a class="play-button" href="games/flappy-bird/index.html">Play now</a>
+            <a class="open-new" href="games/flappy-bird/index.html" target="_blank" rel="noopener">Open in new tab →</a>
+          </div>
+        </div>
+      </article>
+    </section>
     </main>
 
     <footer class="site-footer">
