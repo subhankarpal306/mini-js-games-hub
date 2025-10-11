@@ -78,6 +78,15 @@ const games = [
     duration: "Endless",
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
+  {
+    name: "Simon Says",
+    path: "games/SimonSays/index.html",
+    icon: "🧠",
+    description: "A fun memory game where players repeat an increasingly complex sequence of colors.",
+    category: "Memory",
+    duration: "Progressive",
+    tags:  ["memory", "focus", "puzzle", "challenge"],
+  },
 ];
 
 const container = document.getElementById("games-container");
