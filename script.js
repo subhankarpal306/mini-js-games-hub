@@ -58,6 +58,8 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "shooting", "keyboard"],
+  },
+  {
     name: "2048",
     path: "games/2048/index.html",
     icon: "🔢",
@@ -88,6 +90,15 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+  name: "Kong fights ",
+    path: "games/The Godzilla Fights game(html,css,js)/index.html",
+    icon: "&#129421",
+    description: "A exciting fighting game where two cartoon gorillas stand on opposite rooftops in a cityscape at sunset. The player (on the left) aims and throws a bomb at the computer opponent by dragging to set the angle and velocity",
+    category: "Fighting",
+    duration: "Endless",
+    tags: ["Fighting", "Special", "multiplayer", "computer"],
+  },
+  {
     name: "Simon Says",
     path: "games/SimonSays/index.html",
     icon: "🧠",
@@ -95,6 +106,8 @@ const games = [
     category: "Memory",
     duration: "Progressive",
     tags:  ["memory", "focus", "puzzle", "challenge"],
+  },
+  {
     name: "Typing Test",
     path: "games/typing-test/index.html",
     icon: "⌨️",
@@ -105,19 +118,10 @@ const games = [
     tags: ["typing", "speed", "accuracy", "skill"],
   },
   {
-    name: "Tetris",
-    path: "games/tetris/index.html",
-    icon: "🧩",
-    description: "Hardcore Tetris with levels, ghost piece, hold, and advanced scoring — master the falling blocks!",
-    category: "Puzzle",
-    duration: "Endless",
-    tags: ["puzzle", "arcade", "keyboard", "hardcore"],
-  },
-  {
-    name: "Catch the Ball",
-    path: "games/catch-the-ball/index.html",
-    icon: "🎯",
-    description: "Click the moving balls before they disappear! Test your reflexes.",
+    name: "Balloon Pop",
+    path: "games/balloon-pop/index.html",
+    icon: "🎈",
+    description: "Click the balloons before they float away! Pop as many as you can.",
     category: "Arcade",
     duration: "30 seconds",
     tags: ["arcade", "reflex", "clicker"],
@@ -139,6 +143,7 @@ const games = [
 
 
 ];
+
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
