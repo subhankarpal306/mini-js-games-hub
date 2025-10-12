@@ -58,6 +58,8 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "shooting", "keyboard"],
+  },
+  {
     name: "2048",
     path: "games/2048/index.html",
     icon: "🔢",
@@ -104,6 +106,8 @@ const games = [
     category: "Memory",
     duration: "Progressive",
     tags:  ["memory", "focus", "puzzle", "challenge"],
+  },
+  {
     name: "Typing Test",
     path: "games/typing-test/index.html",
     icon: "⌨️",
@@ -114,24 +118,16 @@ const games = [
     tags: ["typing", "speed", "accuracy", "skill"],
   },
   {
-    name: "Tetris",
-    path: "games/tetris/index.html",
-    icon: "🧩",
-    description: "Hardcore Tetris with levels, ghost piece, hold, and advanced scoring — master the falling blocks!",
-    category: "Puzzle",
-    duration: "Endless",
-    tags: ["puzzle", "arcade", "keyboard", "hardcore"],
-  },
-  {
-    name: "Catch the Ball",
-    path: "games/catch-the-ball/index.html",
-    icon: "🎯",
-    description: "Click the moving balls before they disappear! Test your reflexes.",
+    name: "Balloon Pop",
+    path: "games/balloon-pop/index.html",
+    icon: "🎈",
+    description: "Click the balloons before they float away! Pop as many as you can.",
     category: "Arcade",
-    duration: "30 seconds",
-    tags: ["arcade", "reflex", "clicker"],
-  }, 
+    duration: "Endless",
+    tags: ["arcade", "click", "fun", "score"],
+  }
 ];
+
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
