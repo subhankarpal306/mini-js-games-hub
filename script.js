@@ -123,9 +123,25 @@ const games = [
     icon: "🎈",
     description: "Click the balloons before they float away! Pop as many as you can.",
     category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "click", "fun", "score"],
-  }
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker"],
+  }, 
+
+
+
+  {
+  name: "Catch the Dot",
+  path: "games/Catch_The_Dot/index.html",
+  icon: "⚫",
+  description:
+    "Test your reflexes! Click the moving dot as many times as you can before time runs out.",
+  category: "Reflex / Skill",
+  duration: "30 seconds per round",
+  tags: ["single player", "reaction", "fast-paced", "matte UI"],
+}
+
+
+
 ];
 
 
