@@ -41,7 +41,63 @@ mini-js-games-hub/
     │   ├── index.html
     │   ├── style.css
     │   └── script.js
-    └── reaction-timer/
+    ├── reaction-timer/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── flappy-bird/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── breakout/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── pong/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── tetris/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── 2048/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── rock-paper-scissors/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── typing-test/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── simon-says/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── catch-the-dot/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── balloon-pop/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── kong-fights/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── catch-the-ball/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── space-shooter/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    └── 15-puzzle/
         ├── index.html
         ├── style.css
         └── script.js
@@ -55,6 +111,20 @@ mini-js-games-hub/
 - � **Memory Game** – match all emoji pairs
 - 🔨 **Whack-a-Mole** – hit the mole before it vanishes
 - ⚡ **Reaction Timer** – tap as quickly as you can
+- 🕹️ **Flappy Bird** – fly between pipes and survive  
+- 🧱 **Breakout** – destroy all bricks with your paddle  
+- 🏓 **Pong** – the classic two-player ball game  
+- 🧊 **Tetris** – arrange falling blocks to clear rows  
+- 🔢 **2048** – combine tiles to reach the number 2048  
+- ✊ **Rock Paper Scissors** – play against the computer  
+- ⌨️ **Typing Test** – test your typing speed and accuracy  
+- 🔴 **Simon Says** – repeat the pattern correctly  
+- 🎯 **Catch The Dot** – move fast to catch the bouncing dot  
+- 🎈 **Balloon Pop** – pop balloons before they fly away  
+- 🦖 **Kong Fights** – battle monsters with your mighty moves  
+- 🏐 **Catch The Ball** – catch falling balls to score high  
+- 🚀 **Space Shooter** – fast-paced top-down shooter — dodge, weave, and blast incoming waves  
+- 🔢 **15 Puzzle** – arrange the numbered tiles in order by sliding them into the empty space. Classic spatial puzzle
 - ⏱️ *More coming soon! Add yours too...*
 
 ---
