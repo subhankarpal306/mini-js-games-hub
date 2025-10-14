@@ -134,6 +134,17 @@ const games = [
   category: "Reflex / Skill",
   duration: "30 seconds per round",
   tags: ["single player", "reaction", "fast-paced", "matte UI"],
+  },
+
+  {
+  name: "FUNHUB - Meme Generator",
+  path: "games/meme_generator/index.html",
+  icon: "😂",
+  description:
+    "Get your daily dose of memes! Fetch random memes dynamically from the API and enjoy a fun scrolling experience.",
+  category: "Fun / Entertainment",
+  duration: "Unlimited",
+  tags: ["single player", "dynamic content", "API-driven", "fun"],
 }
 
 
