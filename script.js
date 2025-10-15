@@ -149,8 +149,17 @@ const games = [
   category: "Fun / Entertainment",
   duration: "Unlimited",
   tags: ["single player", "dynamic content", "API-driven", "fun"],
-}
-
+  },
+  {
+  name: "Number Guessing Game",
+  path: "games/Number_Gussing_game/NGG.html",
+  icon: "😎",
+  description:
+    "Guess the number in lowest time",
+  category: "Fun / Entertainment",
+  duration: "Unlimited",
+  tags: ["single player", "Solo", "Numbers", "fun"],
+  }
 
 
 ];
