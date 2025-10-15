@@ -293,3 +293,20 @@ function animateCount(node, target, duration) {
 function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'light') {
+  body.classList.add('light-theme');
+  themeToggle.textContent = '🌞';
+}
+
+// Toggle on click
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const isLight = body.classList.contains('light-theme');
+  themeToggle.textContent = isLight ? '🌞' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
