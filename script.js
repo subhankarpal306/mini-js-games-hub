@@ -1,5 +1,16 @@
 const games = [
   {
+    name: "Simon Says",
+    path: "games/Simon-Says-Game/index.html",
+    icon: "🧠",
+    description:
+      "Challenge your memory and reflexes in this fast-paced color sequence game! Each round adds a new twist—can you keep up as the pattern grows? Perfect for puzzle lovers and focus masters seeking a brain-boosting thrill.",
+    category: "Memory",
+    duration: "Progressive",
+    tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
+  }
+  ,
+  {
     name: "Tic Tac Toe",
     path: "games/tictactoe/index.html",
     icon: "❎",
@@ -139,41 +150,41 @@ const games = [
     tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
 
-{
+  {
 
-  name: "FUNHUB - Meme Generator",
+    name: "FUNHUB - Meme Generator",
 
-  path: "games/meme_generator/index.html",
+    path: "games/meme_generator/index.html",
 
-  icon: "😂",
+    icon: "😂",
 
-  description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
+    description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
 
-  category: "Fun / Entertainment",
+    category: "Fun / Entertainment",
 
-  duration: "Unlimited",
+    duration: "Unlimited",
 
-  tags: ["single player", "dynamic content", "API-driven", "fun"],
+    tags: ["single player", "dynamic content", "API-driven", "fun"],
 
-},
+  },
 
-{
+  {
 
-  name: "Number Guessing Game",
+    name: "Number Guessing Game",
 
-  path: "games/Number_Gussing_game/NGG.html",
+    path: "games/Number_Gussing_game/NGG.html",
 
-  icon: "🤓",
+    icon: "🤓",
 
-  description: "Guess the number in lowest time",
+    description: "Guess the number in lowest time",
 
-  category: "Fun / Entertainment",
+    category: "Fun / Entertainment",
 
-  duration: "Unlimited",
+    duration: "Unlimited",
 
-  tags: ["single player", "Solo", "Numbers", "fun"],
+    tags: ["single player", "Solo", "Numbers", "fun"],
 
-},
+  },
 ];
 
 const container = document.getElementById("games-container");
