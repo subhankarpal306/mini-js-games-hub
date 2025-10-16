@@ -174,6 +174,24 @@ const games = [
   tags: ["single player", "Solo", "Numbers", "fun"],
 
 },
+
+{
+
+  name: "Sudoku Game",
+
+  path: "games/sudoku/index.html",
+
+  icon: "🤯",
+
+  description: "Think the number with logic",
+
+  category: "Classic / Skill",
+
+  duration: "Unlimited",
+
+  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
+
+}
 ];
 
 const container = document.getElementById("games-container");
