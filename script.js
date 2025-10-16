@@ -158,62 +158,33 @@ const games = [
   duration: "1–2 min",
   tags: ["fun", "strategy", "classic", "singleplayer"]
   },
-
   {
-  name: "FUNHUB - Meme Generator",
-
     name: "FUNHUB - Meme Generator",
-
     path: "games/meme_generator/index.html",
-
     icon: "😂",
-
     description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
-
     category: "Fun / Entertainment",
-
     duration: "Unlimited",
-
-    tags: ["single player", "dynamic content", "API-driven", "fun"],
-
+    tags: ["single player", "dynamic content", "API-driven", "fun"]
   },
-
   {
-
     name: "Number Guessing Game",
-
     path: "games/Number_Gussing_game/NGG.html",
-
     icon: "🤓",
-
     description: "Guess the number in lowest time",
-
     category: "Fun / Entertainment",
-
     duration: "Unlimited",
-
-    tags: ["single player", "Solo", "Numbers", "fun"],
-
-},
-
-{
-
-  name: "Sudoku Game",
-
-  path: "games/sudoku/index.html",
-
-  icon: "🤯",
-
-  description: "Think the number with logic",
-
-  category: "Classic / Skill",
-
-  duration: "Unlimited",
-
-  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
-
-}
+    tags: ["single player", "Solo", "Numbers", "fun"]
   },
+  {
+    name: "Sudoku Game",
+    path: "games/sudoku/index.html",
+    icon: "🤯",
+    description: "Think the number with logic",
+    category: "Classic / Skill",
+    duration: "Unlimited",
+    tags: ["single player", "Solo", "Numbers", "fun", "brain"]
+  }
 ];
 
 const container = document.getElementById("games-container");
@@ -372,12 +343,52 @@ const body = document.body;
 // Load saved theme
 if (localStorage.getItem('theme') === 'light') {
   body.classList.add('light-theme');
-  themeToggle.textContent = '🌞';
+  // themeToggle.textContent = '🌞'; // Removed changing button text on load
 }
 
 // Toggle on click
 themeToggle.addEventListener('click', () => {
-  body.classList.toggle('light-theme');
-  const isLight = body.classList.contains('light-theme');
-  themeToggle.textContent = isLight
+  // Toggle the class on body
+  const isNowLight = body.classList.toggle('light-theme');
+  // Persist the user's choice
+  try {
+    localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
+  } catch (e) {
+    // ignore localStorage errors (e.g., privacy mode)
+  }
+  // Do not change the button symbol/text per request — keep its existing content
 });
+
+// Scroll to Top/Bottom Buttons
+const scrollTopBtn = document.getElementById('scroll-top');
+const scrollBottomBtn = document.getElementById('scroll-bottom');
+
+function updateScrollBtns() {
+  const scrollY = window.scrollY || document.documentElement.scrollTop;
+  const winH = window.innerHeight || document.documentElement.clientHeight;
+  const docH = document.documentElement.scrollHeight;
+  
+  // Show top button if not at top (with some threshold)
+  if (scrollTopBtn) {
+    scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
+  }
+  
+  // Show bottom button if not at bottom (with some threshold)
+  if (scrollBottomBtn) {
+    scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
+  }
+}
+window.addEventListener('scroll', updateScrollBtns);
+window.addEventListener('resize', updateScrollBtns);
+setTimeout(updateScrollBtns, 300); // Initial
+
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+if (scrollBottomBtn) {
+  scrollBottomBtn.addEventListener('click', () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+  });
+}
