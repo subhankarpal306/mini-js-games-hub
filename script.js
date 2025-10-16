@@ -149,8 +149,18 @@ const games = [
     duration: "30 seconds per round",
     tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
+  {
+  name: "Rock Paper Scissors",
+  path: "games/rock-paper-scissors/index.html",
+  icon: "✊📄✂️",
+  description: "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
+  category: "Strategy / Fun",
+  duration: "1–2 min",
+  tags: ["fun", "strategy", "classic", "singleplayer"]
+  },
 
   {
+  name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
 
