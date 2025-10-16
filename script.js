@@ -90,10 +90,11 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
-  name: "Kong fights ",
+    name: "Kong fights ",
     path: "games/The Godzilla Fights game(html,css,js)/index.html",
     icon: "&#129421",
-    description: "A exciting fighting game where two cartoon gorillas stand on opposite rooftops in a cityscape at sunset. The player (on the left) aims and throws a bomb at the computer opponent by dragging to set the angle and velocity",
+    description:
+      "A exciting fighting game where two cartoon gorillas stand on opposite rooftops in a cityscape at sunset. The player (on the left) aims and throws a bomb at the computer opponent by dragging to set the angle and velocity",
     category: "Fighting",
     duration: "Endless",
     tags: ["Fighting", "Special", "multiplayer", "computer"],
@@ -102,10 +103,11 @@ const games = [
     name: "Simon Says",
     path: "games/SimonSays/index.html",
     icon: "🧠",
-    description: "A fun memory game where players repeat an increasingly complex sequence of colors.",
+    description:
+      "A fun memory game where players repeat an increasingly complex sequence of colors.",
     category: "Memory",
     duration: "Progressive",
-    tags:  ["memory", "focus", "puzzle", "challenge"],
+    tags: ["memory", "focus", "puzzle", "challenge"],
   },
   {
     name: "Typing Test",
@@ -125,36 +127,28 @@ const games = [
     category: "Arcade",
     duration: "30 seconds",
     tags: ["arcade", "reflex", "clicker"],
-  }, 
-
-
-
-  {
-  name: "Catch the Dot",
-  path: "games/Catch_The_Dot/index.html",
-  icon: "⚫",
-  description:
-    "Test your reflexes! Click the moving dot as many times as you can before time runs out.",
-  category: "Reflex / Skill",
-  duration: "30 seconds per round",
-  tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
-
   {
-  name: "FUNHUB - Meme Generator",
-  path: "games/meme_generator/index.html",
-  icon: "😂",
-  description:
-    "Get your daily dose of memes! Fetch random memes dynamically from the API and enjoy a fun scrolling experience.",
-  category: "Fun / Entertainment",
-  duration: "Unlimited",
-  tags: ["single player", "dynamic content", "API-driven", "fun"],
-}
-
-
-
+    name: "Catch the Dot",
+    path: "games/Catch_The_Dot/index.html",
+    icon: "⚫",
+    description:
+      "Test your reflexes! Click the moving dot as many times as you can before time runs out.",
+    category: "Reflex / Skill",
+    duration: "30 seconds per round",
+    tags: ["single player", "reaction", "fast-paced", "matte UI"],
+  },
+  {
+    name: "FUNHUB - Meme Generator",
+    path: "games/meme_generator/index.html",
+    icon: "😂",
+    description:
+      "Get your daily dose of memes! Fetch random memes dynamically from the API and enjoy a fun scrolling experience.",
+    category: "Fun / Entertainment",
+    duration: "Unlimited",
+    tags: ["single player", "dynamic content", "API-driven", "fun"],
+  },
 ];
-
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
@@ -304,6 +298,7 @@ function animateCount(node, target, duration) {
 function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
+
 // Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
@@ -318,6 +313,5 @@ if (localStorage.getItem('theme') === 'light') {
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('light-theme');
   const isLight = body.classList.contains('light-theme');
-  themeToggle.textContent = isLight ? '🌞' : '🌙';
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  themeToggle.textContent = isLight
 });
