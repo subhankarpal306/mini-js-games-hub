@@ -855,3 +855,74 @@ a {
   color: #020305;
   transform: scale(1.1);
 }
+/* ===========================
+   🌟 PRO PLAYER BADGES
+=========================== */
+#pro-badges {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(16, 23, 39, 0.72);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px) saturate(1.2);
+}
+
+#pro-badges h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  text-shadow: 0 1px 6px rgba(88, 166, 255, 0.25);
+}
+
+.pro-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pro-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, rgba(88, 166, 255, 0.18), rgba(168, 85, 247, 0.14));
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  color: var(--text-100);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.pro-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(88, 166, 255, 0.35);
+}
+
+.pro-badge__icon {
+  font-size: 1.2rem;
+  color: #ffd700; /* gold star */
+}
+
+.pro-badge__name {
+  font-weight: 600;
+}
+
+.pro-badge__count {
+  font-size: 0.85rem;
+  color: var(--text-300);
+  background: rgba(88, 166, 255, 0.12);
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+}
+
+/* Responsive badges */
+@media (max-width: 640px) {
+  .pro-badges-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
