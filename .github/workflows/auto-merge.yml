@@ -19,7 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-    steps:
       - name: Get PR info
         id: pr_info
         run: |
