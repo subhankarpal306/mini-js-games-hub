@@ -212,9 +212,7 @@ const games = [
 
   tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
 
-}
-  },
-];
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
