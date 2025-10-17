@@ -212,8 +212,18 @@ const games = [
 
   tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
 
+},
+
+{
+  name: "Connect Four",
+  path: "games/Connect-four/index.html",
+  icon: "🟡",
+  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
+  category: "Strategy",
+  duration: "5-10 min",
+  tags: ["two-player", "grid", "classic"],
 }
-  },
+
 ];
 
 const container = document.getElementById("games-container");
