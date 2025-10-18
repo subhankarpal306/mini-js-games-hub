@@ -187,13 +187,6 @@ const games = [
   },
 
 {
-  name: "Connect Four",
-  path: "games/Connect-four/index.html",
-  icon: "🟡",
-  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
-  category: "Strategy",
-  duration: "5-10 min",
-  tags: ["two-player", "grid", "classic"],
   name: "Coin Toss Simulator",
   path: "games/coin_toss_simulator/index.html",
   icon: "🪙",
@@ -201,9 +194,17 @@ const games = [
   category: "Fun / Simulation",
   duration: "Unlimited",
   tags: ["single player", "fun", "simulation"],
-}
+},
 
-];
+{
+  name: "Connect Four",
+  path: "games/Connect-four/index.html",
+  icon: "🟡",
+  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
+  category: "Strategy",
+  duration: "5-10 min",
+  tags: ["two-player", "grid", "classic"],
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
