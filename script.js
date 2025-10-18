@@ -10,8 +10,8 @@ const games = [
     tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
   },
   {
-    name: "Wave Defense: Core Guard",
-    path: "games/wave-defense/index.html",
+    name: "Tower Defense: Core Guard",
+    path: "games/tower-defense/index.html",
     icon: "🛡️",
     description:
       "Build a strategic maze of towers, manage your economy (Resource Stream), and upgrade your defenses to protect the Core from increasingly complex enemy waves.",
