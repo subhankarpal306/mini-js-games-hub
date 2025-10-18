@@ -225,6 +225,7 @@ const games = [
 }
 
 ];
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
