@@ -185,7 +185,41 @@ const games = [
     duration: "Unlimited",
     tags: ["single player", "Solo", "Numbers", "fun", "brain"]
   }
+
+    tags: ["single player", "Solo", "Numbers", "fun"],
+
+},
+
+{
+
+  name: "Sudoku Game",
+
+  path: "games/sudoku/index.html",
+
+  icon: "🤯",
+
+  description: "Think the number with logic",
+
+  category: "Classic / Skill",
+
+  duration: "Unlimited",
+
+  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
+
+},
+
+{
+  name: "Coin Toss Simulator",
+  path: "games/coin_toss_simulator/index.html",
+  icon: "🪙",
+  description: "A simple coin toss simulator. Will it be heads or tails?",
+  category: "Fun / Simulation",
+  duration: "Unlimited",
+  tags: ["single player", "fun", "simulation"],
+}
+
 ];
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
