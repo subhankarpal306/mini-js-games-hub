@@ -184,29 +184,7 @@ const games = [
     category: "Classic / Skill",
     duration: "Unlimited",
     tags: ["single player", "Solo", "Numbers", "fun", "brain"]
-  }
-
-    tags: ["single player", "Solo", "Numbers", "fun"],
-
-},
-
-{
-
-  name: "Sudoku Game",
-
-  path: "games/sudoku/index.html",
-
-  icon: "🤯",
-
-  description: "Think the number with logic",
-
-  category: "Classic / Skill",
-
-  duration: "Unlimited",
-
-  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
-
-},
+  },
 
 {
   name: "Connect Four",
@@ -226,7 +204,6 @@ const games = [
 }
 
 ];
-}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
