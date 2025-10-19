@@ -221,6 +221,20 @@ const games = [
   tags: ["single player", "fun", "simulation"],
 },
 
+  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
+
+},
+   {
+    name: "Hangman",
+    path: "games/hangman/index.html",
+    icon: "🪢",
+    description: "Guess the word before you run out of attempts! Can you save the stickman?",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "word", "logic", "guessing"],
+}
+  },
+];
 {
   name: "Connect Four",
   path: "games/Connect-four/index.html",
@@ -392,6 +406,10 @@ if (localStorage.getItem('theme') === 'light') {
 
 // Toggle on click
 themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const isLight = body.classList.contains('light-theme');
+  themeToggle.textContent = isLight
+});
   // Toggle the class on body
   const isNowLight = body.classList.toggle('light-theme');
   // Persist the user's choice
