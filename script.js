@@ -212,6 +212,15 @@ const games = [
 
   tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
 
+},
+   {
+    name: "Hangman",
+    path: "games/hangman/index.html",
+    icon: "🪢",
+    description: "Guess the word before you run out of attempts! Can you save the stickman?",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "word", "logic", "guessing"],
 }
   },
 ];
