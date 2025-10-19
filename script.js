@@ -227,12 +227,23 @@ const games = [
    {
     name: "Hangman",
     path: "games/hangman/index.html",
-    icon: "🪢",
+    icon: "🏗️",
     description: "Guess the word before you run out of attempts! Can you save the stickman?",
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "word", "logic", "guessing"],
+},
+  
+  {
+    name: "Frogger",
+    path: "games/frogger/index.html",
+    icon: "🐸",
+    description: "Classic arcade game where you guide a frog across roads and rivers, avoiding obstacles and reaching safe zones.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reaction", "strategy", "reflex"],
 }
+
   },
 ];
 {
