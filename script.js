@@ -202,29 +202,11 @@ const games = [
     path: "games/coin_toss_simulator/index.html",
     icon: "🪙",
     description: "Flip a virtual coin — will it be heads or tails?",
-    category: "Simulation",
+    category: "Fun / Simulation",
     duration: "Unlimited",
-    tags: ["fun", "simulation", "singleplayer"],
+    tags: ["single player", "fun", "simulation"],
   },
-];
-
-    tags: ["single player", "Solo", "Numbers", "fun", "brain"]
-  },
-
-{
-  name: "Coin Toss Simulator",
-  path: "games/coin_toss_simulator/index.html",
-  icon: "🪙",
-  description: "A simple coin toss simulator. Will it be heads or tails?",
-  category: "Fun / Simulation",
-  duration: "Unlimited",
-  tags: ["single player", "fun", "simulation"],
-},
-
-  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
-
-},
-   {
+  {
     name: "Hangman",
     path: "games/hangman/index.html",
     icon: "🏗️",
@@ -232,8 +214,7 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "word", "logic", "guessing"],
-},
-  
+  },
   {
     name: "Frogger",
     path: "games/frogger/index.html",
@@ -242,19 +223,17 @@ const games = [
     category: "Arcade",
     duration: "Unlimited",
     tags: ["arcade", "reaction", "strategy", "reflex"],
-}
-
   },
+  {
+    name: "Quote Generator",
+    path: "games/quote/index.html",
+    icon: "🗃️",
+    description: "Generate your random quote",
+    category: "Simple",
+    duration: "Unlimited",
+    tags: ["single-player", "quote", "classic"],
+  }
 ];
-{
-  name: "Connect Four",
-  path: "games/Connect-four/index.html",
-  icon: "🟡",
-  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
-  category: "Strategy",
-  duration: "5-10 min",
-  tags: ["two-player", "grid", "classic"],
-}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
@@ -409,28 +388,31 @@ function easeOutCubic(t) {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Load saved theme
-if (localStorage.getItem('theme') === 'light') {
-  body.classList.add('light-theme');
-  // themeToggle.textContent = '🌞'; // Removed changing button text on load
+// Load saved theme with error handling
+try {
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
+  }
+} catch (e) {
+  // Default to dark theme if localStorage unavailable
+  console.log('localStorage not available, using default theme');
 }
 
 // Toggle on click
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('light-theme');
-  const isLight = body.classList.contains('light-theme');
-  themeToggle.textContent = isLight
-});
-  // Toggle the class on body
-  const isNowLight = body.classList.toggle('light-theme');
-  // Persist the user's choice
-  try {
-    localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
-  } catch (e) {
-    // ignore localStorage errors (e.g., privacy mode)
-  }
-  // Do not change the button symbol/text per request — keep its existing content
-});
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    // Toggle the class on body
+    const isNowLight = body.classList.toggle('light-theme');
+    
+    // Persist the user's choice
+    try {
+      localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
+    } catch (e) {
+      // Ignore localStorage errors (e.g., privacy mode)
+      console.log('Could not save theme preference');
+    }
+  });
+}
 
 // Scroll to Top/Bottom Buttons
 const scrollTopBtn = document.getElementById('scroll-top');
@@ -451,15 +433,17 @@ function updateScrollBtns() {
     scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
   }
 }
+
 window.addEventListener('scroll', updateScrollBtns);
 window.addEventListener('resize', updateScrollBtns);
-setTimeout(updateScrollBtns, 300); // Initial
+setTimeout(updateScrollBtns, 300); // Initial check
 
 if (scrollTopBtn) {
   scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
 if (scrollBottomBtn) {
   scrollBottomBtn.addEventListener('click', () => {
     window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
