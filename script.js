@@ -254,6 +254,16 @@ const games = [
   category: "Puzzle",
   duration: "1 min",
   tags: ["single player", "puzzle", "emoji", "fun"],
+},
+
+{
+  name: "Tap the Bubble",
+  path: "games/tap-the-bubble/index.html",
+  icon: "🫧",
+  description: "Tap the bubbles as they appear to score points! How many can you pop?",
+  category: "Arcade / Reflex",
+  duration: "Endless",
+  tags: ["reflex", "clicker", "solo", "bubble"],
 }];
 
 const container = document.getElementById("games-container");
