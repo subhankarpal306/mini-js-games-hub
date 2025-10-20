@@ -204,6 +204,16 @@ const games = [
   category: "Strategy",
   duration: "5-10 min",
   tags: ["two-player", "grid", "classic"],
+},
+
+{
+  name: "Odd One Out",
+  path: "games/odd-one-out/index.html",
+  icon: "🔍",
+  description: "Find the odd emoji/ odd-coloured tile out from a group of similar ones!",
+  category: "Puzzle",
+  duration: "1 min",
+  tags: ["single player", "puzzle", "emoji", "fun"],
 }];
 
 const container = document.getElementById("games-container");
