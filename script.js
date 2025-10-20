@@ -233,6 +233,16 @@ const games = [
     duration: "Unlimited",
     tags: ["single-player", "quote", "classic"],
   }
+  {
+        name: "Color Clicker",
+        path: "games/color-clicker/index.html",
+        icon: "🎨", 
+        description:
+            "Click the color box as fast as you can to score points! Every click changes the color, testing your speed and focus.",
+        category: "Arcade / Reflex",
+        duration: "Endless",
+        tags: ["reflex", "clicker", "solo", "color"],
+    },
 ];
 
 const container = document.getElementById("games-container");
