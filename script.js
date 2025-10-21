@@ -187,25 +187,27 @@ const games = [
     duration: "Unlimited",
     tags: ["singleplayer", "numbers", "logic", "brain"],
   },
-  {
-    name: "Connect Four",
-    path: "games/Connect-Four/index.html",
-    icon: "🟡",
-    description:
-      "Form a line of four of your own colored discs before your opponent does.",
-    category: "Strategy",
-    duration: "5–10 min",
-    tags: ["two-player", "grid", "classic"],
-  },
-  {
-    name: "Coin Toss Simulator",
-    path: "games/coin_toss_simulator/index.html",
-    icon: "🪙",
-    description: "Flip a virtual coin — will it be heads or tails?",
-    category: "Fun / Simulation",
-    duration: "Unlimited",
-    tags: ["single player", "fun", "simulation"],
-  },
+
+{
+  name: "Coin Toss Simulator",
+  path: "games/coin_toss_simulator/index.html",
+  icon: "🪙",
+  description: "A simple coin toss simulator. Will it be heads or tails?",
+  category: "Fun / Simulation",
+  duration: "Unlimited",
+  tags: ["single player", "fun", "simulation"],
+},
+
+{
+  name: "Connect Four",
+  path: "games/Connect-four/index.html",
+  icon: "🟡",
+  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
+  category: "Strategy",
+  duration: "5-10 min",
+  tags: ["two-player", "grid", "classic"],
+},
+
   {
     name: "Hangman",
     path: "games/hangman/index.html",
@@ -232,7 +234,7 @@ const games = [
     category: "Simple",
     duration: "Unlimited",
     tags: ["single-player", "quote", "classic"],
-  }
+  },
   {
         name: "Color Clicker",
         path: "games/color-clicker/index.html",
@@ -242,8 +244,17 @@ const games = [
         category: "Arcade / Reflex",
         duration: "Endless",
         tags: ["reflex", "clicker", "solo", "color"],
-    },
-];
+  },
+  
+{
+  name: "Odd One Out",
+  path: "games/odd-one-out/index.html",
+  icon: "🔍",
+  description: "Find the odd emoji/ odd-coloured tile out from a group of similar ones!",
+  category: "Puzzle",
+  duration: "1 min",
+  tags: ["single player", "puzzle", "emoji", "fun"],
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
