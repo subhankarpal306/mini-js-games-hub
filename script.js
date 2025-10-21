@@ -160,6 +160,17 @@ const games = [
   },
 
   {
+  name: "Line Game",
+  path: "games/line-game/index.html",
+  icon: "📈",
+  description: "Guide your neon line through obstacles and test your reflexes!",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "reflex", "dodge", "challenge"],
+},
+
+
+  {
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
