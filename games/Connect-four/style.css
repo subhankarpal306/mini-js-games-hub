@@ -111,4 +111,15 @@ h2{
 .column-hover{
     background-color: #374151;
 }
+.full-column-warning {
+    animation: shake 0.3s;
+    border: 2px solid #f87171; /* Red border as warning */
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
 
