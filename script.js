@@ -169,6 +169,16 @@ const games = [
     tags: ["fun", "strategy", "classic", "singleplayer"],
   },
   {
+    name: "Tap Reveal",
+    path: "games/tap-reveal/index.html",
+    icon: "🟩",
+    description: "A fun memory game! Tap tiles to reveal icons and match all pairs as fast as you can.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "memory", "matching", "click", "tap"],
+},
+
+  {
   name: "Line Game",
   path: "games/line-game/index.html",
   icon: "📈",
