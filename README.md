@@ -160,6 +160,18 @@ To add your own game or fix an issue, please check the [CONTRIBUTING.md](CONTRIB
 
 ---
 
+## ✨ Contributors
+
+#### Thanks to all the wonderful contributors 💖
+
+<a href="https://github.com/ritaban06/mini-js-games-hub/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ritaban06/mini-js-games-hub" />
+</a>
+
+#### See full list of contributor contribution [Contribution Graph](https://github.com/ritaban06/mini-js-games-hub/graphs/contributors)  
+
+---
+
 ## 🪪 License
 This project is licensed under the [**MIT License**](LICENSE) — free to use and modify.  
 
