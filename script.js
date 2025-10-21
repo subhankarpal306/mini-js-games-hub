@@ -40,6 +40,16 @@ const games = [
     tags: ["arcade", "retro", "keyboard"],
   },
   {
+    name: "Color Squid Puzzle",
+    path: "games/color-squid-puzzle/index.html",
+    icon: "🎨",
+    description: "A colorful and engaging puzzle game. Solve color-based challenges by arranging or matching colors in the correct order.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "color", "logic", "memory", "pattern"],
+},
+
+  {
     name: "Memory Game",
     path: "games/memory/index.html",
     icon: "🧠",
