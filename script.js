@@ -158,7 +158,15 @@ const games = [
   duration: "1–2 min",
   tags: ["fun", "strategy", "classic", "singleplayer"]
   },
-
+  {
+    name: "Merge LAB",
+    path: "games/merge-lab/index.html",
+    icon: "🧪",
+    description: "Combine similar lab elements to create higher-level compounds and achieve the highest score!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "strategy", "logic", "merge"],
+},
   {
   name: "FUNHUB - Meme Generator",
 
