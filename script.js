@@ -41,6 +41,16 @@ const games = [
     tags: ["memory", "solo", "matching"],
   },
   {
+    name: "Peglinko",
+    path: "games/peglinko/index.html",
+    icon: "🔵",
+    description: "Shoot balls, hit pegs, and score combos in this glowing arcade puzzle!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "physics", "canvas", "reflex"],
+},
+
+  {
     name: "Whack-a-Mole",
     path: "games/whack-a-mole/index.html",
     icon: "🔨",
