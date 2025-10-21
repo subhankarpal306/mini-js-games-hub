@@ -209,6 +209,17 @@ const games = [
 
 
   {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
+},
+
+
+  {
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
@@ -515,53 +526,3 @@ themeToggle.addEventListener('click', () => {
   const isLight = body.classList.contains('light-theme');
   themeToggle.textContent = isLight
 });
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    // Toggle the class on body
-    const isNowLight = body.classList.toggle('light-theme');
-    
-    // Persist the user's choice
-    try {
-      localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
-    } catch (e) {
-      // Ignore localStorage errors (e.g., privacy mode)
-      console.log('Could not save theme preference');
-    }
-  });
-}
-
-// Scroll to Top/Bottom Buttons
-const scrollTopBtn = document.getElementById('scroll-top');
-const scrollBottomBtn = document.getElementById('scroll-bottom');
-
-function updateScrollBtns() {
-  const scrollY = window.scrollY || document.documentElement.scrollTop;
-  const winH = window.innerHeight || document.documentElement.clientHeight;
-  const docH = document.documentElement.scrollHeight;
-
-  // Show top button if not at top (with some threshold)
-  if (scrollTopBtn) {
-    scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
-  }
-
-  // Show bottom button if not at bottom (with some threshold)
-  if (scrollBottomBtn) {
-    scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
-  }
-}
-
-window.addEventListener('scroll', updateScrollBtns);
-window.addEventListener('resize', updateScrollBtns);
-setTimeout(updateScrollBtns, 300); // Initial check
-
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-if (scrollBottomBtn) {
-  scrollBottomBtn.addEventListener('click', () => {
-    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-  });
-}
