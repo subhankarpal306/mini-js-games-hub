@@ -158,8 +158,17 @@ const games = [
   duration: "1–2 min",
   tags: ["fun", "strategy", "classic", "singleplayer"]
   },
-
   {
+    name: "Maiolike Block Puzzle",
+    path: "games/maiolike-block-puzzle/index.html",
+    icon: "⬛",
+    description: "A casual block puzzle game. Place blocks to complete rows or columns and score points. Plan ahead to avoid running out of space!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "block", "strategy"],
+},
+
+{
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
