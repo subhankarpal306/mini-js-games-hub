@@ -187,6 +187,14 @@ const games = [
     duration: "Unlimited",
     tags: ["puzzle", "strategy", "logic", "merge"],
 },
+  {
+  name: "Cozy Blocks",
+  path: "games/cozy-blocks/index.html",
+  icon: "🧱",
+  description: "Stack blocks as high as you can in this relaxing, precision-based game.",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "precision", "stacking", "relaxing"],
     name: "Maiolike Block Puzzle",
     path: "games/maiolike-block-puzzle/index.html",
     icon: "⬛",
@@ -205,7 +213,6 @@ const games = [
   duration: "3–5 minutes",
   tags: ["puzzle", "memory", "logic", "connect"],
 },
-
 
   {
     name: "Boom",
