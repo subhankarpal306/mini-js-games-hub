@@ -40,6 +40,15 @@ const games = [
     tags: ["arcade", "retro", "keyboard"],
   },
   {
+    name: "Color Squid Puzzle",
+    path: "games/color-squid-puzzle/index.html",
+    icon: "🎨",
+    description: "A colorful and engaging puzzle game. Solve color-based challenges by arranging or matching colors in the correct order.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "color", "logic", "memory", "pattern"],
+  },
+  {
     name: "Memory Game",
     path: "games/memory/index.html",
     icon: "🧠",
@@ -48,6 +57,15 @@ const games = [
     category: "Brain Teaser",
     duration: "5 min",
     tags: ["memory", "solo", "matching"],
+  },
+  {
+    name: "Peglinko",
+    path: "games/peglinko/index.html",
+    icon: "🔵",
+    description: "Shoot balls, hit pegs, and score combos in this glowing arcade puzzle!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "physics", "canvas", "reflex"],
   },
   {
     name: "Whack-a-Mole",
@@ -100,6 +118,15 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
+    name: "TileMan.io",
+    path: "games/tileman/index.html",
+    icon: "🟩",
+    description: "Claim tiles and dominate the grid while avoiding your enemies!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "multiplayer", "grid", "reflex", "advanced"],
+  },
+  {
     name: "Pong",
     path: "games/pong/index.html",
     icon: "🏓",
@@ -109,7 +136,16 @@ const games = [
     duration: "Endless",
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
-{
+  {
+  name: "Words of Wonders",
+  path: "games/words-of-wonders/index.html",
+  icon: "🧩",
+  description: "Form words from given letters to fill the crossword puzzle grid!",
+  category: "Puzzle",
+  duration: "Unlimited",
+  tags: ["puzzle", "word", "logic", "crossword"],
+  },
+  {
     name: "Island Survival Text Game",
     path: "games/island-survival/index.html",
     icon: "🌴",
@@ -156,8 +192,9 @@ const games = [
     category: "Cooking",
     duration: "No time limit",
     tags: ["cooking", "food", "memory", "fun"],
-  }, 
-  {  name: "Catch the Dot",
+  },
+  {
+  name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
     description:
@@ -184,7 +221,7 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "memory", "matching", "click", "tap"],
-},
+  },
   {
     name: "The World's Easiest Game",
     path: "games/worlds-easiest-game/index.html",
@@ -193,7 +230,7 @@ const games = [
     category: "Casual",
     duration: "1-2 minutes",
     tags: ["casual", "fun", "quick", "clicker"],
-},
+  },
   {
   name: "Line Game",
   path: "games/line-game/index.html",
@@ -202,8 +239,35 @@ const games = [
   category: "Arcade",
   duration: "Endless",
   tags: ["arcade", "reflex", "dodge", "challenge"],
-},
-{
+  },
+  {
+    name: "Merge LAB",
+    path: "games/merge-lab/index.html",
+    icon: "🧪",
+    description: "Combine similar lab elements to create higher-level compounds and achieve the highest score!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "strategy", "logic", "merge"],
+  },
+  {
+  name: "Cozy Blocks",
+  path: "games/cozy-blocks/index.html",
+  icon: "🧱",
+  description: "Stack blocks as high as you can in this relaxing, precision-based game.",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "precision", "stacking", "relaxing"],
+  },
+  {
+    name: "Maiolike Block Puzzle",
+    path: "games/maiolike-block-puzzle/index.html",
+    icon: "⬛",
+    description: "A casual block puzzle game. Place blocks to complete rows or columns and score points. Plan ahead to avoid running out of space!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "block", "strategy"],
+  },
+  {
   name: "Link Game",
   path: "games/link-game/index.html",
   icon: "🔗",
@@ -211,7 +275,16 @@ const games = [
   category: "Puzzle",
   duration: "3–5 minutes",
   tags: ["puzzle", "memory", "logic", "connect"],
-},
+  },
+  {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
+  },
   {
     name: "FUNHUB - Meme Generator",
     path: "games/meme_generator/index.html",
@@ -240,7 +313,7 @@ const games = [
     duration: "Unlimited",
     tags: ["singleplayer", "numbers", "logic", "brain"],
   },
-{
+  {
   name: "Coin Toss Simulator",
   path: "games/coin_toss_simulator/index.html",
   icon: "🪙",
@@ -248,8 +321,8 @@ const games = [
   category: "Fun / Simulation",
   duration: "Unlimited",
   tags: ["single player", "fun", "simulation"],
-},
-{
+  },
+  {
   name: "Connect Four",
   path: "games/Connect-four/index.html",
   icon: "🟡",
@@ -257,7 +330,7 @@ const games = [
   category: "Strategy",
   duration: "5-10 min",
   tags: ["two-player", "grid", "classic"],
-},
+  },
   {
     name: "Hangman",
     path: "games/hangman/index.html",
@@ -284,7 +357,7 @@ const games = [
   category: "Arcade",
   duration: "5-15 minutes",
   tags: ["arcade","multiplayer","physics","canvas"]
-},
+  },
   {
     name: "Tiny Fishing",
     path: "games/tiny-fishing/index.html",
@@ -293,8 +366,8 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
-},
-{
+  },
+  {
     name: "Grass Defense",
     path: "games/grass-defense/index.html",
     icon: "🌿",
@@ -315,14 +388,14 @@ const games = [
   {
         name: "Color Clicker",
         path: "games/color-clicker/index.html",
-        icon: "🎨", 
+        icon: "🎨", 
         description:
             "Click the color box as fast as you can to score points! Every click changes the color, testing your speed and focus.",
         category: "Arcade / Reflex",
         duration: "Endless",
         tags: ["reflex", "clicker", "solo", "color"],
   },
-{
+  {
   name: "Odd One Out",
   path: "games/odd-one-out/index.html",
   icon: "🔍",
@@ -330,8 +403,8 @@ const games = [
   category: "Puzzle",
   duration: "1 min",
   tags: ["single player", "puzzle", "emoji", "fun"],
-},
-{
+  },
+  {
   name: "Tap the Bubble",
   path: "games/tap-the-bubble/index.html",
   icon: "🫧",
@@ -339,8 +412,9 @@ const games = [
   category: "Arcade / Reflex",
   duration: "Endless",
   tags: ["reflex", "clicker", "solo", "bubble"],
-}
+  }
 ];
+
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
 const emptyState = document.getElementById("empty-state");
@@ -350,144 +424,144 @@ const latestTargets = document.querySelectorAll("[data-latest-game]");
 const previewCount = document.querySelector("[data-preview-count]");
 
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.4 }
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.4 }
 );
 
 const latestGameName = games.length ? games[games.length - 1].name : "--";
 countTargets.forEach((el) => {
-  el.textContent = String(games.length);
+  el.textContent = String(games.length);
 });
 latestTargets.forEach((el) => {
-  el.textContent = latestGameName;
+  el.textContent = latestGameName;
 });
 
 if (previewCount) {
-  animateCount(previewCount, games.length, 920);
+  animateCount(previewCount, games.length, 920);
 }
 
 renderGames(games);
 
 if (searchInput) {
-  searchInput.addEventListener("input", () => {
-    renderGames(filterGames(searchInput.value));
-  });
+  searchInput.addEventListener("input", () => {
+    renderGames(filterGames(searchInput.value));
+  });
 }
 
 if (clearSearchButton) {
-  clearSearchButton.addEventListener("click", () => {
-    if (!searchInput) return;
-    searchInput.value = "";
-    searchInput.focus();
-    renderGames(games);
-  });
+  clearSearchButton.addEventListener("click", () => {
+    if (!searchInput) return;
+    searchInput.value = "";
+    searchInput.focus();
+    renderGames(games);
+  });
 }
 
 function renderGames(list) {
-  container.innerHTML = "";
+  container.innerHTML = "";
 
-  if (!list.length) {
-    if (emptyState) emptyState.hidden = false;
-    return;
-  }
+  if (!list.length) {
+    if (emptyState) emptyState.hidden = false;
+    return;
+  }
 
-  if (emptyState) emptyState.hidden = true;
+  if (emptyState) emptyState.hidden = true;
 
-  list.forEach((game, index) => {
-    const card = document.createElement("article");
-    card.className = "game-card";
-    card.tabIndex = 0;
-    card.dataset.name = game.name.toLowerCase();
-    card.style.setProperty("--stagger", `${index * 60}ms`);
+  list.forEach((game, index) => {
+    const card = document.createElement("article");
+    card.className = "game-card";
+    card.tabIndex = 0;
+    card.dataset.name = game.name.toLowerCase();
+    card.style.setProperty("--stagger", `${index * 60}ms`);
 
-    card.innerHTML = `
-      <div class="card-header">
-        <span class="card-pill">${game.icon} ${game.category}</span>
-        <span class="card-timing">${game.duration}</span>
-      </div>
-      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
-      <p class="card-body">${game.description}</p>
-      <div class="card-tags">
-        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
-      </div>
-      <div class="card-actions">
-        <a class="play-button" href="${game.path}">Play now</a>
-        <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
-      </div>
-    `;
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="card-pill">${game.icon} ${game.category}</span>
+        <span class="card-timing">${game.duration}</span>
+      </div>
+      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
+      <p class="card-body">${game.description}</p>
+      <div class="card-tags">
+        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
+      </div>
+      <div class="card-actions">
+        <a class="play-button" href="${game.path}">Play now</a>
+        <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
+      </div>
+    `;
 
-    card.addEventListener("pointermove", handleCardTilt);
-    card.addEventListener("pointerleave", resetCardTilt);
-    card.addEventListener("focusout", resetCardTilt);
-    card.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      event.preventDefault();
-      window.open(game.path, "_blank", "noopener,noreferrer");
-    });
+    card.addEventListener("pointermove", handleCardTilt);
+    card.addEventListener("pointerleave", resetCardTilt);
+    card.addEventListener("focusout", resetCardTilt);
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      window.open(game.path, "_blank", "noopener,noreferrer");
+    });
 
-    container.appendChild(card);
-    observer.observe(card);
-  });
+    container.appendChild(card);
+    observer.observe(card);
+  });
 }
 
 function filterGames(rawTerm) {
-  const term = rawTerm.trim().toLowerCase();
-  if (!term) return games;
+  const term = rawTerm.trim().toLowerCase();
+  if (!term) return games;
 
-  return games.filter((game) => {
-    const haystack = [
-      game.name,
-      game.category,
-      game.description,
-      ...game.tags,
-    ]
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(term);
-  });
+  return games.filter((game) => {
+    const haystack = [
+      game.name,
+      game.category,
+      game.description,
+      ...game.tags,
+    ]
+      .join(" ")
+      .toLowerCase();
+    return haystack.includes(term);
+  });
 }
 
 function handleCardTilt(event) {
-  const card = event.currentTarget;
-  const rect = card.getBoundingClientRect();
-  const relativeX = (event.clientX - rect.left) / rect.width;
-  const relativeY = (event.clientY - rect.top) / rect.height;
-  const tiltX = (0.5 - relativeY) * 8;
-  const tiltY = (relativeX - 0.5) * 8;
-  card.style.setProperty("--tiltX", `${tiltX.toFixed(2)}deg`);
-  card.style.setProperty("--tiltY", `${tiltY.toFixed(2)}deg`);
+  const card = event.currentTarget;
+  const rect = card.getBoundingClientRect();
+  const relativeX = (event.clientX - rect.left) / rect.width;
+  const relativeY = (event.clientY - rect.top) / rect.height;
+  const tiltX = (0.5 - relativeY) * 8;
+  const tiltY = (relativeX - 0.5) * 8;
+  card.style.setProperty("--tiltX", `${tiltX.toFixed(2)}deg`);
+  card.style.setProperty("--tiltY", `${tiltY.toFixed(2)}deg`);
 }
 
 function resetCardTilt(event) {
-  const card = event.currentTarget;
-  card.style.setProperty("--tiltX", "0deg");
-  card.style.setProperty("--tiltY", "0deg");
+  const card = event.currentTarget;
+  card.style.setProperty("--tiltX", "0deg");
+  card.style.setProperty("--tiltY", "0deg");
 }
 
 function animateCount(node, target, duration) {
-  const start = Number(node.textContent) || 0;
-  const startTime = performance.now();
+  const start = Number(node.textContent) || 0;
+  const startTime = performance.now();
 
-  const tick = (now) => {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = easeOutCubic(progress);
-    const value = Math.round(start + (target - start) * eased);
-    node.textContent = value.toString().padStart(2, "0");
-    if (progress < 1) requestAnimationFrame(tick);
-  };
+  const tick = (now) => {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutCubic(progress);
+    const value = Math.round(start + (target - start) * eased);
+    node.textContent = value.toString().padStart(2, "0");
+    if (progress < 1) requestAnimationFrame(tick);
+  };
 
-  requestAnimationFrame(tick);
+  requestAnimationFrame(tick);
 }
 
 function easeOutCubic(t) {
-  return 1 - Math.pow(1 - t, 3);
+  return 1 - Math.pow(1 - t, 3);
 }
 
 // Theme Toggle
@@ -496,33 +570,28 @@ const body = document.body;
 
 // Load saved theme with error handling
 try {
-  if (localStorage.getItem('theme') === 'light') {
-    body.classList.add('light-theme');
-  }
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
+  }
 } catch (e) {
-  // Default to dark theme if localStorage unavailable
-  console.log('localStorage not available, using default theme');
+  // Default to dark theme if localStorage unavailable
+  console.log('localStorage not available, using default theme');
 }
 
-// Toggle on click
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('light-theme');
-  const isLight = body.classList.contains('light-theme');
-  themeToggle.textContent = isLight
-});
+// FIX: Combined theme toggle and scroll button logic (Keeping the more complete logic from the fix branch)
 if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    // Toggle the class on body
-    const isNowLight = body.classList.toggle('light-theme');
-    
-    // Persist the user's choice
-    try {
-      localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
-    } catch (e) {
-      // Ignore localStorage errors (e.g., privacy mode)
-      console.log('Could not save theme preference');
-    }
-  });
+  themeToggle.addEventListener('click', () => {
+    // Toggle the class on body
+    const isNowLight = body.classList.toggle('light-theme');
+    
+    // Persist the user's choice
+    try {
+      localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
+    } catch (e) {
+      // Ignore localStorage errors (e.g., privacy mode)
+      console.log('Could not save theme preference');
+    }
+  });
 }
 
 // Scroll to Top/Bottom Buttons
@@ -530,19 +599,19 @@ const scrollTopBtn = document.getElementById('scroll-top');
 const scrollBottomBtn = document.getElementById('scroll-bottom');
 
 function updateScrollBtns() {
-  const scrollY = window.scrollY || document.documentElement.scrollTop;
-  const winH = window.innerHeight || document.documentElement.clientHeight;
-  const docH = document.documentElement.scrollHeight;
+  const scrollY = window.scrollY || document.documentElement.scrollTop;
+  const winH = window.innerHeight || document.documentElement.clientHeight;
+  const docH = document.documentElement.scrollHeight;
 
-  // Show top button if not at top (with some threshold)
-  if (scrollTopBtn) {
-    scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
-  }
+  // Show top button if not at top (with some threshold)
+  if (scrollTopBtn) {
+    scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
+  }
 
-  // Show bottom button if not at bottom (with some threshold)
-  if (scrollBottomBtn) {
-    scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
-  }
+  // Show bottom button if not at bottom (with some threshold)
+  if (scrollBottomBtn) {
+    scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
+  }
 }
 
 window.addEventListener('scroll', updateScrollBtns);
@@ -550,13 +619,13 @@ window.addEventListener('resize', updateScrollBtns);
 setTimeout(updateScrollBtns, 300); // Initial check
 
 if (scrollTopBtn) {
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
 if (scrollBottomBtn) {
-  scrollBottomBtn.addEventListener('click', () => {
-    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-  });
+  scrollBottomBtn.addEventListener('click', () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+  });
 }
