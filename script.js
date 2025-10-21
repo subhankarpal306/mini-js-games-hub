@@ -169,6 +169,19 @@ const games = [
     tags: ["fun", "strategy", "classic", "singleplayer"],
   },
   {
+  name: "Line Game",
+  path: "games/line-game/index.html",
+  icon: "📈",
+  description: "Guide your neon line through obstacles and test your reflexes!",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "reflex", "dodge", "challenge"],
+},
+
+
+  {
+  name: "FUNHUB - Meme Generator",
+
     name: "FUNHUB - Meme Generator",
     path: "games/meme_generator/index.html",
     icon: "😂",
@@ -468,6 +481,11 @@ try {
 }
 
 // Toggle on click
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const isLight = body.classList.contains('light-theme');
+  themeToggle.textContent = isLight
+});
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     // Toggle the class on body
