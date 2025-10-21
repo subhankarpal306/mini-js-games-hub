@@ -160,6 +160,17 @@ const games = [
   },
 
   {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
+},
+
+
+  {
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
