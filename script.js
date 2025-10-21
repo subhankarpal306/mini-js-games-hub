@@ -91,6 +91,16 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
+    name: "TileMan.io",
+    path: "games/tileman/index.html",
+    icon: "🟩",
+    description: "Claim tiles and dominate the grid while avoiding your enemies!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "multiplayer", "grid", "reflex", "advanced"],
+},
+
+  {
     name: "Pong",
     path: "games/pong/index.html",
     icon: "🏓",
