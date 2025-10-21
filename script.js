@@ -195,7 +195,35 @@ const games = [
   category: "Arcade",
   duration: "Endless",
   tags: ["arcade", "precision", "stacking", "relaxing"],
+    name: "Maiolike Block Puzzle",
+    path: "games/maiolike-block-puzzle/index.html",
+    icon: "⬛",
+    description: "A casual block puzzle game. Place blocks to complete rows or columns and score points. Plan ahead to avoid running out of space!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "block", "strategy"],
 },
+
+{
+  name: "Link Game",
+  path: "games/link-game/index.html",
+  icon: "🔗",
+  description: "Connect matching tiles before you run out of moves! A fun logic puzzle for quick thinkers.",
+  category: "Puzzle",
+  duration: "3–5 minutes",
+  tags: ["puzzle", "memory", "logic", "connect"],
+},
+
+  {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
+},
+
 
   {
   name: "FUNHUB - Meme Generator",
