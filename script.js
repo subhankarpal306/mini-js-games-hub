@@ -8,8 +8,17 @@ const games = [
     category: "Memory",
     duration: "Progressive",
     tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
-  }
-  ,
+  },
+  {
+    name: "Tower Defense: Core Guard",
+    path: "games/tower-defense/index.html",
+    icon: "🛡️",
+    description:
+      "Build a strategic maze of towers, manage your economy (Resource Stream), and upgrade your defenses to protect the Core from increasingly complex enemy waves.",
+    category: "Defense",
+    duration: "Varied rounds",
+    tags: ["strategy", "tower defense", "upgrades", "economy"],
+  },
   {
     name: "Tic Tac Toe",
     path: "games/tictactoe/index.html",
@@ -101,24 +110,14 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
-    name: "Kong fights ",
-    path: "games/The Godzilla Fights game(html,css,js)/index.html",
-    icon: "&#129421",
+    name: "Kong Fights",
+    path: "games/The-Godzilla-Fights/index.html",
+    icon: "🦍",
     description:
-      "A exciting fighting game where two cartoon gorillas stand on opposite rooftops in a cityscape at sunset. The player (on the left) aims and throws a bomb at the computer opponent by dragging to set the angle and velocity",
+      "An exciting rooftop fighting game! Aim and throw bombs at your opponent using drag gestures to set angle and power.",
     category: "Fighting",
     duration: "Endless",
-    tags: ["Fighting", "Special", "multiplayer", "computer"],
-  },
-  {
-    name: "Simon Says",
-    path: "games/SimonSays/index.html",
-    icon: "🧠",
-    description:
-      "A fun memory game where players repeat an increasingly complex sequence of colors.",
-    category: "Memory",
-    duration: "Progressive",
-    tags: ["memory", "focus", "puzzle", "challenge"],
+    tags: ["fighting", "multiplayer", "computer", "aim"],
   },
   {
     name: "Typing Test",
@@ -134,12 +133,22 @@ const games = [
     name: "Balloon Pop",
     path: "games/balloon-pop/index.html",
     icon: "🎈",
-    description: "Click the balloons before they float away! Pop as many as you can.",
+    description:
+      "Click the balloons before they float away! Pop as many as you can.",
     category: "Arcade",
     duration: "30 seconds",
     tags: ["arcade", "reflex", "clicker"],
   },
   {
+    name: "Burger Builder",
+    path: "games/burger-builder/index.html",
+    icon: "🍔",
+    description: "Stack ingredients in the right order to make the perfect burger before time runs out!",
+    category: "Cooking",
+    duration: "No time limit",
+    tags: ["cooking", "food", "memory", "fun"],
+  },  
+];
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
@@ -150,13 +159,14 @@ const games = [
     tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
   {
-  name: "Rock Paper Scissors",
-  path: "games/rock-paper-scissors/index.html",
-  icon: "✊📄✂️",
-  description: "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
-  category: "Strategy / Fun",
-  duration: "1–2 min",
-  tags: ["fun", "strategy", "classic", "singleplayer"]
+    name: "Rock Paper Scissors",
+    path: "games/rock-paper-scissors/index.html",
+    icon: "✊📄✂️",
+    description:
+      "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
+    category: "Strategy / Fun",
+    duration: "1–2 min",
+    tags: ["fun", "strategy", "classic", "singleplayer"],
   },
   {
     name: "Merge LAB",
@@ -171,58 +181,139 @@ const games = [
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
-
     path: "games/meme_generator/index.html",
-
     icon: "😂",
-
-    description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
-
+    description:
+      "Get your daily dose of memes! Fetch random memes dynamically from the API.",
     category: "Fun / Entertainment",
-
     duration: "Unlimited",
-
     tags: ["single player", "dynamic content", "API-driven", "fun"],
-
+  },
+  {
+    name: "Number Guessing Game",
+    path: "games/Number_Guessing_Game/index.html",
+    icon: "🤓",
+    description: "Guess the secret number in the lowest number of tries!",
+    category: "Fun / Entertainment",
+    duration: "Unlimited",
+    tags: ["numbers", "solo", "fun"],
+  },
+  {
+    name: "Sudoku Game",
+    path: "games/sudoku/index.html",
+    icon: "🤯",
+    description: "Use logic to fill the grid and solve the puzzle!",
+    category: "Classic / Skill",
+    duration: "Unlimited",
+    tags: ["singleplayer", "numbers", "logic", "brain"],
   },
 
-  {
-
-    name: "Number Guessing Game",
-
-    path: "games/Number_Gussing_game/NGG.html",
-
-    icon: "🤓",
-
-    description: "Guess the number in lowest time",
-
-    category: "Fun / Entertainment",
-
-    duration: "Unlimited",
-
-    tags: ["single player", "Solo", "Numbers", "fun"],
-
+{
+  name: "Coin Toss Simulator",
+  path: "games/coin_toss_simulator/index.html",
+  icon: "🪙",
+  description: "A simple coin toss simulator. Will it be heads or tails?",
+  category: "Fun / Simulation",
+  duration: "Unlimited",
+  tags: ["single player", "fun", "simulation"],
 },
 
 {
+  name: "Connect Four",
+  path: "games/Connect-four/index.html",
+  icon: "🟡",
+  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
+  category: "Strategy",
+  duration: "5-10 min",
+  tags: ["two-player", "grid", "classic"],
+},
 
-  name: "Sudoku Game",
-
-  path: "games/sudoku/index.html",
-
-  icon: "🤯",
-
-  description: "Think the number with logic",
-
-  category: "Classic / Skill",
-
-  duration: "Unlimited",
-
-  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
-
-}
+  {
+    name: "Hangman",
+    path: "games/hangman/index.html",
+    icon: "🏗️",
+    description: "Guess the word before you run out of attempts! Can you save the stickman?",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "word", "logic", "guessing"],
   },
-];
+  {
+    name: "Frogger",
+    path: "games/frogger/index.html",
+    icon: "🐸",
+    description: "Classic arcade game where you guide a frog across roads and rivers, avoiding obstacles and reaching safe zones.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reaction", "strategy", "reflex"],
+  },
+  {
+  name: "8 Ball Pool Billiards Multiplayer",
+  path: "games/8-ball-pool/index.html",
+  icon: "🎱",
+  description: "Realistic local 2-player 8-ball pool with cue aiming, power meter and physics using Canvas.",
+  category: "Arcade",
+  duration: "5-15 minutes",
+  tags: ["arcade","multiplayer","physics","canvas"]
+},
+  {
+    name: "Tiny Fishing",
+    path: "games/tiny-fishing/index.html",
+    icon: "🎣",
+    description: "Cast your line, catch fish, and upgrade your gear! A relaxing fishing challenge built with Canvas.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
+},
+
+{
+    name: "Grass Defense",
+    path: "games/grass-defense/index.html",
+    icon: "🌿",
+    description: "Strategic tower defense! Place plants to defend your garden from pests.",
+    category: "Strategy",
+    duration: "Wave-based",
+    tags: ["strategy", "defense", "canvas", "logic"],
+},
+
+  {
+    name: "Quote Generator",
+    path: "games/quote/index.html",
+    icon: "🗃️",
+    description: "Generate your random quote",
+    category: "Simple",
+    duration: "Unlimited",
+    tags: ["single-player", "quote", "classic"],
+  },
+  {
+        name: "Color Clicker",
+        path: "games/color-clicker/index.html",
+        icon: "🎨", 
+        description:
+            "Click the color box as fast as you can to score points! Every click changes the color, testing your speed and focus.",
+        category: "Arcade / Reflex",
+        duration: "Endless",
+        tags: ["reflex", "clicker", "solo", "color"],
+  },
+  
+{
+  name: "Odd One Out",
+  path: "games/odd-one-out/index.html",
+  icon: "🔍",
+  description: "Find the odd emoji/ odd-coloured tile out from a group of similar ones!",
+  category: "Puzzle",
+  duration: "1 min",
+  tags: ["single player", "puzzle", "emoji", "fun"],
+},
+
+{
+  name: "Tap the Bubble",
+  path: "games/tap-the-bubble/index.html",
+  icon: "🫧",
+  description: "Tap the bubbles as they appear to score points! How many can you pop?",
+  category: "Arcade / Reflex",
+  duration: "Endless",
+  tags: ["reflex", "clicker", "solo", "bubble"],
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
@@ -377,10 +468,14 @@ function easeOutCubic(t) {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Load saved theme
-if (localStorage.getItem('theme') === 'light') {
-  body.classList.add('light-theme');
-  themeToggle.textContent = '🌞';
+// Load saved theme with error handling
+try {
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
+  }
+} catch (e) {
+  // Default to dark theme if localStorage unavailable
+  console.log('localStorage not available, using default theme');
 }
 
 // Toggle on click
