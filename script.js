@@ -140,9 +140,19 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
-    name: "Kong Fights",
-    path: "games/The-Godzilla-Fights/index.html",
-    icon: "🦍",
+  name: "Words of Wonders",
+  path: "games/words-of-wonders/index.html",
+  icon: "🧩",
+  description: "Form words from given letters to fill the crossword puzzle grid!",
+  category: "Puzzle",
+  duration: "Unlimited",
+  tags: ["puzzle", "word", "logic", "crossword"],
+},
+
+  {
+    name: "Kong fights ",
+    path: "games/The Godzilla Fights game(html,css,js)/index.html",
+    icon: "&#129421",
     description:
       "An exciting rooftop fighting game! Aim and throw bombs at your opponent using drag gestures to set angle and power.",
     category: "Fighting",
