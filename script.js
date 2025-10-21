@@ -179,6 +179,28 @@ const games = [
 },
 
 {
+  name: "Link Game",
+  path: "games/link-game/index.html",
+  icon: "🔗",
+  description: "Connect matching tiles before you run out of moves! A fun logic puzzle for quick thinkers.",
+  category: "Puzzle",
+  duration: "3–5 minutes",
+  tags: ["puzzle", "memory", "logic", "connect"],
+},
+
+
+  {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
+},
+
+
+  {
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
