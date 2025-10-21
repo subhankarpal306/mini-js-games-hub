@@ -168,6 +168,16 @@ const games = [
     duration: "Unlimited",
     tags: ["puzzle", "memory", "matching", "click", "tap"],
 },
+  {
+    name: "The World's Easiest Game",
+    path: "games/worlds-easiest-game/index.html",
+    icon: "😎",
+    description: "A super simple, fun, and humorous game. Click the button and win instantly!",
+    category: "Casual",
+    duration: "1-2 minutes",
+    tags: ["casual", "fun", "quick", "clicker"],
+},
+
 
   {
     name: "FUNHUB - Meme Generator",
