@@ -243,6 +243,15 @@ const games = [
     tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
 },
 
+{
+    name: "Grass Defense",
+    path: "games/grass-defense/index.html",
+    icon: "🌿",
+    description: "Strategic tower defense! Place plants to defend your garden from pests.",
+    category: "Strategy",
+    duration: "Wave-based",
+    tags: ["strategy", "defense", "canvas", "logic"],
+},
 
   {
     name: "Quote Generator",
