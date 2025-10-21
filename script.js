@@ -40,6 +40,15 @@ const games = [
     tags: ["arcade", "retro", "keyboard"],
   },
   {
+    name: "Color Squid Puzzle",
+    path: "games/color-squid-puzzle/index.html",
+    icon: "🎨",
+    description: "A colorful and engaging puzzle game. Solve color-based challenges by arranging or matching colors in the correct order.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "color", "logic", "memory", "pattern"],
+},
+  {
     name: "Memory Game",
     path: "games/memory/index.html",
     icon: "🧠",
@@ -49,6 +58,15 @@ const games = [
     duration: "5 min",
     tags: ["memory", "solo", "matching"],
   },
+  {
+    name: "Peglinko",
+    path: "games/peglinko/index.html",
+    icon: "🔵",
+    description: "Shoot balls, hit pegs, and score combos in this glowing arcade puzzle!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "physics", "canvas", "reflex"],
+},
   {
     name: "Whack-a-Mole",
     path: "games/whack-a-mole/index.html",
@@ -100,6 +118,15 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
+    name: "TileMan.io",
+    path: "games/tileman/index.html",
+    icon: "🟩",
+    description: "Claim tiles and dominate the grid while avoiding your enemies!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "multiplayer", "grid", "reflex", "advanced"],
+},
+  {
     name: "Pong",
     path: "games/pong/index.html",
     icon: "🏓",
@@ -109,8 +136,16 @@ const games = [
     duration: "Endless",
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
-
-{
+  {
+  name: "Words of Wonders",
+  path: "games/words-of-wonders/index.html",
+  icon: "🧩",
+  description: "Form words from given letters to fill the crossword puzzle grid!",
+  category: "Puzzle",
+  duration: "Unlimited",
+  tags: ["puzzle", "word", "logic", "crossword"],
+},
+  {
     name: "Island Survival Text Game",
     path: "games/island-survival/index.html",
     icon: "🌴",
@@ -157,8 +192,9 @@ const games = [
     category: "Cooking",
     duration: "No time limit",
     tags: ["cooking", "food", "memory", "fun"],
-  }, 
-  {  name: "Catch the Dot",
+  },
+  {
+    name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
     description:
@@ -204,6 +240,33 @@ const games = [
   duration: "Endless",
   tags: ["arcade", "reflex", "dodge", "challenge"],
 },
+  {
+    name: "Merge LAB",
+    path: "games/merge-lab/index.html",
+    icon: "🧪",
+    description: "Combine similar lab elements to create higher-level compounds and achieve the highest score!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "strategy", "logic", "merge"],
+},
+  {
+  name: "Cozy Blocks",
+  path: "games/cozy-blocks/index.html",
+  icon: "🧱",
+  description: "Stack blocks as high as you can in this relaxing, precision-based game.",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "precision", "stacking", "relaxing"],
+  },
+  {
+    name: "Maiolike Block Puzzle",
+    path: "games/maiolike-block-puzzle/index.html",
+    icon: "⬛",
+    description: "A casual block puzzle game. Place blocks to complete rows or columns and score points. Plan ahead to avoid running out of space!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "block", "strategy"],
+},
 {
   name: "Link Game",
   path: "games/link-game/index.html",
@@ -212,6 +275,15 @@ const games = [
   category: "Puzzle",
   duration: "3–5 minutes",
   tags: ["puzzle", "memory", "logic", "connect"],
+},
+  {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
 },
   {
     name: "FUNHUB - Meme Generator",
@@ -316,7 +388,7 @@ const games = [
   {
         name: "Color Clicker",
         path: "games/color-clicker/index.html",
-        icon: "🎨", 
+        icon: "🎨", 
         description:
             "Click the color box as fast as you can to score points! Every click changes the color, testing your speed and focus.",
         category: "Arcade / Reflex",
@@ -506,12 +578,12 @@ try {
   console.log('localStorage not available, using default theme');
 }
 
-// FIX: This section now only includes the correct, required logic.
+// FIX: Combined theme toggle and scroll button logic (Keeping the more complete logic from the fix branch)
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     // Toggle the class on body
     const isNowLight = body.classList.toggle('light-theme');
-    
+    
     // Persist the user's choice
     try {
       localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
