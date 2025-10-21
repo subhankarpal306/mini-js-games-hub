@@ -158,6 +158,15 @@ const games = [
   duration: "1–2 min",
   tags: ["fun", "strategy", "classic", "singleplayer"]
   },
+  {
+    name: "Tap Reveal",
+    path: "games/tap-reveal/index.html",
+    icon: "🟩",
+    description: "A fun memory game! Tap tiles to reveal icons and match all pairs as fast as you can.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "memory", "matching", "click", "tap"],
+},
 
   {
   name: "FUNHUB - Meme Generator",
