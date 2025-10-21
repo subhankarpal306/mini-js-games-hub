@@ -140,6 +140,15 @@ const games = [
     tags: ["arcade", "reflex", "clicker"],
   },
   {
+    name: "Burger Builder",
+    path: "games/burger-builder/index.html",
+    icon: "🍔",
+    description: "Stack ingredients in the right order to make the perfect burger before time runs out!",
+    category: "Cooking",
+    duration: "No time limit",
+    tags: ["cooking", "food", "memory", "fun"],
+  },  
+];
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
