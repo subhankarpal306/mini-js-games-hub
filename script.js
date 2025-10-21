@@ -178,6 +178,16 @@ const games = [
     tags: ["puzzle", "strategy", "logic", "merge"],
 },
   {
+  name: "Cozy Blocks",
+  path: "games/cozy-blocks/index.html",
+  icon: "🧱",
+  description: "Stack blocks as high as you can in this relaxing, precision-based game.",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "precision", "stacking", "relaxing"],
+},
+
+  {
   name: "FUNHUB - Meme Generator",
 
     name: "FUNHUB - Meme Generator",
