@@ -236,6 +236,16 @@ const games = [
     tags: ["arcade", "reaction", "strategy", "reflex"],
   },
   {
+  name: "8 Ball Pool Billiards Multiplayer",
+  path: "games/8-ball-pool/index.html",
+  icon: "🎱",
+  description: "Realistic local 2-player 8-ball pool with cue aiming, power meter and physics using Canvas.",
+  category: "Arcade",
+  duration: "5-15 minutes",
+  tags: ["arcade","multiplayer","physics","canvas"]
+}
+
+  {
     name: "Quote Generator",
     path: "games/quote/index.html",
     icon: "🗃️",
