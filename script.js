@@ -140,6 +140,15 @@ const games = [
     tags: ["arcade", "reflex", "clicker"],
   },
   {
+    name: "Burger Builder",
+    path: "games/burger-builder/index.html",
+    icon: "🍔",
+    description: "Stack ingredients in the right order to make the perfect burger before time runs out!",
+    category: "Cooking",
+    duration: "No time limit",
+    tags: ["cooking", "food", "memory", "fun"],
+  },  
+];
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
@@ -200,25 +209,27 @@ const games = [
     duration: "Unlimited",
     tags: ["singleplayer", "numbers", "logic", "brain"],
   },
-  {
-    name: "Connect Four",
-    path: "games/Connect-Four/index.html",
-    icon: "🟡",
-    description:
-      "Form a line of four of your own colored discs before your opponent does.",
-    category: "Strategy",
-    duration: "5–10 min",
-    tags: ["two-player", "grid", "classic"],
-  },
-  {
-    name: "Coin Toss Simulator",
-    path: "games/coin_toss_simulator/index.html",
-    icon: "🪙",
-    description: "Flip a virtual coin — will it be heads or tails?",
-    category: "Fun / Simulation",
-    duration: "Unlimited",
-    tags: ["single player", "fun", "simulation"],
-  },
+
+{
+  name: "Coin Toss Simulator",
+  path: "games/coin_toss_simulator/index.html",
+  icon: "🪙",
+  description: "A simple coin toss simulator. Will it be heads or tails?",
+  category: "Fun / Simulation",
+  duration: "Unlimited",
+  tags: ["single player", "fun", "simulation"],
+},
+
+{
+  name: "Connect Four",
+  path: "games/Connect-four/index.html",
+  icon: "🟡",
+  description: "Form a line of four of your own coloured discs - Outsmart your opponent",
+  category: "Strategy",
+  duration: "5-10 min",
+  tags: ["two-player", "grid", "classic"],
+},
+
   {
     name: "Hangman",
     path: "games/hangman/index.html",
@@ -238,6 +249,35 @@ const games = [
     tags: ["arcade", "reaction", "strategy", "reflex"],
   },
   {
+  name: "8 Ball Pool Billiards Multiplayer",
+  path: "games/8-ball-pool/index.html",
+  icon: "🎱",
+  description: "Realistic local 2-player 8-ball pool with cue aiming, power meter and physics using Canvas.",
+  category: "Arcade",
+  duration: "5-15 minutes",
+  tags: ["arcade","multiplayer","physics","canvas"]
+},
+  {
+    name: "Tiny Fishing",
+    path: "games/tiny-fishing/index.html",
+    icon: "🎣",
+    description: "Cast your line, catch fish, and upgrade your gear! A relaxing fishing challenge built with Canvas.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
+},
+
+{
+    name: "Grass Defense",
+    path: "games/grass-defense/index.html",
+    icon: "🌿",
+    description: "Strategic tower defense! Place plants to defend your garden from pests.",
+    category: "Strategy",
+    duration: "Wave-based",
+    tags: ["strategy", "defense", "canvas", "logic"],
+},
+
+  {
     name: "Quote Generator",
     path: "games/quote/index.html",
     icon: "🗃️",
@@ -245,7 +285,7 @@ const games = [
     category: "Simple",
     duration: "Unlimited",
     tags: ["single-player", "quote", "classic"],
-  }
+  },
   {
         name: "Color Clicker",
         path: "games/color-clicker/index.html",
@@ -255,8 +295,27 @@ const games = [
         category: "Arcade / Reflex",
         duration: "Endless",
         tags: ["reflex", "clicker", "solo", "color"],
-    },
-];
+  },
+  
+{
+  name: "Odd One Out",
+  path: "games/odd-one-out/index.html",
+  icon: "🔍",
+  description: "Find the odd emoji/ odd-coloured tile out from a group of similar ones!",
+  category: "Puzzle",
+  duration: "1 min",
+  tags: ["single player", "puzzle", "emoji", "fun"],
+},
+
+{
+  name: "Tap the Bubble",
+  path: "games/tap-the-bubble/index.html",
+  icon: "🫧",
+  description: "Tap the bubbles as they appear to score points! How many can you pop?",
+  category: "Arcade / Reflex",
+  duration: "Endless",
+  tags: ["reflex", "clicker", "solo", "bubble"],
+}];
 
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
@@ -427,3 +486,53 @@ themeToggle.addEventListener('click', () => {
   const isLight = body.classList.contains('light-theme');
   themeToggle.textContent = isLight
 });
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    // Toggle the class on body
+    const isNowLight = body.classList.toggle('light-theme');
+    
+    // Persist the user's choice
+    try {
+      localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
+    } catch (e) {
+      // Ignore localStorage errors (e.g., privacy mode)
+      console.log('Could not save theme preference');
+    }
+  });
+}
+
+// Scroll to Top/Bottom Buttons
+const scrollTopBtn = document.getElementById('scroll-top');
+const scrollBottomBtn = document.getElementById('scroll-bottom');
+
+function updateScrollBtns() {
+  const scrollY = window.scrollY || document.documentElement.scrollTop;
+  const winH = window.innerHeight || document.documentElement.clientHeight;
+  const docH = document.documentElement.scrollHeight;
+
+  // Show top button if not at top (with some threshold)
+  if (scrollTopBtn) {
+    scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
+  }
+
+  // Show bottom button if not at bottom (with some threshold)
+  if (scrollBottomBtn) {
+    scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
+  }
+}
+
+window.addEventListener('scroll', updateScrollBtns);
+window.addEventListener('resize', updateScrollBtns);
+setTimeout(updateScrollBtns, 300); // Initial check
+
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+if (scrollBottomBtn) {
+  scrollBottomBtn.addEventListener('click', () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+  });
+}
