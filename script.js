@@ -168,6 +168,15 @@ const games = [
   duration: "Endless",
   tags: ["arcade", "reflex", "dodge", "challenge"],
 },
+{
+  name: "Link Game",
+  path: "games/link-game/index.html",
+  icon: "🔗",
+  description: "Connect matching tiles before you run out of moves! A fun logic puzzle for quick thinkers.",
+  category: "Puzzle",
+  duration: "3–5 minutes",
+  tags: ["puzzle", "memory", "logic", "connect"],
+},
 
 
   {
