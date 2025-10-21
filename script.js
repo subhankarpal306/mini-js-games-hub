@@ -101,6 +101,16 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+  name: "Words of Wonders",
+  path: "games/words-of-wonders/index.html",
+  icon: "🧩",
+  description: "Form words from given letters to fill the crossword puzzle grid!",
+  category: "Puzzle",
+  duration: "Unlimited",
+  tags: ["puzzle", "word", "logic", "crossword"],
+},
+
+  {
     name: "Kong fights ",
     path: "games/The Godzilla Fights game(html,css,js)/index.html",
     icon: "&#129421",
