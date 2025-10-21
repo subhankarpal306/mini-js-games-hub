@@ -243,7 +243,17 @@ const games = [
   category: "Arcade",
   duration: "5-15 minutes",
   tags: ["arcade","multiplayer","physics","canvas"]
-}
+},
+  {
+    name: "Tiny Fishing",
+    path: "games/tiny-fishing/index.html",
+    icon: "🎣",
+    description: "Cast your line, catch fish, and upgrade your gear! A relaxing fishing challenge built with Canvas.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
+},
+
 
   {
     name: "Quote Generator",
