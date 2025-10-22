@@ -400,6 +400,15 @@ const games = [
   category: "Puzzle",
   duration: "1 min rounds",
   tags: ["puzzle", "words", "vocabulary", "timed", "brain-teaser", "difficulty", "hints"],
+},
+{
+  name: "Starry Night Sky",
+  path: "games/starry-night-sky/index.html",
+  icon: "🌌",
+  description: "A relaxing meditation game where you connect stars to form constellations. Features ambient music, breathing guide, and achievement system for mindful star gazing.",
+  category: "Relaxation",
+  duration: "Unlimited",
+  tags: ["relaxation", "meditation", "stars", "constellations", "mindfulness", "ambient", "breathing"],
 }
 ];const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
