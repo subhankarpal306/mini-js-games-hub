@@ -91,6 +91,16 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
+  name: "Endless Runner",
+  path: "games/endless-runner/index.html",
+  icon: "🏃‍♂️",
+  description: "Run endlessly, dodge obstacles, and survive as the game speeds up!",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "runner", "reflex", "jump", "dodge"],
+},
+
+  {
     name: "Pong",
     path: "games/pong/index.html",
     icon: "🏓",
@@ -186,6 +196,17 @@ const games = [
   duration: "60 seconds",
   tags: ["puzzle", "hidden", "seek", "timed", "casual"]
 },
+
+  {
+    name: "Color Guessing Game",
+    path: "games/color-guessing-game/index.html",
+    icon: "🎨",
+    description: "Guess the correct color based on the RGB value shown — test your eyes and reflexes!",
+    category: "Puzzle",
+    duration: "30 seconds",
+    tags: ["puzzle", "color", "rgb", "reflex", "visual"],
+},
+
 
   {
 
