@@ -111,6 +111,16 @@ const games = [
     tags: ["Fighting", "Special", "multiplayer", "computer"],
   },
   {
+    name: "Color Switch Challenge",
+    path: "games/color-switch-challenge/index.html",
+    icon: "🎨",
+    description: "A fast-paced game where you navigate a ball through rotating obstacles, matching its color. Test your reflexes and timing!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "reflex", "timing", "color", "challenge"],
+},
+
+  {
     name: "Simon Says",
     path: "games/SimonSays/index.html",
     icon: "🧠",
