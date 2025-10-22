@@ -262,28 +262,89 @@ mini-js-games-hub/
 ```
 
 ---
+## 🎮 Games Included
 
-## 🧠 Games Included
-- 🎲 **Tic Tac Toe** – classic 3x3 strategy
-- 🐍 **Snake Game** – grow without hitting the walls
-- � **Memory Game** – match all emoji pairs
-- 🔨 **Whack-a-Mole** – hit the mole before it vanishes
-- ⚡ **Reaction Timer** – tap as quickly as you can
-- 🕹️ **Flappy Bird** – fly between pipes and survive  
-- 🧱 **Breakout** – destroy all bricks with your paddle  
-- 🏓 **Pong** – the classic two-player ball game  
-- 🧊 **Tetris** – arrange falling blocks to clear rows  
-- 🔢 **2048** – combine tiles to reach the number 2048  
-- ✊ **Rock Paper Scissors** – play against the computer  
-- ⌨️ **Typing Test** – test your typing speed and accuracy  
-- 🔴 **Simon Says** – repeat the pattern correctly  
-- 🎯 **Catch The Dot** – move fast to catch the bouncing dot  
-- 🎈 **Balloon Pop** – pop balloons before they fly away  
-- 🦖 **Kong Fights** – battle monsters with your mighty moves  
-- 🏐 **Catch The Ball** – catch falling balls to score high  
-- 🚀 **Space Shooter** – fast-paced top-down shooter — dodge, weave, and blast incoming waves  
-- 🔢 **15 Puzzle** – arrange the numbered tiles in order by sliding them into the empty space. Classic spatial puzzle
-- ⏱️ *More coming soon! Add yours too...*
+This repository currently features **58 interactive mini-games** built with HTML, CSS, and JavaScript:
+
+### Puzzle Games
+- **15 Puzzle** - Classic sliding tile puzzle to arrange numbers in order
+- **2048** - Merge tiles to reach 2048
+- **Color Squid Puzzle** - Color-based puzzle challenge
+- **Logic Chain** - Solve logical sequences
+- **Maiolike Block Puzzle** - Arrange blocks in patterns
+- **Sudoku** - Fill the grid with numbers 1-9
+- **Word Scramble** - Unscramble the letters to form words
+- **Words of Wonders** - Word puzzle game
+
+### Arcade Games
+- **Asteroids** - Classic space shooter game
+- **Breakout** - Break bricks with a bouncing ball
+- **Flappy Bird** - Navigate through pipes by tapping
+- **Frogger** - Help the frog cross the road
+- **Pong** - Classic two-paddle arcade game
+- **Snake** - Eat food and grow longer without hitting walls
+- **Space Shooter** - Shoot down enemies in space
+- **Tetris** - Stack falling blocks to clear lines
+- **Whack-a-Mole** - Hit the moles as they pop up
+
+### Action & Reflexes
+- **Balloon Pop** - Pop balloons as fast as you can
+- **Boom** - Explosive action game
+- **Catch the Ball** - Catch falling balls
+- **Catch The Dot** - Click the moving dot quickly
+- **Endless Runner** - Run infinitely avoiding obstacles
+- **Grass Defense** - Defend your territory
+- **Island Survival** - Survive on a deserted island
+- **Reaction Timer** - Test your reaction speed
+- **Shadow Catcher** - Catch the moving shadows
+- **Tap Reveal** - Tap to reveal hidden items
+- **Tap the Bubble** - Pop bubbles by tapping
+- **The Godzilla Fights** - Epic monster battle game
+- **Tower Defense** - Defend against waves of enemies
+- **World's Easiest Game** - Deceptively challenging game
+
+### Strategy & Logic
+- **8 Ball Pool** - Play pool/billiards
+- **Connect Four** - Four-in-a-row strategy game
+- **Rock Paper Scissors** - Classic hand game
+- **Tic Tac Toe** - Classic X's and O's game
+
+### Memory & Pattern Games
+- **Color Clicker** - Click matching colors
+- **Color Guessing Game** - Guess the RGB color value
+- **Memory** - Match pairs of cards
+- **Odd One Out** - Find the different item
+- **Simon Says Game** - Repeat the pattern sequence
+- **SimonSays** - Follow the pattern game
+
+### Creative & Building
+- **Burger Builder** - Create custom burgers
+- **Cozy Blocks** - Build with cozy blocks
+- **Meme Generator** - Create funny memes
+- **Pixel Art Creator** - Draw pixel art creations
+
+### Word & Trivia
+- **Hangman** - Guess the word letter by letter
+- **Quiz Game** - Answer trivia questions
+- **Typing Test** - Measure your typing speed and accuracy
+
+### Casual & Fun
+- **Coin Toss Simulator** - Flip a virtual coin
+- **Find Hidden Object** - Locate hidden objects in scenes
+- **Line Game** - Draw lines without crossing
+- **Link Game** - Connect matching items
+- **Merge Lab** - Merge similar items together
+- **Number Guessing Game** - Guess the secret number
+- **Peglinko** - Drop the ball through pegs
+- **Quote** - Display random inspirational quotes
+- **Tileman** - Tile-based adventure
+- **Tiny Fishing** - Relax with simple fishing
+
+---
+
+**Total: 58 Games and Growing!** 🎮
+
+Each game is self-contained with its own HTML, CSS, and JavaScript files, making it easy to play, modify, or learn from.
 
 ---
 
