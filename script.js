@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+  name: "Quiz Game (MCQ)",
+  path: "games/quiz-game/index.html",
+  icon: "🧠",
+  description: "Test your knowledge with interactive multiple-choice questions!",
+  category: "Educational",
+  duration: "Variable",
+  tags: ["quiz", "education", "puzzle", "trivia"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
