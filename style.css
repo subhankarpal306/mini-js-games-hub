@@ -286,7 +286,10 @@ a {
   margin-top: 0.5rem;
 }
 
-  border: 1px solid var(--ui-border);
+.hero__label {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ui-border); /* Fix applied here by splitting border */
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--primary);
@@ -978,3 +981,4 @@ a {
   #scroll-top { bottom: 4.5rem; }
   #scroll-bottom { bottom: 1rem; }
 }
+

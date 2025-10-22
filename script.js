@@ -39,6 +39,7 @@ const games = [
     duration: "Endless",
     tags: ["arcade", "retro", "keyboard"],
   },
+  // ----------------- Merged Games Start -----------------
   {
     name: "Color Squid Puzzle",
     path: "games/color-squid-puzzle/index.html",
@@ -47,7 +48,7 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "color", "logic", "memory", "pattern"],
-  },
+},
   {
     name: "Memory Game",
     path: "games/memory/index.html",
@@ -66,7 +67,7 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "physics", "canvas", "reflex"],
-  },
+},
   {
     name: "Whack-a-Mole",
     path: "games/whack-a-mole/index.html",
@@ -125,7 +126,7 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "multiplayer", "grid", "reflex", "advanced"],
-  },
+},
   {
     name: "Pong",
     path: "games/pong/index.html",
@@ -144,7 +145,7 @@ const games = [
   category: "Puzzle",
   duration: "Unlimited",
   tags: ["puzzle", "word", "logic", "crossword"],
-  },
+},
   {
     name: "Island Survival Text Game",
     path: "games/island-survival/index.html",
@@ -194,7 +195,7 @@ const games = [
     tags: ["cooking", "food", "memory", "fun"],
   },
   {
-  name: "Catch the Dot",
+    name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
     description:
@@ -221,7 +222,7 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "memory", "matching", "click", "tap"],
-  },
+},
   {
     name: "The World's Easiest Game",
     path: "games/worlds-easiest-game/index.html",
@@ -230,7 +231,7 @@ const games = [
     category: "Casual",
     duration: "1-2 minutes",
     tags: ["casual", "fun", "quick", "clicker"],
-  },
+},
   {
   name: "Line Game",
   path: "games/line-game/index.html",
@@ -239,7 +240,7 @@ const games = [
   category: "Arcade",
   duration: "Endless",
   tags: ["arcade", "reflex", "dodge", "challenge"],
-  },
+},
   {
     name: "Merge LAB",
     path: "games/merge-lab/index.html",
@@ -248,7 +249,7 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "strategy", "logic", "merge"],
-  },
+},
   {
   name: "Cozy Blocks",
   path: "games/cozy-blocks/index.html",
@@ -266,8 +267,8 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "logic", "block", "strategy"],
-  },
-  {
+},
+{
   name: "Link Game",
   path: "games/link-game/index.html",
   icon: "🔗",
@@ -275,7 +276,7 @@ const games = [
   category: "Puzzle",
   duration: "3–5 minutes",
   tags: ["puzzle", "memory", "logic", "connect"],
-  },
+},
   {
     name: "Boom",
     path: "games/boom/index.html",
@@ -284,7 +285,7 @@ const games = [
     category: "Arcade",
     duration: "Unlimited",
     tags: ["arcade", "reflex", "clicker", "speed"],
-  },
+},
   {
     name: "FUNHUB - Meme Generator",
     path: "games/meme_generator/index.html",
@@ -313,7 +314,7 @@ const games = [
     duration: "Unlimited",
     tags: ["singleplayer", "numbers", "logic", "brain"],
   },
-  {
+{
   name: "Coin Toss Simulator",
   path: "games/coin_toss_simulator/index.html",
   icon: "🪙",
@@ -321,8 +322,8 @@ const games = [
   category: "Fun / Simulation",
   duration: "Unlimited",
   tags: ["single player", "fun", "simulation"],
-  },
-  {
+},
+{
   name: "Connect Four",
   path: "games/Connect-four/index.html",
   icon: "🟡",
@@ -330,7 +331,7 @@ const games = [
   category: "Strategy",
   duration: "5-10 min",
   tags: ["two-player", "grid", "classic"],
-  },
+},
   {
     name: "Hangman",
     path: "games/hangman/index.html",
@@ -357,7 +358,7 @@ const games = [
   category: "Arcade",
   duration: "5-15 minutes",
   tags: ["arcade","multiplayer","physics","canvas"]
-  },
+},
   {
     name: "Tiny Fishing",
     path: "games/tiny-fishing/index.html",
@@ -366,8 +367,8 @@ const games = [
     category: "Arcade",
     duration: "Endless",
     tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
-  },
-  {
+},
+{
     name: "Grass Defense",
     path: "games/grass-defense/index.html",
     icon: "🌿",
@@ -395,7 +396,7 @@ const games = [
         duration: "Endless",
         tags: ["reflex", "clicker", "solo", "color"],
   },
-  {
+{
   name: "Odd One Out",
   path: "games/odd-one-out/index.html",
   icon: "🔍",
@@ -403,8 +404,8 @@ const games = [
   category: "Puzzle",
   duration: "1 min",
   tags: ["single player", "puzzle", "emoji", "fun"],
-  },
-  {
+},
+{
   name: "Tap the Bubble",
   path: "games/tap-the-bubble/index.html",
   icon: "🫧",
@@ -412,7 +413,7 @@ const games = [
   category: "Arcade / Reflex",
   duration: "Endless",
   tags: ["reflex", "clicker", "solo", "bubble"],
-  }
+}
 ];
 
 const container = document.getElementById("games-container");
