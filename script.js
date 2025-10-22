@@ -187,6 +187,16 @@ const games = [
     tags: ["single player", "dynamic content", "API-driven", "fun"],
 
   },
+  {
+    name: "Color Guessing Game",
+    path: "games/color-guessing-game/index.html",
+    icon: "🎨",
+    description: "Guess the correct color based on the RGB value shown — test your eyes and reflexes!",
+    category: "Puzzle",
+    duration: "30 seconds",
+    tags: ["puzzle", "color", "rgb", "reflex", "visual"],
+},
+
 
   {
 
