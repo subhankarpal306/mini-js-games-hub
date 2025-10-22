@@ -12,6 +12,7 @@
   --text-300: #c9d1d9;
   --text-500: #94a3b8;
   --glass-border: rgba(148, 163, 184, 0.12);
+  --ui-border: rgba(255,255,255,0.22); /* stronger white border in dark mode */
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
@@ -31,6 +32,7 @@ body.light-theme {
   --text-300: #334155;
   --text-500: #64748b;
   --glass-border: rgba(148, 163, 184, 0.25);
+  --ui-border: rgba(10,10,10,0.12);
   background: radial-gradient(circle at top left, #f1f5f9, #e2e8f0);
   color-scheme: light;
 }
@@ -55,6 +57,7 @@ body.light-theme {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 body.light-theme .game-card,
+body.light-theme .hero__nav,
 body.light-theme .preview-card,
 body.light-theme .hero__stats div {
   background: rgba(255, 255, 255, 0.85);
@@ -63,6 +66,7 @@ body.light-theme .hero__stats div {
 }
 
 body.light-theme .game-card:hover,
+body.light-theme .hero__nav:hover,
 body.light-theme .preview-card:hover {
   background: rgba(250, 250, 255, 1);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
@@ -284,7 +288,10 @@ a {
   margin-top: 0.5rem;
 }
 
-.hero__eyebrow {
+.hero__label {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ui-border); /* Fix applied here by splitting border */
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--primary);
@@ -405,6 +412,12 @@ a {
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(3,6,18,0.28);
+  border: 1px solid var(--ui-border);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.hero__nav:hover {
+  border-color: rgba(255,255,255,0.36);
 }
 
 .hub {
@@ -926,3 +939,48 @@ a {
     gap: 0.75rem;
   }
 }
+
+/* Scroll to Top/Bottom Buttons */
+.scroll-btn {
+  display: none; /* Hidden by default, JS will show when needed */
+  position: fixed;
+  right: 2rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  border: 1px solid var(--ui-border);
+  background: linear-gradient(135deg, rgba(88,166,255,0.92), rgba(168,85,247,0.85));
+  color: #fff;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.scroll-btn:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.scroll-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(88,166,255,0.12);
+  border-color: rgba(255,255,255,0.6);
+}
+#scroll-top {
+  bottom: 5.5rem;
+}
+#scroll-bottom {
+  bottom: 2rem;
+}
+@media (max-width: 600px) {
+  .scroll-btn {
+    right: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.2rem;
+  }
+  #scroll-top { bottom: 4.5rem; }
+  #scroll-bottom { bottom: 1rem; }
+}
+
