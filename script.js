@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Emoji Battle Arena",
+    path: "games/emoji-battle-arena/index.html",
+    icon: "🪄",
+    description: "Fast-paced multiplayer arena where players control emoji characters, move around, and attack opponents. Last emoji standing wins!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["multiplayer", "arcade", "emoji", "action", "battle"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
