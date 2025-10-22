@@ -101,6 +101,16 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
+  name: "Endless Runner",
+  path: "games/endless-runner/index.html",
+  icon: "🏃‍♂️",
+  description: "Run endlessly, dodge obstacles, and survive as the game speeds up!",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "runner", "reflex", "jump", "dodge"],
+},
+
+  {
     name: "Pong",
     path: "games/pong/index.html",
     icon: "🏓",
@@ -187,6 +197,26 @@ const games = [
     tags: ["single player", "dynamic content", "API-driven", "fun"],
 
   },
+{
+  name: "Find the Hidden Object",
+  path: "games/find-hidden-object/index.html",
+  icon: "🔍",
+  description: "Spot and click hidden items in cluttered scenes before time runs out!",
+  category: "Puzzle",
+  duration: "60 seconds",
+  tags: ["puzzle", "hidden", "seek", "timed", "casual"]
+},
+
+  {
+    name: "Color Guessing Game",
+    path: "games/color-guessing-game/index.html",
+    icon: "🎨",
+    description: "Guess the correct color based on the RGB value shown — test your eyes and reflexes!",
+    category: "Puzzle",
+    duration: "30 seconds",
+    tags: ["puzzle", "color", "rgb", "reflex", "visual"],
+},
+
 
   {
 
@@ -205,6 +235,17 @@ const games = [
     tags: ["single player", "Solo", "Numbers", "fun"],
 
 },
+  {
+    name: "Word Scramble",
+    path: "games/word-scramble/index.html",
+    icon: "🔤",
+    description: "Unscramble letters to form words before time runs out!",
+    category: "Puzzle",
+    duration: "Variable",
+    tags: ["puzzle", "word", "timer", "logic"],
+},
+
+
 {
   name: "Link Game",
   path: "games/link-game/index.html",
