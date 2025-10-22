@@ -409,6 +409,15 @@ const games = [
   category: "Relaxation",
   duration: "Unlimited",
   tags: ["relaxation", "meditation", "stars", "constellations", "mindfulness", "ambient", "breathing"],
+},
+{
+  name: "Precision Archer",
+  path: "games/precision-archer/index.html",
+  icon: "🏹",
+  description: "Test your aiming skills in this physics-based archery game! Adjust power and angle, account for wind effects, and hit moving targets for maximum points.",
+  category: "Skill",
+  duration: "10-15 min",
+  tags: ["archery", "physics", "precision", "aiming", "wind", "targets", "skill-based"],
 }
 ];const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
