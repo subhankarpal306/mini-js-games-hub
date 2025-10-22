@@ -101,6 +101,16 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+    name: "Emoji Match Game",
+    path: "games/emoji-match/index.html",
+    icon: "🧩",
+    description: "A fun and addictive memory game! Flip cards to reveal emojis and match pairs. Track your moves and time—can you finish with the fewest moves?",
+    category: "Memory",
+    duration: "Unlimited",
+    tags: ["memory", "puzzle", "matching", "logic", "brain-training", "fun"],
+}
+
+  {
     name: "Kong fights ",
     path: "games/The Godzilla Fights game(html,css,js)/index.html",
     icon: "&#129421",
