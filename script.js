@@ -8,8 +8,7 @@ const games = [
     category: "Memory",
     duration: "Progressive",
     tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
-  }
-  ,
+  },
   {
     name: "Tic Tac Toe",
     path: "games/tictactoe/index.html",
@@ -27,7 +26,7 @@ const games = [
   description: "Test your knowledge with interactive multiple-choice questions!",
   category: "Educational",
   duration: "Variable",
-  tags: ["quiz", "education", "puzzle", "trivia"],
+  tags: ["quiz", "education", "puzzle", "trivia"]
 },
 
   {
@@ -181,20 +180,12 @@ const games = [
 
   {
   name: "FUNHUB - Meme Generator",
-
-    name: "FUNHUB - Meme Generator",
-
-    path: "games/meme_generator/index.html",
-
-    icon: "😂",
-
-    description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
-
-    category: "Fun / Entertainment",
-
-    duration: "Unlimited",
-
-    tags: ["single player", "dynamic content", "API-driven", "fun"],
+  path: "games/meme_generator/index.html",
+  icon: "😂",
+  description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
+  category: "Fun / Entertainment",
+  duration: "Unlimited",
+  tags: ["single player", "dynamic content", "API-driven", "fun"],
 
   },
 {
@@ -410,14 +401,14 @@ const latestTargets = document.querySelectorAll("[data-latest-game]");
 const previewCount = document.querySelector("[data-preview-count]");
 
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.4 }
+  (entries) => {
+     entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+       observer.unobserve(entry.target);
+      });
+    },
+  { threshold: 0.4 }
 );
 
 const latestGameName = games.length ? games[games.length - 1].name : "--";
@@ -600,9 +591,49 @@ function updateScrollBtns() {
   }
 }
 
-// Toggle on click
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('light-theme');
-  const isLight = body.classList.contains('light-theme');
-  themeToggle.textContent = isLight
+  // Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  
+  // Check if elements exist
+  if (!themeToggle || !body) {
+    console.error('Theme toggle elements not found');
+    return;
+  }
+  
+  // Initialize theme
+  function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    
+    // Use saved theme, else use system preference, else default to dark
+    if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+      body.classList.add('light-theme');
+      themeToggle.textContent = '☀️';
+    } else {
+      body.classList.remove('light-theme');
+      themeToggle.textContent = '🌙';
+    }
+  }
+  
+  // Toggle theme function
+  function toggleTheme() {
+    body.classList.toggle('light-theme');
+    const isLight = body.classList.contains('light-theme');
+    
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    
+    // Save preference
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    
+    console.log('Theme toggled to:', isLight ? 'light' : 'dark');
+  }
+  
+  // Add event listener
+  themeToggle.addEventListener('click', toggleTheme);
+  
+  // Initialize theme on load
+  initializeTheme();
 });
