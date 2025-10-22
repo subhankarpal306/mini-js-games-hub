@@ -177,6 +177,15 @@ const games = [
     tags: ["single player", "dynamic content", "API-driven", "fun"],
 
   },
+{
+    name: "Click Combo Game Quiz",
+    path: "games/click_combo_game_quiz/index.html",
+    icon: "⚡",
+    description: "Speed + knowledge challenge! Click the correct answers to build combos and score high.",
+    category: "Arcade / Quiz",
+    duration: "Timed",
+    tags: ["quiz", "combo", "reaction", "clicker", "fast"],
+},
 
   {
 
