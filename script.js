@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Lights Out",
+    path: "games/lights-out/index.html",
+    icon: "💡",
+    description: "Turn off all lights by toggling your moves wisely!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "brain", "strategy"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
