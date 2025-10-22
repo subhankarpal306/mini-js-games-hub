@@ -391,6 +391,15 @@ const games = [
   category: "Creative",
   duration: "Unlimited",
   tags: ["art", "creative", "pixel", "drawing", "solo"],
+},
+{
+  name: "Word Chain Puzzle",
+  path: "games/word-chain-puzzle/index.html",
+  icon: "🔗",
+  description: "Build chains of related words in different categories with difficulty levels! Start with a word and find the next one starting with the last letter. Features hints, sound effects, and high score tracking.",
+  category: "Puzzle",
+  duration: "1 min rounds",
+  tags: ["puzzle", "words", "vocabulary", "timed", "brain-teaser", "difficulty", "hints"],
 }
 ];const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
