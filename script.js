@@ -418,6 +418,15 @@ const games = [
   category: "Skill",
   duration: "10-15 min",
   tags: ["archery", "physics", "precision", "aiming", "wind", "targets", "skill-based"],
+},
+{
+  name: "Color Switch",
+  path: "games/color-switch/index.html",
+  icon: "🎨",
+  description: "A fast-paced color-matching platformer! Switch the ball's color to match rotating platforms and survive as long as possible. Features smooth animations and increasing difficulty.",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["color-matching", "platformer", "timing", "reflexes", "endless", "mobile-friendly"],
 }
 ];const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
