@@ -626,6 +626,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
+
   // Toggle theme function
   function toggleTheme() {
     body.classList.toggle('light-theme');
