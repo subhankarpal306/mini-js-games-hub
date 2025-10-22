@@ -23,84 +23,242 @@ mini-js-games-hub/
 ├── index.html          # Home page listing all games
 ├── style.css           # Global styling
 ├── script.js           # Handles navigation and game loading
-│
-└── games/
-    ├── tictactoe/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── snake/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── memory/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── whack-a-mole/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── reaction-timer/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── flappy-bird/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── breakout/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── pong/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── tetris/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── 2048/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── rock-paper-scissors/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── typing-test/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── simon-says/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── catch-the-dot/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── balloon-pop/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── kong-fights/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── catch-the-ball/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    ├── space-shooter/
-    │   ├── index.html
-    │   ├── style.css
-    │   └── script.js
-    └── 15-puzzle/
-        ├── index.html
-        ├── style.css
-        └── script.js
+└── games/              # All game directories
+├── 15-puzzle/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── 2048/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── 8-ball-pool/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── asteroids/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── balloon-pop/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── boom/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── breakout/
+│ ├── index.html
+│ ├── style.css
+│ ├── script.js
+│ └── README.md
+├── burger-builder/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── catch-the-ball/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── Catch_The_Dot/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── coin_toss_simulator/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── color-clicker/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── color-guessing-game/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── color-squid-puzzle/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── Connect-four/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── cozy-blocks/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── endless-runner/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── find-hidden-object/
+│ ├── index.html
+│ ├── style.css
+│ ├── script.js
+│ └── levels/
+├── flappy-bird/
+│ ├── index.html
+│ ├── style.css
+│ ├── script.js
+│ ├── README.md
+│ └── thumbnail.svg
+├── Frogger/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── grass-defense/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── hangman/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── island-survival/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── line-game/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── link-game/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── Logic-Chain/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── maiolike-block-puzzle/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── meme_generator/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── memory/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── merge-lab/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── Number_Gussing_game/
+│ ├── NGG.html
+│ ├── NGG.css
+│ └── NGG.js
+├── odd-one-out/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── peglinko/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── pixel-art-creator/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── pong/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── quiz-game/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── quote/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── reaction-timer/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── rock-paper-scissors/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── shadow-catcher/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── Simon-Says-Game/
+│ ├── index.html
+│ ├── style.css
+│ ├── app.js
+│ └── images/
+├── SimonSays/
+│ ├── index.html
+│ ├── style.css
+│ └── app.js
+├── snake/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── space-shooter/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── sudoku/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tap-reveal/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tap-the-bubble/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tetris/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── The Godzilla Fights game/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tictactoe/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tileman/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tiny-fishing/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── tower-defense/
+│ └── index.html
+├── typing-test/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── whack-a-mole/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── word-scramble/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── words-of-wonders/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+└── worlds-easiest-game/
+├── index.html
+├── style.css
+└── script.js
 ```
 
 ---
