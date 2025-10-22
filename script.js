@@ -1,272 +1,209 @@
 const games = [
-  {
-    name: "Simon Says",
-    path: "games/Simon-Says-Game/index.html",
-    icon: "🧠",
-    description:
-      "Challenge your memory and reflexes in this fast-paced color sequence game! Each round adds a new twist—can you keep up as the pattern grows? Perfect for puzzle lovers and focus masters seeking a brain-boosting thrill.",
-    category: "Memory",
-    duration: "Progressive",
-    tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
-  },
-  {
-    name: "Tower Defense: Core Guard",
-    path: "games/tower-defense/index.html",
-    icon: "🛡️",
-    description:
-      "Build a strategic maze of towers, manage your economy (Resource Stream), and upgrade your defenses to protect the Core from increasingly complex enemy waves.",
-    category: "Defense",
-    duration: "Varied rounds",
-    tags: ["strategy", "tower defense", "upgrades", "economy"],
-  },
-  {
-    name: "Tic Tac Toe",
-    path: "games/tictactoe/index.html",
-    icon: "❎",
-    description:
-      "Classic 3x3 strategy — outsmart your opponent before the grid fills up.",
-    category: "Strategy",
-    duration: "2 min rounds",
-    tags: ["2 players", "grid", "classic"],
-  },
-  {
-    name: "Snake Game",
-    path: "games/snake/index.html",
-    icon: "🐍",
-    description:
-      "Guide the snake, snack on pixels, and avoid hitting the walls or yourself.",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "retro", "keyboard"],
-  },
-  // ----------------- Merged Games Start -----------------
-  {
-    name: "Color Squid Puzzle",
-    path: "games/color-squid-puzzle/index.html",
-    icon: "🎨",
-    description: "A colorful and engaging puzzle game. Solve color-based challenges by arranging or matching colors in the correct order.",
-    category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "color", "logic", "memory", "pattern"],
+  {
+    name: "Simon Says",
+    path: "games/Simon-Says-Game/index.html",
+    icon: "🧠",
+    description:
+      "Challenge your memory and reflexes in this fast-paced color sequence game! Each round adds a new twist—can you keep up as the pattern grows? Perfect for puzzle lovers and focus masters seeking a brain-boosting thrill.",
+    category: "Memory",
+    duration: "Progressive",
+    tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
+  }
+  ,
+  {
+    name: "Tic Tac Toe",
+    path: "games/tictactoe/index.html",
+    icon: "❎",
+    description:
+      "Classic 3x3 strategy — outsmart your opponent before the grid fills up.",
+    category: "Strategy",
+    duration: "2 min rounds",
+    tags: ["2 players", "grid", "classic"],
+  },
+  {
+    name: "Snake Game",
+    path: "games/snake/index.html",
+    icon: "🐍",
+    description:
+      "Guide the snake, snack on pixels, and avoid hitting the walls or yourself.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "retro", "keyboard"],
+  },
+  {
+    name: "Memory Game",
+    path: "games/memory/index.html",
+    icon: "🧠",
+    description:
+      "Flip cards, remember emoji pairs, and clear the board in record time.",
+    category: "Brain Teaser",
+    duration: "5 min",
+    tags: ["memory", "solo", "matching"],
+  },
+  {
+    name: "Whack-a-Mole",
+    path: "games/whack-a-mole/index.html",
+    icon: "🔨",
+    description:
+      "Moles pop fast — keep your reflexes sharp to stack up the score.",
+    category: "Arcade",
+    duration: "30 sec",
+    tags: ["reflex", "timed", "mouse"],
+  },
+  {
+    name: "Reaction Timer",
+    path: "games/reaction-timer/index.html",
+    icon: "⚡",
+    description:
+      "Wait for green, tap quickly, and chase a new personal best reaction time.",
+    category: "Reflex",
+    duration: "Quick burst",
+    tags: ["speed", "focus", "solo"],
+  },
+  {
+    name: "Space Shooter",
+    path: "games/space-shooter/index.html",
+    icon: "🚀",
+    description:
+      "Fast-paced top-down shooter — dodge, weave and blast incoming waves.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "shooting", "keyboard"],
+  },
+  {
+    name: "2048",
+    path: "games/2048/index.html",
+    icon: "🔢",
+    description:
+      "Slide tiles to combine numbers and reach 2048. A relaxing puzzle of strategy and luck.",
+    category: "Puzzle",
+    duration: "10-20 min",
+    tags: ["puzzle", "singleplayer", "numbers"],
+  },
+  {
+    name: "15 Puzzle",
+    path: "games/15-puzzle/index.html",
+    icon: "🔳",
+    description:
+      "Arrange the numbered tiles in order by sliding them into the empty space. Classic spatial puzzle.",
+    category: "Puzzle",
+    duration: "5-15 min",
+    tags: ["puzzle", "tiles", "spatial"],
+  },
+  {
+  name: "Endless Runner",
+  path: "games/endless-runner/index.html",
+  icon: "🏃‍♂️",
+  description: "Run endlessly, dodge obstacles, and survive as the game speeds up!",
+  category: "Arcade",
+  duration: "Endless",
+  tags: ["arcade", "runner", "reflex", "jump", "dodge"],
 },
-  {
-    name: "Memory Game",
-    path: "games/memory/index.html",
-    icon: "🧠",
-    description:
-      "Flip cards, remember emoji pairs, and clear the board in record time.",
-    category: "Brain Teaser",
-    duration: "5 min",
-    tags: ["memory", "solo", "matching"],
-  },
-  {
-    name: "Peglinko",
-    path: "games/peglinko/index.html",
-    icon: "🔵",
-    description: "Shoot balls, hit pegs, and score combos in this glowing arcade puzzle!",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "physics", "canvas", "reflex"],
-},
-  {
-    name: "Whack-a-Mole",
-    path: "games/whack-a-mole/index.html",
-    icon: "🔨",
-    description:
-      "Moles pop fast — keep your reflexes sharp to stack up the score.",
-    category: "Arcade",
-    duration: "30 sec",
-    tags: ["reflex", "timed", "mouse"],
-  },
-  {
-    name: "Reaction Timer",
-    path: "games/reaction-timer/index.html",
-    icon: "⚡",
-    description:
-      "Wait for green, tap quickly, and chase a new personal best reaction time.",
-    category: "Reflex",
-    duration: "Quick burst",
-    tags: ["speed", "focus", "solo"],
-  },
-  {
-    name: "Space Shooter",
-    path: "games/space-shooter/index.html",
-    icon: "🚀",
-    description:
-      "Fast-paced top-down shooter — dodge, weave and blast incoming waves.",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "shooting", "keyboard"],
-  },
-  {
-    name: "2048",
-    path: "games/2048/index.html",
-    icon: "🔢",
-    description:
-      "Slide tiles to combine numbers and reach 2048. A relaxing puzzle of strategy and luck.",
-    category: "Puzzle",
-    duration: "10-20 min",
-    tags: ["puzzle", "singleplayer", "numbers"],
-  },
-  {
-    name: "15 Puzzle",
-    path: "games/15-puzzle/index.html",
-    icon: "🔳",
-    description:
-      "Arrange the numbered tiles in order by sliding them into the empty space. Classic spatial puzzle.",
-    category: "Puzzle",
-    duration: "5-15 min",
-    tags: ["puzzle", "tiles", "spatial"],
-  },
-  {
-    name: "TileMan.io",
-    path: "games/tileman/index.html",
-    icon: "🟩",
-    description: "Claim tiles and dominate the grid while avoiding your enemies!",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "multiplayer", "grid", "reflex", "advanced"],
-},
-  {
-    name: "Pong",
-    path: "games/pong/index.html",
-    icon: "🏓",
-    description:
-      "A tiny Pong clone — play against the CPU or another player. Use W/S and ↑/↓ to move paddles.",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "retro", "multiplayer", "cpu"],
-  },
-  {
-  name: "Words of Wonders",
-  path: "games/words-of-wonders/index.html",
-  icon: "🧩",
-  description: "Form words from given letters to fill the crossword puzzle grid!",
-  category: "Puzzle",
-  duration: "Unlimited",
-  tags: ["puzzle", "word", "logic", "crossword"],
-},
-  {
-    name: "Island Survival Text Game",
-    path: "games/island-survival/index.html",
-    icon: "🌴",
-    description: "A turn-based text adventure where you manage your health, hunger, and resources to survive on a deserted island.",
-    category: "Adventure / Strategy",
-    duration: "Varied (Turn-based)",
-    tags: ["text-based", "strategy", "management", "turn-based", "stats"],
-  },
-  {
-    name: "Kong Fights",
-    path: "games/The-Godzilla-Fights/index.html",
-    icon: "🦍",
-    description:
-      "An exciting rooftop fighting game! Aim and throw bombs at your opponent using drag gestures to set angle and power.",
-    category: "Fighting",
-    duration: "Endless",
-    tags: ["fighting", "multiplayer", "computer", "aim"],
-  },
-  {
-    name: "Typing Test",
-    path: "games/typing-test/index.html",
-    icon: "⌨️",
-    description:
-      "Test your typing speed and accuracy in 1 minute. Challenge yourself and improve!",
-    category: "Skill",
-    duration: "1 min",
-    tags: ["typing", "speed", "accuracy", "skill"],
-  },
-  {
-    name: "Balloon Pop",
-    path: "games/balloon-pop/index.html",
-    icon: "🎈",
-    description:
-      "Click the balloons before they float away! Pop as many as you can.",
-    category: "Arcade",
-    duration: "30 seconds",
-    tags: ["arcade", "reflex", "clicker"],
-  },
-  {
-    name: "Burger Builder",
-    path: "games/burger-builder/index.html",
-    icon: "🍔",
-    description: "Stack ingredients in the right order to make the perfect burger before time runs out!",
-    category: "Cooking",
-    duration: "No time limit",
-    tags: ["cooking", "food", "memory", "fun"],
-  },
-  {
-    name: "Catch the Dot",
-    path: "games/Catch_The_Dot/index.html",
-    icon: "⚫",
-    description:
-      "Test your reflexes! Click the moving dot as many times as you can before time runs out.",
-    category: "Reflex / Skill",
-    duration: "30 seconds per round",
-    tags: ["single player", "reaction", "fast-paced", "matte UI"],
-  },
-  {
-    name: "Rock Paper Scissors",
-    path: "games/rock-paper-scissors/index.html",
-    icon: "✊📄✂️",
-    description:
-      "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
-    category: "Strategy / Fun",
-    duration: "1–2 min",
-    tags: ["fun", "strategy", "classic", "singleplayer"],
-  },
-  {
-    name: "Tap Reveal",
-    path: "games/tap-reveal/index.html",
-    icon: "🟩",
-    description: "A fun memory game! Tap tiles to reveal icons and match all pairs as fast as you can.",
-    category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "memory", "matching", "click", "tap"],
-},
-  {
-    name: "The World's Easiest Game",
-    path: "games/worlds-easiest-game/index.html",
-    icon: "😎",
-    description: "A super simple, fun, and humorous game. Click the button and win instantly!",
-    category: "Casual",
-    duration: "1-2 minutes",
-    tags: ["casual", "fun", "quick", "clicker"],
-},
-  {
-  name: "Line Game",
-  path: "games/line-game/index.html",
-  icon: "📈",
-  description: "Guide your neon line through obstacles and test your reflexes!",
-  category: "Arcade",
-  duration: "Endless",
-  tags: ["arcade", "reflex", "dodge", "challenge"],
-},
-  {
-    name: "Merge LAB",
-    path: "games/merge-lab/index.html",
-    icon: "🧪",
-    description: "Combine similar lab elements to create higher-level compounds and achieve the highest score!",
-    category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "strategy", "logic", "merge"],
-},
-  {
-  name: "Cozy Blocks",
-  path: "games/cozy-blocks/index.html",
-  icon: "🧱",
-  description: "Stack blocks as high as you can in this relaxing, precision-based game.",
-  category: "Arcade",
-  duration: "Endless",
-  tags: ["arcade", "precision", "stacking", "relaxing"],
-  },
-  {
-    name: "Maiolike Block Puzzle",
-    path: "games/maiolike-block-puzzle/index.html",
-    icon: "⬛",
-    description: "A casual block puzzle game. Place blocks to complete rows or columns and score points. Plan ahead to avoid running out of space!",
-    category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "logic", "block", "strategy"],
+
+  {
+    name: "Pong",
+    path: "games/pong/index.html",
+    icon: "🏓",
+    description:
+      "A tiny Pong clone — play against the CPU or another player. Use W/S and ↑/↓ to move paddles.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "retro", "multiplayer", "cpu"],
+  },
+  {
+    name: "Kong fights ",
+    path: "games/The Godzilla Fights game(html,css,js)/index.html",
+    icon: "&#129421",
+    description:
+      "A exciting fighting game where two cartoon gorillas stand on opposite rooftops in a cityscape at sunset. The player (on the left) aims and throws a bomb at the computer opponent by dragging to set the angle and velocity",
+    category: "Fighting",
+    duration: "Endless",
+    tags: ["Fighting", "Special", "multiplayer", "computer"],
+  },
+  {
+    name: "Simon Says",
+    path: "games/SimonSays/index.html",
+    icon: "🧠",
+    description:
+      "A fun memory game where players repeat an increasingly complex sequence of colors.",
+    category: "Memory",
+    duration: "Progressive",
+    tags: ["memory", "focus", "puzzle", "challenge"],
+  },
+  {
+    name: "Typing Test",
+    path: "games/typing-test/index.html",
+    icon: "⌨️",
+    description:
+      "Test your typing speed and accuracy in 1 minute. Challenge yourself and improve!",
+    category: "Skill",
+    duration: "1 min",
+    tags: ["typing", "speed", "accuracy", "skill"],
+  },
+  {
+    name: "Balloon Pop",
+    path: "games/balloon-pop/index.html",
+    icon: "🎈",
+    description: "Click the balloons before they float away! Pop as many as you can.",
+    category: "Arcade",
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker"],
+  },
+  {
+    name: "Catch the Dot",
+    path: "games/Catch_The_Dot/index.html",
+    icon: "⚫",
+    description:
+      "Test your reflexes! Click the moving dot as many times as you can before time runs out.",
+    category: "Reflex / Skill",
+    duration: "30 seconds per round",
+    tags: ["single player", "reaction", "fast-paced", "matte UI"],
+  },
+  {
+  name: "Rock Paper Scissors",
+  path: "games/rock-paper-scissors/index.html",
+  icon: "✊📄✂️",
+  description: "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
+  category: "Strategy / Fun",
+  duration: "1–2 min",
+  tags: ["fun", "strategy", "classic", "singleplayer"]
+  },
+
+  {
+  name: "FUNHUB - Meme Generator",
+
+    name: "FUNHUB - Meme Generator",
+
+    path: "games/meme_generator/index.html",
+
+    icon: "😂",
+
+    description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
+
+    category: "Fun / Entertainment",
+
+    duration: "Unlimited",
+
+    tags: ["single player", "dynamic content", "API-driven", "fun"],
+
+  },
+
+  {
+
+    name: "Number Guessing Game",
+
+    path: "games/Number_Gussing_game/NGG.html",
+
+    icon: "🤓",
+
+    description: "Guess the number in lowest time",
+
+    category: "Fun / Entertainment",
+
+    duration: "Unlimited",
+
+    tags: ["single player", "Solo", "Numbers", "fun"],
+
 },
 {
   name: "Link Game",
@@ -615,18 +552,9 @@ function updateScrollBtns() {
   }
 }
 
-window.addEventListener('scroll', updateScrollBtns);
-window.addEventListener('resize', updateScrollBtns);
-setTimeout(updateScrollBtns, 300); // Initial check
-
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-if (scrollBottomBtn) {
-  scrollBottomBtn.addEventListener('click', () => {
-    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-  });
-}
+// Toggle on click
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const isLight = body.classList.contains('light-theme');
+  themeToggle.textContent = isLight
+});
