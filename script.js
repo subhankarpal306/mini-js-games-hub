@@ -187,6 +187,16 @@ const games = [
     tags: ["single player", "dynamic content", "API-driven", "fun"],
 
   },
+{
+  name: "Find the Hidden Object",
+  path: "games/find-hidden-object/index.html",
+  icon: "🔍",
+  description: "Spot and click hidden items in cluttered scenes before time runs out!",
+  category: "Puzzle",
+  duration: "60 seconds",
+  tags: ["puzzle", "hidden", "seek", "timed", "casual"]
+},
+
   {
     name: "Color Guessing Game",
     path: "games/color-guessing-game/index.html",
