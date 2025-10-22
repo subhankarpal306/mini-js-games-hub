@@ -28,6 +28,15 @@ const games = [
   duration: "Variable",
   tags: ["quiz", "education", "puzzle", "trivia"]
 },
+{
+    name: "Minesweeper Clone",
+    path: "games/minesweeper-clone/index.html",
+    icon: "💣",
+    description: "The classic logic puzzle game where you clear a board without detonating hidden mines.",
+    category: "Puzzle",
+    duration: "Short",
+    tags: ["puzzle", "logic", "classic", "board-game"]
+},
 
   {
     name: "Snake Game",
