@@ -121,6 +121,16 @@ const games = [
     tags: ["memory", "focus", "puzzle", "challenge"],
   },
   {
+    name: "Color Sequence Memory",
+    path: "games/color-sequence-memory/index.html",
+    icon: "🎨",
+    description: "Test your memory by following the color sequence shown on the screen. Repeat the pattern correctly to advance through increasingly challenging levels.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "memory", "sequence", "logic", "challenge"],
+},
+
+  {
     name: "Typing Test",
     path: "games/typing-test/index.html",
     icon: "⌨️",
