@@ -195,6 +195,16 @@ const games = [
     tags: ["single player", "Solo", "Numbers", "fun"],
 
 },
+  {
+    name: "Word Scramble",
+    path: "games/word-scramble/index.html",
+    icon: "🔤",
+    description: "Unscramble letters to form words before time runs out!",
+    category: "Puzzle",
+    duration: "Variable",
+    tags: ["puzzle", "word", "timer", "logic"],
+},
+
 
 {
 
