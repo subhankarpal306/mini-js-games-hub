@@ -37,6 +37,16 @@ const games = [
     duration: "Short",
     tags: ["puzzle", "logic", "classic", "board-game"]
 },
+{
+    name: "Gravity Switch",
+    path: "games/gravity-switch/index.html",
+    icon: "🔄",
+    description: "A fast-paced arcade game where the player continuously switches gravity (flip between the floor and the ceiling) to navigate and survive an endless stream of vertically-aligned obstacles.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "physics", "timing", "canvas", "runner"]
+},
+
 
   {
     name: "Snake Game",
