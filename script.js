@@ -61,6 +61,16 @@ const games = [
     tags: ["speed", "focus", "solo"],
   },
   {
+    name: "Math Challenge",
+    path: "games/math-challenge/index.html",
+    icon: "🧮",
+    description: "Test your arithmetic skills with addition, subtraction, multiplication, and division against the clock!",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["math", "puzzle", "arithmetic", "timed", "logic"],
+},
+
+  {
     name: "Space Shooter",
     path: "games/space-shooter/index.html",
     icon: "🚀",
