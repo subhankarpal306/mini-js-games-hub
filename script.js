@@ -436,7 +436,17 @@ const games = [
   category: "Arcade",
   duration: "Endless",
   tags: ["color-matching", "platformer", "timing", "reflexes", "endless", "mobile-friendly"],
+},
+{
+  name: "ShadowShift",
+  path: "games/shadowshift/index.html",
+  icon: "🕶️",
+  description: "Stealth puzzle: drag blocker panels to reshape shadows and sneak past lights to the goal.",
+  category: "Puzzle",
+  duration: "3-5 min",
+  tags: ["single player", "stealth", "puzzle", "logic", "drag-and-drop"]
 }
+
 ];const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
 const emptyState = document.getElementById("empty-state");
