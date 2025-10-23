@@ -136,6 +136,16 @@ const games = [
     tags: ["puzzle", "singleplayer", "numbers"],
   },
   {
+    name: "Spot the Difference",
+    path: "games/spot-the-difference/index.html",
+    icon: "🔍",
+    description: "Find all the differences between two images before time runs out! Test your observation and attention to detail.",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["puzzle", "observation", "attention", "clicker", "challenge"],
+},
+
+  {
     name: "15 Puzzle",
     path: "games/15-puzzle/index.html",
     icon: "🔳",
