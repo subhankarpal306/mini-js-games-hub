@@ -226,6 +226,16 @@ const games = [
     tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
   {
+    name: "Emoji Pop Quiz",
+    path: "games/emoji-pop-quiz/index.html",
+    icon: "📝",
+    description: "A fun and interactive quiz game. Guess the word, phrase, movie, or song from emoji combinations. Challenges your emoji interpretation skills and provides instant feedback.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "quiz", "emoji", "brain-teaser", "logic"],
+},
+
+  {
   name: "Rock Paper Scissors",
   path: "games/rock-paper-scissors/index.html",
   icon: "✊📄✂️",
