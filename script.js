@@ -211,7 +211,7 @@ const games = [
     category: "Memory",
     duration: "Unlimited",
     tags: ["memory", "puzzle", "matching", "logic", "brain-training", "fun"],
-}
+},
 
   {
     name: "Kong fights ",
@@ -370,7 +370,7 @@ const games = [
     tags: ["single player", "Solo", "Numbers", "fun"],
 
 },
-  {
+{
     name: "Word Scramble",
     path: "games/word-scramble/index.html",
     icon: "🔤",
@@ -399,16 +399,6 @@ const games = [
     duration: "Unlimited",
     tags: ["arcade", "reflex", "clicker", "speed"],
 },
-  {
-    name: "FUNHUB - Meme Generator",
-    path: "games/meme_generator/index.html",
-    icon: "😂",
-    description:
-      "Get your daily dose of memes! Fetch random memes dynamically from the API.",
-    category: "Fun / Entertainment",
-    duration: "Unlimited",
-    tags: ["single player", "dynamic content", "API-driven", "fun"],
-  },
   {
     name: "Number Guessing Game",
     path: "games/Number_Guessing_Game/index.html",
