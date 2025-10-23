@@ -105,6 +105,16 @@ const games = [
     tags: ["reflex", "timed", "mouse"],
   },
   {
+    name: "Falling Leaves Collector",
+    path: "games/falling-leaves-collector/index.html",
+    icon: "🍂",
+    description: "Collect falling leaves before they hit the ground. Test your reflexes and hand-eye coordination, and try to get the highest score!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "catch", "reaction"],
+},
+
+  {
     name: "Reaction Timer",
     path: "games/reaction-timer/index.html",
     icon: "⚡",
