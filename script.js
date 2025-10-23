@@ -37,6 +37,15 @@ const games = [
     duration: "Short",
     tags: ["puzzle", "logic", "classic", "board-game"]
 },
+{
+    name: "Brick Breaker",
+    path: "games/brick-breaker/index.html",
+    icon: "🧱",
+    description: "A classic arcade game where the player controls a paddle to deflect a ball and destroy a wall of colored bricks.",
+    category: "Arcade",
+    duration: "Short/Medium",
+    tags: ["arcade", "classic", "physics", "canvas"]
+},
 
   {
     name: "Snake Game",
