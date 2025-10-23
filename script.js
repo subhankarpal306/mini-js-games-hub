@@ -197,6 +197,16 @@ const games = [
     tags: ["arcade", "reflex", "clicker"],
   },
   {
+    name: "Minesweeper",
+    path: "games/minesweeper/index.html",
+    icon: "💣",
+    description: "A classic Minesweeper game. Clear the grid without detonating mines. Numbers indicate how many mines are adjacent to a square.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "grid", "strategy"],
+},
+
+  {
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
