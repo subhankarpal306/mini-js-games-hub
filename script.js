@@ -342,7 +342,6 @@ const games = [
     tags: ["puzzle", "color", "rgb", "reflex", "visual"],
 },
 
-  },
 {
     name: "Click Combo Game Quiz",
     path: "games/click_combo_game_quiz/index.html",
