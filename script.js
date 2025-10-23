@@ -226,6 +226,16 @@ const games = [
     tags: ["puzzle", "color", "rgb", "reflex", "visual"],
 },
 
+  },
+{
+    name: "Click Combo Game Quiz",
+    path: "games/click_combo_game_quiz/index.html",
+    icon: "⚡",
+    description: "Speed + knowledge challenge! Click the correct answers to build combos and score high.",
+    category: "Arcade / Quiz",
+    duration: "Timed",
+    tags: ["quiz", "combo", "reaction", "clicker", "fast"],
+},
 
   {
 
@@ -625,70 +635,9 @@ if (themeToggle) {
   });
 }
 
-// Scroll to Top/Bottom Buttons
-const scrollTopBtn = document.getElementById('scroll-top');
-const scrollBottomBtn = document.getElementById('scroll-bottom');
-
-function updateScrollBtns() {
-  const scrollY = window.scrollY || document.documentElement.scrollTop;
-  const winH = window.innerHeight || document.documentElement.clientHeight;
-  const docH = document.documentElement.scrollHeight;
-
-  // Show top button if not at top (with some threshold)
-  if (scrollTopBtn) {
-    scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
-  }
-
-  // Show bottom button if not at bottom (with some threshold)
-  if (scrollBottomBtn) {
-    scrollBottomBtn.style.display = (scrollY + winH < docH - 200) ? 'block' : 'none';
-  }
-}
-
-  // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  const themeToggle = document.getElementById('themeToggle');
-  const body = document.body;
-  
-  // Check if elements exist
-  if (!themeToggle || !body) {
-    console.error('Theme toggle elements not found');
-    return;
-  }
-  
-  // Initialize theme
-  function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    
-    // Use saved theme, else use system preference, else default to dark
-    if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
-      body.classList.add('light-theme');
-      themeToggle.textContent = '☀️';
-    } else {
-      body.classList.remove('light-theme');
-      themeToggle.textContent = '🌙';
-    }
-  }
-  
-
-  // Toggle theme function
-  function toggleTheme() {
-    body.classList.toggle('light-theme');
-    const isLight = body.classList.contains('light-theme');
-    
-    themeToggle.textContent = isLight ? '☀️' : '🌙';
-    themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-    
-    // Save preference
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    
-    console.log('Theme toggled to:', isLight ? 'light' : 'dark');
-  }
-  
-  // Add event listener
-  themeToggle.addEventListener('click', toggleTheme);
-  
-  // Initialize theme on load
-  initializeTheme();
+// Toggle on click
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const isLight = body.classList.contains('light-theme');
+  themeToggle.textContent = isLight
 });
