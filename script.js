@@ -148,6 +148,15 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+    name: "Avoid the Blocks",
+    path: "games/avoid-the-blocks/index.html",
+    icon: "⬛",
+    description: "A fast-paced obstacle-avoidance game. Dodge falling blocks as long as possible. Tests reflexes and timing with increasing difficulty.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "dodging", "timing"],
+ },
+ {
     name: "Emoji Match Game",
     path: "games/emoji-match/index.html",
     icon: "🧩",
