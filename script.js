@@ -20,6 +20,15 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Quick Math Battle Quiz",
+    path: "games/quick-math-battle-quiz/index.html",
+    icon: "🧮",
+    description: "A fast-paced math quiz game. Solve arithmetic questions (addition, subtraction, multiplication, division) before the timer runs out. Tracks score and speed for a fun and educational challenge.",
+    category: "Puzzle",
+    duration: "Timed",
+    tags: ["puzzle", "quiz", "math", "logic", "speed"],
+  },
+  {
     name: "Reaction Duel",
     path: "games/reaction-duel/index.html",
     icon: "⚡",
