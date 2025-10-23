@@ -27,6 +27,33 @@ const games = [
     category: "Puzzle",
     duration: "Timed",
     tags: ["puzzle", "quiz", "math", "logic", "speed"],
+  },
+  {
+    name: "Reaction Duel",
+    path: "games/reaction-duel/index.html",
+    icon: "⚡",
+    description: "A fast-paced two-player reaction game. Press your key as fast as possible after the signal appears!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "two-player", "keyboard"],
+  },
+  {
+    name: "Lights Out",
+    path: "games/lights-out/index.html",
+    icon: "💡",
+    description: "Turn off all lights by toggling your moves wisely!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "brain", "strategy"],
+},
+{
+    name: "Brick Breaker",
+    path: "games/brick-breaker/index.html",
+    icon: "🧱",
+    description: "A classic arcade game where the player controls a paddle to deflect a ball and destroy a wall of colored bricks.",
+    category: "Arcade",
+    duration: "Short/Medium",
+    tags: ["arcade", "classic", "physics", "canvas"]
 },
 
   {
@@ -69,6 +96,16 @@ const games = [
     duration: "Quick burst",
     tags: ["speed", "focus", "solo"],
   },
+  {
+    name: "Math Challenge",
+    path: "games/math-challenge/index.html",
+    icon: "🧮",
+    description: "Test your arithmetic skills with addition, subtraction, multiplication, and division against the clock!",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["math", "puzzle", "arithmetic", "timed", "logic"],
+},
+
   {
     name: "Space Shooter",
     path: "games/space-shooter/index.html",
@@ -120,6 +157,25 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+    name: "Avoid the Blocks",
+    path: "games/avoid-the-blocks/index.html",
+    icon: "⬛",
+    description: "A fast-paced obstacle-avoidance game. Dodge falling blocks as long as possible. Tests reflexes and timing with increasing difficulty.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "dodging", "timing"],
+ },
+ {
+    name: "Emoji Match Game",
+    path: "games/emoji-match/index.html",
+    icon: "🧩",
+    description: "A fun and addictive memory game! Flip cards to reveal emojis and match pairs. Track your moves and time—can you finish with the fewest moves?",
+    category: "Memory",
+    duration: "Unlimited",
+    tags: ["memory", "puzzle", "matching", "logic", "brain-training", "fun"],
+}
+
+  {
     name: "Kong fights ",
     path: "games/The Godzilla Fights game(html,css,js)/index.html",
     icon: "&#129421",
@@ -159,6 +215,16 @@ const games = [
     tags: ["arcade", "reflex", "clicker"],
   },
   {
+    name: "Minesweeper",
+    path: "games/minesweeper/index.html",
+    icon: "💣",
+    description: "A classic Minesweeper game. Clear the grid without detonating mines. Numbers indicate how many mines are adjacent to a square.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "grid", "strategy"],
+},
+
+  {
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
     icon: "⚫",
@@ -168,6 +234,16 @@ const games = [
     duration: "30 seconds per round",
     tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
+  {
+    name: "Emoji Pop Quiz",
+    path: "games/emoji-pop-quiz/index.html",
+    icon: "📝",
+    description: "A fun and interactive quiz game. Guess the word, phrase, movie, or song from emoji combinations. Challenges your emoji interpretation skills and provides instant feedback.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "quiz", "emoji", "brain-teaser", "logic"],
+},
+
   {
   name: "Rock Paper Scissors",
   path: "games/rock-paper-scissors/index.html",
@@ -208,6 +284,16 @@ const games = [
     tags: ["puzzle", "color", "rgb", "reflex", "visual"],
 },
 
+  },
+{
+    name: "Click Combo Game Quiz",
+    path: "games/click_combo_game_quiz/index.html",
+    icon: "⚡",
+    description: "Speed + knowledge challenge! Click the correct answers to build combos and score high.",
+    category: "Arcade / Quiz",
+    duration: "Timed",
+    tags: ["quiz", "combo", "reaction", "clicker", "fast"],
+},
 
   {
 
