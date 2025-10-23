@@ -20,22 +20,31 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
-  name: "Quiz Game (MCQ)",
-  path: "games/quiz-game/index.html",
-  icon: "🧠",
-  description: "Test your knowledge with interactive multiple-choice questions!",
-  category: "Educational",
-  duration: "Variable",
-  tags: ["quiz", "education", "puzzle", "trivia"]
+    name: "Reaction Duel",
+    path: "games/reaction-duel/index.html",
+    icon: "⚡",
+    description: "A fast-paced two-player reaction game. Press your key as fast as possible after the signal appears!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "two-player", "keyboard"],
+  },
+  {
+    name: "Lights Out",
+    path: "games/lights-out/index.html",
+    icon: "💡",
+    description: "Turn off all lights by toggling your moves wisely!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "brain", "strategy"],
 },
 {
-    name: "Minesweeper Clone",
-    path: "games/minesweeper-clone/index.html",
-    icon: "💣",
-    description: "The classic logic puzzle game where you clear a board without detonating hidden mines.",
-    category: "Puzzle",
-    duration: "Short",
-    tags: ["puzzle", "logic", "classic", "board-game"]
+    name: "Brick Breaker",
+    path: "games/brick-breaker/index.html",
+    icon: "🧱",
+    description: "A classic arcade game where the player controls a paddle to deflect a ball and destroy a wall of colored bricks.",
+    category: "Arcade",
+    duration: "Short/Medium",
+    tags: ["arcade", "classic", "physics", "canvas"]
 },
 
   {
@@ -78,6 +87,16 @@ const games = [
     duration: "Quick burst",
     tags: ["speed", "focus", "solo"],
   },
+  {
+    name: "Math Challenge",
+    path: "games/math-challenge/index.html",
+    icon: "🧮",
+    description: "Test your arithmetic skills with addition, subtraction, multiplication, and division against the clock!",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["math", "puzzle", "arithmetic", "timed", "logic"],
+},
+
   {
     name: "Space Shooter",
     path: "games/space-shooter/index.html",
@@ -136,7 +155,16 @@ const games = [
     category: "Arcade",
     duration: "Unlimited",
     tags: ["arcade", "reflex", "dodging", "timing"],
-},
+ },
+ {
+    name: "Emoji Match Game",
+    path: "games/emoji-match/index.html",
+    icon: "🧩",
+    description: "A fun and addictive memory game! Flip cards to reveal emojis and match pairs. Track your moves and time—can you finish with the fewest moves?",
+    category: "Memory",
+    duration: "Unlimited",
+    tags: ["memory", "puzzle", "matching", "logic", "brain-training", "fun"],
+}
 
   {
     name: "Kong fights ",
@@ -177,6 +205,16 @@ const games = [
     duration: "30 seconds",
     tags: ["arcade", "reflex", "clicker"],
   },
+  {
+    name: "Minesweeper",
+    path: "games/minesweeper/index.html",
+    icon: "💣",
+    description: "A classic Minesweeper game. Clear the grid without detonating mines. Numbers indicate how many mines are adjacent to a square.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "grid", "strategy"],
+},
+
   {
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
@@ -227,6 +265,16 @@ const games = [
     tags: ["puzzle", "color", "rgb", "reflex", "visual"],
 },
 
+  },
+{
+    name: "Click Combo Game Quiz",
+    path: "games/click_combo_game_quiz/index.html",
+    icon: "⚡",
+    description: "Speed + knowledge challenge! Click the correct answers to build combos and score high.",
+    category: "Arcade / Quiz",
+    duration: "Timed",
+    tags: ["quiz", "combo", "reaction", "clicker", "fast"],
+},
 
   {
 
