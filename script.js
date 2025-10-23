@@ -20,6 +20,15 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Tap Challenge",
+    path: "games/tap-challenge/index.html",
+    icon: "🖱️",
+    description: "A fast-paced reaction game where you tap the button as many times as possible before time runs out. Test your speed and reflexes!",
+    category: "Arcade",
+    duration: "20 seconds",
+    tags: ["arcade", "reaction", "reflex", "clicker", "timed"],
+  },
+  {
     name: "Emoji Battle Arena",
     path: "games/emoji-battle-arena/index.html",
     icon: "🪄",
