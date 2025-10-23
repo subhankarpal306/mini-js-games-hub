@@ -129,16 +129,7 @@ const games = [
     duration: "Endless",
     tags: ["Fighting", "Special", "multiplayer", "computer"],
   },
-  {
-    name: "Simon Says",
-    path: "games/SimonSays/index.html",
-    icon: "🧠",
-    description:
-      "A fun memory game where players repeat an increasingly complex sequence of colors.",
-    category: "Memory",
-    duration: "Progressive",
-    tags: ["memory", "focus", "puzzle", "challenge"],
-  },
+
   {
     name: "Typing Test",
     path: "games/typing-test/index.html",
@@ -198,35 +189,16 @@ const games = [
   tags: ["puzzle", "hidden", "seek", "timed", "casual"]
 },
 
-  {
-    name: "Color Guessing Game",
-    path: "games/color-guessing-game/index.html",
-    icon: "🎨",
-    description: "Guess the correct color based on the RGB value shown — test your eyes and reflexes!",
-    category: "Puzzle",
-    duration: "30 seconds",
-    tags: ["puzzle", "color", "rgb", "reflex", "visual"],
+{
+  name: "Color Guessing Game",
+  path: "games/color-guessing-game/index.html",
+  icon: "🎨",
+  description: "Guess the correct color based on the RGB value shown — test your eyes and reflexes!",
+  category: "Puzzle",
+  duration: "30 seconds",
+  tags: ["puzzle", "color", "rgb", "reflex", "visual"],
 },
-
-
-  {
-
-    name: "Number Guessing Game",
-
-    path: "games/Number_Gussing_game/NGG.html",
-
-    icon: "🤓",
-
-    description: "Guess the number in lowest time",
-
-    category: "Fun / Entertainment",
-
-    duration: "Unlimited",
-
-    tags: ["single player", "Solo", "Numbers", "fun"],
-
-},
-  {
+{
     name: "Word Scramble",
     path: "games/word-scramble/index.html",
     icon: "🔤",
@@ -255,16 +227,6 @@ const games = [
     duration: "Unlimited",
     tags: ["arcade", "reflex", "clicker", "speed"],
 },
-  {
-    name: "FUNHUB - Meme Generator",
-    path: "games/meme_generator/index.html",
-    icon: "😂",
-    description:
-      "Get your daily dose of memes! Fetch random memes dynamically from the API.",
-    category: "Fun / Entertainment",
-    duration: "Unlimited",
-    tags: ["single player", "dynamic content", "API-driven", "fun"],
-  },
   {
     name: "Number Guessing Game",
     path: "games/Number_Guessing_Game/index.html",
@@ -626,6 +588,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
+
   // Toggle theme function
   function toggleTheme() {
     body.classList.toggle('light-theme');

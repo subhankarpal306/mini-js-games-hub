@@ -1,0 +1,228 @@
+[33mcommit 78235dd7d305592282c385c5d2d856e3894900d7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfix/search-no-matches-display[m[33m, [m[1;31morigin/nav-bar-light-mode[m[33m, [m[1;31morigin/fix/search-no-matches-display[m[33m, [m[1;32mnav-bar-light-mode[m[33m)[m
+Author: Pragga Mukherjee <purusottammukherjee962@gmail.com>
+Date:   Wed Oct 22 16:37:17 2025 +0530
+
+    fix: resolved the color of nav bar in light mode
+
+[33mcommit 673640f7c2f925010726cb8506000ad7c8f122d1[m
+Author: Pragga Mukherjee <purusottammukherjee962@gmail.com>
+Date:   Wed Oct 22 15:10:05 2025 +0530
+
+    fix: resolved 'no matches found' displaying with valid search results
+
+[33mcommit a5ff1118c6cff1d04ac20665108abee6a4c7fe34[m[33m ([m[1;31mupstream/main[m[33m, [m[1;31mupstream/HEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: e33eee0 08de6fe
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 14:16:40 2025 +0530
+
+    Merge pull request #196 from pragga9876/docs/update-games-included-section
+    
+    Update Games Included section with all 58 games
+
+[33mcommit e33eee084eb8182bbeb5895de0804c3ccda2bdc5[m
+Merge: 97544d6 d89f7cb
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 14:15:54 2025 +0530
+
+    Merge pull request #195 from pragga9876/docs/update-readme-project-structure
+    
+    Docs: Update README project structure with all 58 games
+
+[33mcommit 97544d68083300891a17eb3f431103805b0e5afe[m
+Merge: 935878e 7ab6666
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 14:14:56 2025 +0530
+
+    Merge pull request #194 from Hacktober-contributoer/main
+    
+    Add Word Chain Puzzle Game (#155)
+
+[33mcommit 935878e9acf2882b829e69da6b55c61660bd8017[m
+Merge: 4075436 83f70d6
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 14:14:17 2025 +0530
+
+    Merge pull request #193 from Koustav41/main
+    
+    Resolve bugs in my PR
+
+[33mcommit 08de6fecbcdcd8bf08f4631ee30fe3e316bc7623[m[33m ([m[1;31morigin/docs/update-games-included-section[m[33m, [m[1;32mdocs/update-games-included-section[m[33m)[m
+Author: Pragga Mukherjee <purusottammukherjee962@gmail.com>
+Date:   Wed Oct 22 12:34:33 2025 +0530
+
+    Docs: Update Games Included section with all 58 games
+
+[33mcommit 7ab6666e5c9120db3891b51abde0ea38078e8a66[m
+Author: Gupta-02 <Gupta-02@users.noreply.github.com>
+Date:   Wed Oct 22 12:17:10 2025 +0530
+
+    Add Word Chain Puzzle Game (#155)
+    
+    - Implemented enhanced word chain puzzle with multiple categories
+    - Added difficulty levels (Easy, Medium, Hard) with appropriate word lists
+    - Features include hints, sound effects, high score tracking
+    - Responsive design with animations and improved UX
+    - Categories: Animals, Food, Technology, Colors, Countries, Sports, Music
+
+[33mcommit d89f7cb6d5f68977e3f7594f374b5bbbef9a3268[m[33m ([m[1;31morigin/docs/update-readme-project-structure[m[33m, [m[1;32mdocs/update-readme-project-structure[m[33m)[m
+Author: Pragga Mukherjee <purusottammukherjee962@gmail.com>
+Date:   Wed Oct 22 12:15:51 2025 +0530
+
+    Docs: Update README project structure with all 58 games
+
+[33mcommit 83f70d6fc219d0f12cc69fdf6dcfaf33372e3b12[m
+Author: Koustav Mukherjee <mkoustav03@gmail.com>
+Date:   Wed Oct 22 12:00:52 2025 +0530
+
+    Resolve bugs in my PR
+
+[33mcommit 4075436de512b97e963ef9b46b1ad8460c6ed10e[m
+Merge: 2e958a2 291c0d9
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 11:55:44 2025 +0530
+
+    Merge pull request #191 from Koustav41/main
+    
+    Add Login & register page.
+
+[33mcommit 291c0d9f97433eae20bda7836f022ae5ef69e14e[m
+Merge: 59552fa 2e958a2
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 11:54:56 2025 +0530
+
+    Merge branch 'main' into main
+
+[33mcommit 59552fad896eec96ebbb8a80fce41370fc6fc1dc[m
+Author: Koustav Mukherjee <mkoustav03@gmail.com>
+Date:   Wed Oct 22 11:54:07 2025 +0530
+
+    update
+
+[33mcommit 2e958a2c8b0ebbd698acaecd748c8bbacdd387e9[m
+Merge: 0803033 3edcbb8
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 11:53:18 2025 +0530
+
+    Merge pull request #190 from pragga9876/fix/toggle-bar-functionality
+    
+    Fix: Resolve toggle bar functionality issue
+
+[33mcommit 0803033d8bf9d9f4a91a4d3152b8dee2dda0e402[m
+Merge: b2b3a86 95d6b14
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 11:52:44 2025 +0530
+
+    Merge pull request #189 from Hacktober-contributoer/main
+    
+    Add Pixel Art Creator mini-game
+
+[33mcommit 50b8931c568f8d3b906fc84efe4047c82ed4820a[m
+Merge: 72332fc b2b3a86
+Author: Koustav Mukherjee <mkoustav03@gmail.com>
+Date:   Wed Oct 22 11:46:57 2025 +0530
+
+    Merge branch 'main' into main
+
+[33mcommit 72332fc3b7439d36f5422b64c50ada2b50c4a81c[m
+Author: Koustav Mukherjee <mkoustav03@gmail.com>
+Date:   Wed Oct 22 11:39:04 2025 +0530
+
+    Add Login & register page.
+
+[33mcommit 3edcbb8bcc77edce2e9556d8545206bb26c25d7c[m[33m ([m[1;31morigin/fix/toggle-bar-functionality[m[33m, [m[1;32mfix/toggle-bar-functionality[m[33m)[m
+Author: Pragga Mukherjee <purusottammukherjee962@gmail.com>
+Date:   Wed Oct 22 11:33:08 2025 +0530
+
+    Fix: Resolve toggle bar functionality issue
+    
+    - Add proper event listener to toggle button
+    - Fix element selectors
+    - Ensure JavaScript loads after DOM
+    - Add CSS classes for toggle states
+    - Closes #[ISSUE_NUMBER]
+
+[33mcommit 95d6b14df85cad36eccfe4b361177fd3e621a3b7[m
+Author: Gupta-02 <Gupta-02@users.noreply.github.com>
+Date:   Wed Oct 22 11:21:41 2025 +0530
+
+    Add Pixel Art Creator mini-game - creative 16x16 pixel art editor with save/load/export features
+
+[33mcommit b2b3a86bef00358597a12c549ef6ea71ca0d3a7a[m
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 09:02:54 2025 +0530
+
+    Update PULL_REQUEST_TEMPLATE.md
+
+[33mcommit bebaff0890d6c37a5b6a51f7add13aee2e4a7511[m
+Merge: b62e494 1af74f6
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:59:09 2025 +0530
+
+    Merge pull request #178 from dimpal-yadav/Quiz-Game-(MCQ)
+    
+    Quiz game (mcq)
+
+[33mcommit 1af74f6dabd7239f19e21ce2ef961553bbae292e[m
+Merge: 9f2a61b b62e494
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:59:02 2025 +0530
+
+    Merge branch 'main' into Quiz-Game-(MCQ)
+
+[33mcommit b62e494214b0520c67237325d7850b68a6ab68e0[m
+Merge: 5c13023 7516066
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:58:17 2025 +0530
+
+    Merge pull request #177 from dimpal-yadav/Word-Scramble
+    
+    Word scramble
+
+[33mcommit 5c1302347c5d80063b4a92f165f8add8c6be8af9[m
+Merge: 88404dc b7b273e
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:57:49 2025 +0530
+
+    Merge pull request #176 from dimpal-yadav/Find-the-Hidden-Object
+    
+    Find the hidden object
+
+[33mcommit b7b273e8e4282cc01c001d06e4150295482ed143[m
+Merge: 9b58b65 88404dc
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:57:42 2025 +0530
+
+    Merge branch 'main' into Find-the-Hidden-Object
+
+[33mcommit 88404dcebaed2b28c3373851141ed20587bcd1d2[m
+Merge: d7b694e 146aac4
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:56:59 2025 +0530
+
+    Merge pull request #175 from dimpal-yadav/Color-Guessing-Game
+    
+    Color guessing game
+
+[33mcommit 146aac43708be83bba66a031cd3e1551d9f50fd6[m
+Merge: 33dc380 d7b694e
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:56:53 2025 +0530
+
+    Merge branch 'main' into Color-Guessing-Game
+
+[33mcommit d7b694ed73818f3dc47d5af8be93441e2a1e0f67[m
+Merge: 6c239a9 c1a887d
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:55:55 2025 +0530
+
+    Merge pull request #174 from dimpal-yadav/Endless-Runner
+    
+    Endless runner
+
+[33mcommit 6c239a987a97ac820b490290b938e08de3195f15[m
+Author: Ritaban Ghosh <ghoshritaban2006@gmail.com>
+Date:   Wed Oct 22 08:54:57 2025 +0530
+
+    Add workflow to auto-resolve games array conflicts
+    
+    Introduces a GitHub Actions workflow and supporting script to automatically resolve merge conflicts in the games array within script.js
