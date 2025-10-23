@@ -20,22 +20,13 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
-  name: "Quiz Game (MCQ)",
-  path: "games/quiz-game/index.html",
-  icon: "🧠",
-  description: "Test your knowledge with interactive multiple-choice questions!",
-  category: "Educational",
-  duration: "Variable",
-  tags: ["quiz", "education", "puzzle", "trivia"]
-},
-{
-    name: "Minesweeper Clone",
-    path: "games/minesweeper-clone/index.html",
-    icon: "💣",
-    description: "The classic logic puzzle game where you clear a board without detonating hidden mines.",
+    name: "Lights Out",
+    path: "games/lights-out/index.html",
+    icon: "💡",
+    description: "Turn off all lights by toggling your moves wisely!",
     category: "Puzzle",
-    duration: "Short",
-    tags: ["puzzle", "logic", "classic", "board-game"]
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "brain", "strategy"],
 },
 {
     name: "Brick Breaker",
