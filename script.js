@@ -20,6 +20,15 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Reaction Duel",
+    path: "games/reaction-duel/index.html",
+    icon: "⚡",
+    description: "A fast-paced two-player reaction game. Press your key as fast as possible after the signal appears!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "two-player", "keyboard"],
+  },
+  {
     name: "Lights Out",
     path: "games/lights-out/index.html",
     icon: "💡",
