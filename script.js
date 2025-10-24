@@ -211,15 +211,21 @@ const games = [
     tags: ["memory", "focus", "puzzle", "challenge"],
   },
   {
-    name: "Color Sequence Memory",
-    path: "games/color-sequence-memory/index.html",
-    icon: "🎨",
-    description:
-      "Test your memory by following the color sequence shown on the screen. Repeat the pattern correctly to advance through increasingly challenging levels.",
+    name: "Speedy Typing Game",
+    path: "games/speedy-typing/index.html",
+    icon: "⌨️",
+    description: "Test your typing speed and accuracy by typing words before time runs out!",
+    category: "Skill",
+    duration: "60 seconds",
+    tags: ["typing", "skill", "reflex", "speed"],
+    name: "Spot the Odd Emoji",
+    path: "games/spot-the-odd-emoji/index.html",
+    icon: "🔎",
+    description: "Find the one emoji that’s different from the rest before time runs out! Fun and challenging puzzle game.",
     category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "memory", "sequence", "logic", "challenge"],
-  },
+    duration: "Timed",
+    tags: ["puzzle", "emoji", "attention", "speed", "pattern recognition"],
+},
 
   {
     name: "Typing Test",
@@ -381,6 +387,16 @@ const games = [
   tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
 
 }
+  },
+  {
+    name: "Fruit Slicer",
+    path: "games/fruit-slicer/index.html",
+    icon: "🍎",
+    description:
+      "Slice flying fruits with mouse or touch gestures; avoid bombs. Score based on accuracy and speed.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "action", "swipe", "fruit", "bombs", "mobile-friendly"],
   },
 ];
 const container = document.getElementById("games-container");
