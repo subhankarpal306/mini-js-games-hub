@@ -402,242 +402,35 @@ const games = [
     tags: ["puzzle", "word", "timer", "logic"],
   },
 
+},
   {
-    name: "Link Game",
-    path: "games/link-game/index.html",
-    icon: "🔗",
-    description:
-      "Connect matching tiles before you run out of moves! A fun logic puzzle for quick thinkers.",
-    category: "Puzzle",
-    duration: "3–5 minutes",
-    tags: ["puzzle", "memory", "logic", "connect"],
-  },
-  {
-    name: "Boom",
-    path: "games/boom/index.html",
-    icon: "💣",
-    description:
-      "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
-    category: "Arcade",
-    duration: "Unlimited",
-    tags: ["arcade", "reflex", "clicker", "speed"],
-  },
-  {
-    name: "Number Guessing Game",
-    path: "games/Number_Guessing_Game/index.html",
-    icon: "🤓",
-    description: "Guess the secret number in the lowest number of tries!",
-    category: "Fun / Entertainment",
-    duration: "Unlimited",
-    tags: ["numbers", "solo", "fun"],
-  },
-  {
-    name: "Sudoku Game",
-    path: "games/sudoku/index.html",
-    icon: "🤯",
-    description: "Use logic to fill the grid and solve the puzzle!",
-    category: "Classic / Skill",
-    duration: "Unlimited",
-    tags: ["singleplayer", "numbers", "logic", "brain"],
-  },
-  {
-    name: "Coin Toss Simulator",
-    path: "games/coin_toss_simulator/index.html",
-    icon: "🪙",
-    description: "A simple coin toss simulator. Will it be heads or tails?",
-    category: "Fun / Simulation",
-    duration: "Unlimited",
-    tags: ["single player", "fun", "simulation"],
-  },
-  {
-    name: "Connect Four",
-    path: "games/Connect-four/index.html",
-    icon: "🟡",
-    description:
-      "Form a line of four of your own coloured discs - Outsmart your opponent",
-    category: "Strategy",
-    duration: "5-10 min",
-    tags: ["two-player", "grid", "classic"],
-  },
-  {
-    name: "Hangman",
-    path: "games/hangman/index.html",
-    icon: "🏗️",
-    description:
-      "Guess the word before you run out of attempts! Can you save the stickman?",
+    name: "Tower of Hanoi Visualizer",
+    path: "games/tower-of-hanoi/index.html",
+    icon: "🗼",
+    description: "Interactive visualizer of the classic Tower of Hanoi puzzle. Auto-solve, manual moves, step controls, and learn recursion!",
     category: "Puzzle",
     duration: "Unlimited",
-    tags: ["puzzle", "word", "logic", "guessing"],
-  },
-  {
-    name: "Frogger",
-    path: "games/frogger/index.html",
-    icon: "🐸",
-    description:
-      "Classic arcade game where you guide a frog across roads and rivers, avoiding obstacles and reaching safe zones.",
-    category: "Arcade",
-    duration: "Unlimited",
-    tags: ["arcade", "reaction", "strategy", "reflex"],
-  },
-  {
-    name: "8 Ball Pool Billiards Multiplayer",
-    path: "games/8-ball-pool/index.html",
-    icon: "🎱",
-    description:
-      "Realistic local 2-player 8-ball pool with cue aiming, power meter and physics using Canvas.",
-    category: "Arcade",
-    duration: "5-15 minutes",
-    tags: ["arcade", "multiplayer", "physics", "canvas"],
-  },
-  {
-    name: "Tiny Fishing",
-    path: "games/tiny-fishing/index.html",
-    icon: "🎣",
-    description:
-      "Cast your line, catch fish, and upgrade your gear! A relaxing fishing challenge built with Canvas.",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
-  },
-  {
-    name: "Grass Defense",
-    path: "games/grass-defense/index.html",
-    icon: "🌿",
-    description:
-      "Strategic tower defense! Place plants to defend your garden from pests.",
-    category: "Strategy",
-    duration: "Wave-based",
-    tags: ["strategy", "defense", "canvas", "logic"],
-  },
-  {
-    name: "Quote Generator",
-    path: "games/quote/index.html",
-    icon: "🗃️",
-    description: "Generate your random quote",
-    category: "Simple",
-    duration: "Unlimited",
-    tags: ["single-player", "quote", "classic"],
-  },
-  {
-    name: "Color Clicker",
-    path: "games/color-clicker/index.html",
-    icon: "🎨",
-    description:
-      "Click the color box as fast as you can to score points! Every click changes the color, testing your speed and focus.",
-    category: "Arcade / Reflex",
-    duration: "Endless",
-    tags: ["reflex", "clicker", "solo", "color"],
-  },
-  {
-    name: "Odd One Out",
-    path: "games/odd-one-out/index.html",
-    icon: "🔍",
-    description:
-      "Find the odd emoji/ odd-coloured tile out from a group of similar ones!",
-    category: "Puzzle",
-    duration: "1 min",
-    tags: ["single player", "puzzle", "emoji", "fun"],
-  },
-  {
-    name: "Tap the Bubble",
-    path: "games/tap-the-bubble/index.html",
-    icon: "🫧",
-    description:
-      "Tap the bubbles as they appear to score points! How many can you pop?",
-    category: "Arcade / Reflex",
-    duration: "Endless",
-    tags: ["reflex", "clicker", "solo", "bubble"],
-  },
-  {
-    name: "Pixel Art Creator",
-    path: "games/pixel-art-creator/index.html",
-    icon: "🎨",
-    description:
-      "Create beautiful pixel art on a 16x16 grid! Choose colors, draw, save your creations, and export as images.",
-    category: "Creative",
-    duration: "Unlimited",
-    tags: ["art", "creative", "pixel", "drawing", "solo"],
-  },
-  {
-    name: "Word Chain Puzzle",
-    path: "games/word-chain-puzzle/index.html",
-    icon: "🔗",
-    description:
-      "Build chains of related words in different categories with difficulty levels! Start with a word and find the next one starting with the last letter. Features hints, sound effects, and high score tracking.",
-    category: "Puzzle",
-    duration: "1 min rounds",
-    tags: [
-      "puzzle",
-      "words",
-      "vocabulary",
-      "timed",
-      "brain-teaser",
-      "difficulty",
-      "hints",
-    ],
-  },
-  {
-    name: "Starry Night Sky",
-    path: "games/starry-night-sky/index.html",
-    icon: "🌌",
-    description:
-      "A relaxing meditation game where you connect stars to form constellations. Features ambient music, breathing guide, and achievement system for mindful star gazing.",
-    category: "Relaxation",
-    duration: "Unlimited",
-    tags: [
-      "relaxation",
-      "meditation",
-      "stars",
-      "constellations",
-      "mindfulness",
-      "ambient",
-      "breathing",
-    ],
-  },
-  {
-    name: "Precision Archer",
-    path: "games/precision-archer/index.html",
-    icon: "🏹",
-    description:
-      "Test your aiming skills in this physics-based archery game! Adjust power and angle, account for wind effects, and hit moving targets for maximum points.",
-    category: "Skill",
-    duration: "10-15 min",
-    tags: [
-      "archery",
-      "physics",
-      "precision",
-      "aiming",
-      "wind",
-      "targets",
-      "skill-based",
-    ],
-  },
-  {
-    name: "Color Switch",
-    path: "games/color-switch/index.html",
-    icon: "🎨",
-    description:
-      "A fast-paced color-matching platformer! Switch the ball's color to match rotating platforms and survive as long as possible. Features smooth animations and increasing difficulty.",
-    category: "Arcade",
-    duration: "Endless",
-    tags: [
-      "color-matching",
-      "platformer",
-      "timing",
-      "reflexes",
-      "endless",
-      "mobile-friendly",
-    ],
-  },
-  {
-    name: "ShadowShift",
-    path: "games/shadowshift/index.html",
-    icon: "🕶️",
-    description:
-      "Stealth puzzle: drag blocker panels to reshape shadows and sneak past lights to the goal.",
-    category: "Puzzle",
-    duration: "3-5 min",
-    tags: ["single player", "stealth", "puzzle", "logic", "drag-and-drop"],
+    tags: ["puzzle", "recursion", "algorithm", "logic", "educational"],
+},
+
+
+{
+
+  name: "Sudoku Game",
+
+  path: "games/sudoku/index.html",
+
+  icon: "🤯",
+
+  description: "Think the number with logic",
+
+  category: "Classic / Skill",
+
+  duration: "Unlimited",
+
+  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
+
+}
   },
 ];
 const container = document.getElementById("games-container");
