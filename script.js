@@ -7,9 +7,15 @@ const games = [
       "Challenge your memory and reflexes in this fast-paced color sequence game! Each round adds a new twist—can you keep up as the pattern grows? Perfect for puzzle lovers and focus masters seeking a brain-boosting thrill.",
     category: "Memory",
     duration: "Progressive",
-    tags: ["memory", "focus", "puzzle", "challenge", "reflex", "brain-training"],
-  }
-  ,
+    tags: [
+      "memory",
+      "focus",
+      "puzzle",
+      "challenge",
+      "reflex",
+      "brain-training",
+    ],
+  },
   {
     name: "Tic Tac Toe",
     path: "games/tictactoe/index.html",
@@ -20,6 +26,66 @@ const games = [
     duration: "2 min rounds",
     tags: ["2 players", "grid", "classic"],
   },
+  {
+    name: "Tap Challenge",
+    path: "games/tap-challenge/index.html",
+    icon: "🖱️",
+    description:
+      "A fast-paced reaction game where you tap the button as many times as possible before time runs out. Test your speed and reflexes!",
+    category: "Arcade",
+    duration: "20 seconds",
+    tags: ["arcade", "reaction", "reflex", "clicker", "timed"],
+  },
+  {
+    name: "Emoji Battle Arena",
+    path: "games/emoji-battle-arena/index.html",
+    icon: "🪄",
+    description:
+      "Fast-paced multiplayer arena where players control emoji characters, move around, and attack opponents. Last emoji standing wins!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["multiplayer", "arcade", "emoji", "action", "battle"],
+  },
+  {
+    name: "Quick Math Battle Quiz",
+    path: "games/quick-math-battle-quiz/index.html",
+    icon: "🧮",
+    description:
+      "A fast-paced math quiz game. Solve arithmetic questions (addition, subtraction, multiplication, division) before the timer runs out. Tracks score and speed for a fun and educational challenge.",
+    category: "Puzzle",
+    duration: "Timed",
+    tags: ["puzzle", "quiz", "math", "logic", "speed"],
+  },
+  {
+    name: "Reaction Duel",
+    path: "games/reaction-duel/index.html",
+    icon: "⚡",
+    description:
+      "A fast-paced two-player reaction game. Press your key as fast as possible after the signal appears!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "two-player", "keyboard"],
+  },
+  {
+    name: "Lights Out",
+    path: "games/lights-out/index.html",
+    icon: "💡",
+    description: "Turn off all lights by toggling your moves wisely!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "brain", "strategy"],
+  },
+  {
+    name: "Brick Breaker",
+    path: "games/brick-breaker/index.html",
+    icon: "🧱",
+    description:
+      "A classic arcade game where the player controls a paddle to deflect a ball and destroy a wall of colored bricks.",
+    category: "Arcade",
+    duration: "Short/Medium",
+    tags: ["arcade", "classic", "physics", "canvas"],
+  },
+
   {
     name: "Snake Game",
     path: "games/snake/index.html",
@@ -51,6 +117,17 @@ const games = [
     tags: ["reflex", "timed", "mouse"],
   },
   {
+    name: "Falling Leaves Collector",
+    path: "games/falling-leaves-collector/index.html",
+    icon: "🍂",
+    description:
+      "Collect falling leaves before they hit the ground. Test your reflexes and hand-eye coordination, and try to get the highest score!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "catch", "reaction"],
+  },
+
+  {
     name: "Reaction Timer",
     path: "games/reaction-timer/index.html",
     icon: "⚡",
@@ -60,6 +137,17 @@ const games = [
     duration: "Quick burst",
     tags: ["speed", "focus", "solo"],
   },
+  {
+    name: "Math Challenge",
+    path: "games/math-challenge/index.html",
+    icon: "🧮",
+    description:
+      "Test your arithmetic skills with addition, subtraction, multiplication, and division against the clock!",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["math", "puzzle", "arithmetic", "timed", "logic"],
+  },
+
   {
     name: "Space Shooter",
     path: "games/space-shooter/index.html",
@@ -81,6 +169,17 @@ const games = [
     tags: ["puzzle", "singleplayer", "numbers"],
   },
   {
+    name: "Spot the Difference",
+    path: "games/spot-the-difference/index.html",
+    icon: "🔍",
+    description:
+      "Find all the differences between two images before time runs out! Test your observation and attention to detail.",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["puzzle", "observation", "attention", "clicker", "challenge"],
+  },
+
+  {
     name: "15 Puzzle",
     path: "games/15-puzzle/index.html",
     icon: "🔳",
@@ -90,6 +189,17 @@ const games = [
     duration: "5-15 min",
     tags: ["puzzle", "tiles", "spatial"],
   },
+  {
+    name: "Endless Runner",
+    path: "games/endless-runner/index.html",
+    icon: "🏃‍♂️",
+    description:
+      "Run endlessly, dodge obstacles, and survive as the game speeds up!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "runner", "reflex", "jump", "dodge"],
+  },
+
   {
     name: "Pong",
     path: "games/pong/index.html",
@@ -101,6 +211,27 @@ const games = [
     tags: ["arcade", "retro", "multiplayer", "cpu"],
   },
   {
+    name: "Avoid the Blocks",
+    path: "games/avoid-the-blocks/index.html",
+    icon: "⬛",
+    description:
+      "A fast-paced obstacle-avoidance game. Dodge falling blocks as long as possible. Tests reflexes and timing with increasing difficulty.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "dodging", "timing"],
+  },
+  {
+    name: "Emoji Match Game",
+    path: "games/emoji-match/index.html",
+    icon: "🧩",
+    description:
+      "A fun and addictive memory game! Flip cards to reveal emojis and match pairs. Track your moves and time—can you finish with the fewest moves?",
+    category: "Memory",
+    duration: "Unlimited",
+    tags: ["memory", "puzzle", "matching", "logic", "brain-training", "fun"],
+  },
+
+  {
     name: "Kong fights ",
     path: "games/The Godzilla Fights game(html,css,js)/index.html",
     icon: "&#129421",
@@ -110,6 +241,17 @@ const games = [
     duration: "Endless",
     tags: ["Fighting", "Special", "multiplayer", "computer"],
   },
+  {
+    name: "Color Switch Challenge",
+    path: "games/color-switch-challenge/index.html",
+    icon: "🎨",
+    description:
+      "A fast-paced game where you navigate a ball through rotating obstacles, matching its color. Test your reflexes and timing!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "reflex", "timing", "color", "challenge"],
+  },
+
   {
     name: "Simon Says",
     path: "games/SimonSays/index.html",
@@ -144,11 +286,23 @@ const games = [
     name: "Balloon Pop",
     path: "games/balloon-pop/index.html",
     icon: "🎈",
-    description: "Click the balloons before they float away! Pop as many as you can.",
+    description:
+      "Click the balloons before they float away! Pop as many as you can.",
     category: "Arcade",
     duration: "30 seconds",
     tags: ["arcade", "reflex", "clicker"],
   },
+  {
+    name: "Minesweeper",
+    path: "games/minesweeper/index.html",
+    icon: "💣",
+    description:
+      "A classic Minesweeper game. Clear the grid without detonating mines. Numbers indicate how many mines are adjacent to a square.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "grid", "strategy"],
+  },
+
   {
     name: "Catch the Dot",
     path: "games/Catch_The_Dot/index.html",
@@ -160,36 +314,71 @@ const games = [
     tags: ["single player", "reaction", "fast-paced", "matte UI"],
   },
   {
-  name: "Rock Paper Scissors",
-  path: "games/rock-paper-scissors/index.html",
-  icon: "✊📄✂️",
-  description: "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
-  category: "Strategy / Fun",
-  duration: "1–2 min",
-  tags: ["fun", "strategy", "classic", "singleplayer"]
-  },
-
-  {
-  name: "FUNHUB - Meme Generator",
-
-    name: "FUNHUB - Meme Generator",
-
-    path: "games/meme_generator/index.html",
-
-    icon: "😂",
-
-    description: "Get your daily dose of memes! Fetch random memes dynamically from the API.",
-
-    category: "Fun / Entertainment",
-
+    name: "Emoji Pop Quiz",
+    path: "games/emoji-pop-quiz/index.html",
+    icon: "📝",
+    description:
+      "A fun and interactive quiz game. Guess the word, phrase, movie, or song from emoji combinations. Challenges your emoji interpretation skills and provides instant feedback.",
+    category: "Puzzle",
     duration: "Unlimited",
-
-    tags: ["single player", "dynamic content", "API-driven", "fun"],
-
+    tags: ["puzzle", "quiz", "emoji", "brain-teaser", "logic"],
   },
 
   {
+    name: "Rock Paper Scissors",
+    path: "games/rock-paper-scissors/index.html",
+    icon: "✊📄✂️",
+    description:
+      "Classic hand game — challenge the computer in a best-of-three Rock, Paper, Scissors match.",
+    category: "Strategy / Fun",
+    duration: "1–2 min",
+    tags: ["fun", "strategy", "classic", "singleplayer"],
+  },
 
+  {
+    name: "FUNHUB - Meme Generator",
+    path: "games/meme_generator/index.html",
+    icon: "😂",
+    description:
+      "Get your daily dose of memes! Fetch random memes dynamically from the API.",
+    category: "Fun / Entertainment",
+    duration: "Unlimited",
+    tags: ["single player", "dynamic content", "API-driven", "fun"],
+  },
+  {
+    name: "Find the Hidden Object",
+    path: "games/find-hidden-object/index.html",
+    icon: "🔍",
+    description:
+      "Spot and click hidden items in cluttered scenes before time runs out!",
+    category: "Puzzle",
+    duration: "60 seconds",
+    tags: ["puzzle", "hidden", "seek", "timed", "casual"],
+  },
+
+  {
+    name: "Color Guessing Game",
+    path: "games/color-guessing-game/index.html",
+    icon: "🎨",
+    description:
+      "Guess the correct color based on the RGB value shown — test your eyes and reflexes!",
+    category: "Puzzle",
+    duration: "30 seconds",
+    tags: ["puzzle", "color", "rgb", "reflex", "visual"],
+  },
+
+  {
+    name: "Click Combo Game Quiz",
+    path: "games/click_combo_game_quiz/index.html",
+    icon: "⚡",
+    description:
+      "Speed + knowledge challenge! Click the correct answers to build combos and score high.",
+    category: "Arcade / Quiz",
+    duration: "Timed",
+    tags: ["quiz", "combo", "reaction", "clicker", "fast"],
+  },
+
+  {
     name: "Number Guessing Game",
 
     path: "games/Number_Gussing_game/NGG.html",
@@ -203,29 +392,255 @@ const games = [
     duration: "Unlimited",
 
     tags: ["single player", "Solo", "Numbers", "fun"],
+  },
+  {
+    name: "Word Scramble",
+    path: "games/word-scramble/index.html",
+    icon: "🔤",
+    description: "Unscramble letters to form words before time runs out!",
+    category: "Puzzle",
+    duration: "Variable",
+    tags: ["puzzle", "word", "timer", "logic"],
+  },
 
-},
-
-{
-
-  name: "Sudoku Game",
-
-  path: "games/sudoku/index.html",
-
-  icon: "🤯",
-
-  description: "Think the number with logic",
-
-  category: "Classic / Skill",
-
-  duration: "Unlimited",
-
-  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
-
-}
+  {
+    name: "Link Game",
+    path: "games/link-game/index.html",
+    icon: "🔗",
+    description:
+      "Connect matching tiles before you run out of moves! A fun logic puzzle for quick thinkers.",
+    category: "Puzzle",
+    duration: "3–5 minutes",
+    tags: ["puzzle", "memory", "logic", "connect"],
+  },
+  {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description:
+      "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed"],
+  },
+  {
+    name: "Number Guessing Game",
+    path: "games/Number_Guessing_Game/index.html",
+    icon: "🤓",
+    description: "Guess the secret number in the lowest number of tries!",
+    category: "Fun / Entertainment",
+    duration: "Unlimited",
+    tags: ["numbers", "solo", "fun"],
+  },
+  {
+    name: "Sudoku Game",
+    path: "games/sudoku/index.html",
+    icon: "🤯",
+    description: "Use logic to fill the grid and solve the puzzle!",
+    category: "Classic / Skill",
+    duration: "Unlimited",
+    tags: ["singleplayer", "numbers", "logic", "brain"],
+  },
+  {
+    name: "Coin Toss Simulator",
+    path: "games/coin_toss_simulator/index.html",
+    icon: "🪙",
+    description: "A simple coin toss simulator. Will it be heads or tails?",
+    category: "Fun / Simulation",
+    duration: "Unlimited",
+    tags: ["single player", "fun", "simulation"],
+  },
+  {
+    name: "Connect Four",
+    path: "games/Connect-four/index.html",
+    icon: "🟡",
+    description:
+      "Form a line of four of your own coloured discs - Outsmart your opponent",
+    category: "Strategy",
+    duration: "5-10 min",
+    tags: ["two-player", "grid", "classic"],
+  },
+  {
+    name: "Hangman",
+    path: "games/hangman/index.html",
+    icon: "🏗️",
+    description:
+      "Guess the word before you run out of attempts! Can you save the stickman?",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "word", "logic", "guessing"],
+  },
+  {
+    name: "Frogger",
+    path: "games/frogger/index.html",
+    icon: "🐸",
+    description:
+      "Classic arcade game where you guide a frog across roads and rivers, avoiding obstacles and reaching safe zones.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reaction", "strategy", "reflex"],
+  },
+  {
+    name: "8 Ball Pool Billiards Multiplayer",
+    path: "games/8-ball-pool/index.html",
+    icon: "🎱",
+    description:
+      "Realistic local 2-player 8-ball pool with cue aiming, power meter and physics using Canvas.",
+    category: "Arcade",
+    duration: "5-15 minutes",
+    tags: ["arcade", "multiplayer", "physics", "canvas"],
+  },
+  {
+    name: "Tiny Fishing",
+    path: "games/tiny-fishing/index.html",
+    icon: "🎣",
+    description:
+      "Cast your line, catch fish, and upgrade your gear! A relaxing fishing challenge built with Canvas.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "fishing", "canvas", "upgrade", "relaxing"],
+  },
+  {
+    name: "Grass Defense",
+    path: "games/grass-defense/index.html",
+    icon: "🌿",
+    description:
+      "Strategic tower defense! Place plants to defend your garden from pests.",
+    category: "Strategy",
+    duration: "Wave-based",
+    tags: ["strategy", "defense", "canvas", "logic"],
+  },
+  {
+    name: "Quote Generator",
+    path: "games/quote/index.html",
+    icon: "🗃️",
+    description: "Generate your random quote",
+    category: "Simple",
+    duration: "Unlimited",
+    tags: ["single-player", "quote", "classic"],
+  },
+  {
+    name: "Color Clicker",
+    path: "games/color-clicker/index.html",
+    icon: "🎨",
+    description:
+      "Click the color box as fast as you can to score points! Every click changes the color, testing your speed and focus.",
+    category: "Arcade / Reflex",
+    duration: "Endless",
+    tags: ["reflex", "clicker", "solo", "color"],
+  },
+  {
+    name: "Odd One Out",
+    path: "games/odd-one-out/index.html",
+    icon: "🔍",
+    description:
+      "Find the odd emoji/ odd-coloured tile out from a group of similar ones!",
+    category: "Puzzle",
+    duration: "1 min",
+    tags: ["single player", "puzzle", "emoji", "fun"],
+  },
+  {
+    name: "Tap the Bubble",
+    path: "games/tap-the-bubble/index.html",
+    icon: "🫧",
+    description:
+      "Tap the bubbles as they appear to score points! How many can you pop?",
+    category: "Arcade / Reflex",
+    duration: "Endless",
+    tags: ["reflex", "clicker", "solo", "bubble"],
+  },
+  {
+    name: "Pixel Art Creator",
+    path: "games/pixel-art-creator/index.html",
+    icon: "🎨",
+    description:
+      "Create beautiful pixel art on a 16x16 grid! Choose colors, draw, save your creations, and export as images.",
+    category: "Creative",
+    duration: "Unlimited",
+    tags: ["art", "creative", "pixel", "drawing", "solo"],
+  },
+  {
+    name: "Word Chain Puzzle",
+    path: "games/word-chain-puzzle/index.html",
+    icon: "🔗",
+    description:
+      "Build chains of related words in different categories with difficulty levels! Start with a word and find the next one starting with the last letter. Features hints, sound effects, and high score tracking.",
+    category: "Puzzle",
+    duration: "1 min rounds",
+    tags: [
+      "puzzle",
+      "words",
+      "vocabulary",
+      "timed",
+      "brain-teaser",
+      "difficulty",
+      "hints",
+    ],
+  },
+  {
+    name: "Starry Night Sky",
+    path: "games/starry-night-sky/index.html",
+    icon: "🌌",
+    description:
+      "A relaxing meditation game where you connect stars to form constellations. Features ambient music, breathing guide, and achievement system for mindful star gazing.",
+    category: "Relaxation",
+    duration: "Unlimited",
+    tags: [
+      "relaxation",
+      "meditation",
+      "stars",
+      "constellations",
+      "mindfulness",
+      "ambient",
+      "breathing",
+    ],
+  },
+  {
+    name: "Precision Archer",
+    path: "games/precision-archer/index.html",
+    icon: "🏹",
+    description:
+      "Test your aiming skills in this physics-based archery game! Adjust power and angle, account for wind effects, and hit moving targets for maximum points.",
+    category: "Skill",
+    duration: "10-15 min",
+    tags: [
+      "archery",
+      "physics",
+      "precision",
+      "aiming",
+      "wind",
+      "targets",
+      "skill-based",
+    ],
+  },
+  {
+    name: "Color Switch",
+    path: "games/color-switch/index.html",
+    icon: "🎨",
+    description:
+      "A fast-paced color-matching platformer! Switch the ball's color to match rotating platforms and survive as long as possible. Features smooth animations and increasing difficulty.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: [
+      "color-matching",
+      "platformer",
+      "timing",
+      "reflexes",
+      "endless",
+      "mobile-friendly",
+    ],
+  },
+  {
+    name: "ShadowShift",
+    path: "games/shadowshift/index.html",
+    icon: "🕶️",
+    description:
+      "Stealth puzzle: drag blocker panels to reshape shadows and sneak past lights to the goal.",
+    category: "Puzzle",
+    duration: "3-5 min",
+    tags: ["single player", "stealth", "puzzle", "logic", "drag-and-drop"],
   },
 ];
-
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
 const emptyState = document.getElementById("empty-state");
@@ -292,20 +707,22 @@ function renderGames(list) {
     card.style.setProperty("--stagger", `${index * 60}ms`);
 
     card.innerHTML = `
-      <div class="card-header">
-        <span class="card-pill">${game.icon} ${game.category}</span>
-        <span class="card-timing">${game.duration}</span>
-      </div>
-      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
-      <p class="card-body">${game.description}</p>
-      <div class="card-tags">
-        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
-      </div>
-      <div class="card-actions">
-        <a class="play-button" href="${game.path}">Play now</a>
-        <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
-      </div>
-    `;
+      <div class="card-header">
+        <span class="card-pill">${game.icon} ${game.category}</span>
+        <span class="card-timing">${game.duration}</span>
+      </div>
+      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
+      <p class="card-body">${game.description}</p>
+      <div class="card-tags">
+        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
+      </div>
+      <div class="card-actions">
+        <a class="play-button" href="${game.path}">Play now</a>
+        <a class="play-link" href="${
+      game.path
+    }" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
+      </div>
+    `;
 
     card.addEventListener("pointermove", handleCardTilt);
     card.addEventListener("pointerleave", resetCardTilt);
@@ -326,12 +743,7 @@ function filterGames(rawTerm) {
   if (!term) return games;
 
   return games.filter((game) => {
-    const haystack = [
-      game.name,
-      game.category,
-      game.description,
-      ...game.tags,
-    ]
+    const haystack = [game.name, game.category, game.description, ...game.tags]
       .join(" ")
       .toLowerCase();
     return haystack.includes(term);
@@ -375,15 +787,26 @@ function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById("themeToggle");
+const appBody = document.body;
+const themeKey = "theme-preference";
 
-// Load saved theme
-if (localStorage.getItem('theme') === 'light') {
-  body.classList.add('light-theme');
-  themeToggle.textContent = '🌞';
+function applyTheme(theme) {
+  appBody.classList.toggle("light-theme", theme === "light");
+
+  if (themeToggleBtn) {
+    themeToggleBtn.innerHTML = theme === "light" ? "☀️" : "🌙";
+  }
+
+  try {
+    localStorage.setItem(themeKey, theme);
+  } catch (e) {
+    console.warn("Could not save theme preference to localStorage.");
+  }
 }
+const savedTheme = localStorage.getItem(themeKey) || "dark"; // Default to dark
+applyTheme(savedTheme);
 
 // Toggle on click
 themeToggle.addEventListener('click', () => {
