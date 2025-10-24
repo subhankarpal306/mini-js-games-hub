@@ -27,64 +27,14 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
-    name: "Tap Challenge",
-    path: "games/tap-challenge/index.html",
-    icon: "🖱️",
-    description:
-      "A fast-paced reaction game where you tap the button as many times as possible before time runs out. Test your speed and reflexes!",
+    name: "Painting Rush",
+    path: "games/painting-rush/index.html",
+    icon: "🖌️",
+    description: "A fast-paced painting game where you must paint all targets before time runs out. Complete levels and earn points!",
     category: "Arcade",
-    duration: "20 seconds",
-    tags: ["arcade", "reaction", "reflex", "clicker", "timed"],
-  },
-  {
-    name: "Emoji Battle Arena",
-    path: "games/emoji-battle-arena/index.html",
-    icon: "🪄",
-    description:
-      "Fast-paced multiplayer arena where players control emoji characters, move around, and attack opponents. Last emoji standing wins!",
-    category: "Arcade",
-    duration: "Unlimited",
-    tags: ["multiplayer", "arcade", "emoji", "action", "battle"],
-  },
-  {
-    name: "Quick Math Battle Quiz",
-    path: "games/quick-math-battle-quiz/index.html",
-    icon: "🧮",
-    description:
-      "A fast-paced math quiz game. Solve arithmetic questions (addition, subtraction, multiplication, division) before the timer runs out. Tracks score and speed for a fun and educational challenge.",
-    category: "Puzzle",
     duration: "Timed",
-    tags: ["puzzle", "quiz", "math", "logic", "speed"],
-  },
-  {
-    name: "Reaction Duel",
-    path: "games/reaction-duel/index.html",
-    icon: "⚡",
-    description:
-      "A fast-paced two-player reaction game. Press your key as fast as possible after the signal appears!",
-    category: "Arcade",
-    duration: "Unlimited",
-    tags: ["arcade", "reflex", "two-player", "keyboard"],
-  },
-  {
-    name: "Lights Out",
-    path: "games/lights-out/index.html",
-    icon: "💡",
-    description: "Turn off all lights by toggling your moves wisely!",
-    category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "logic", "brain", "strategy"],
-  },
-  {
-    name: "Brick Breaker",
-    path: "games/brick-breaker/index.html",
-    icon: "🧱",
-    description:
-      "A classic arcade game where the player controls a paddle to deflect a ball and destroy a wall of colored bricks.",
-    category: "Arcade",
-    duration: "Short/Medium",
-    tags: ["arcade", "classic", "physics", "canvas"],
-  },
+    tags: ["arcade", "reflex", "painting", "canvas", "speed", "precision"],
+},
 
   {
     name: "Snake Game",
