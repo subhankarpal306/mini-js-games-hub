@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Emoji Connect",
+    path: "games/emoji-connect/index.html",
+    icon: "🧩",
+    description: "Connect matching emojis without overlapping lines! Solve all pairs as fast as you can.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "emoji", "logic", "memory"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
