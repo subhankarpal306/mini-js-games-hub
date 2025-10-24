@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Catch the Stars",
+    path: "games/catch-the-stars/index.html",
+    icon: "🌠",
+    description: "Catch as many falling stars as possible using a movable catcher. Avoid missing stars and rack up your score!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "score", "fun"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
