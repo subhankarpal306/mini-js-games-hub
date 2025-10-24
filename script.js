@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Tap & Pop Clouds",
+    path: "games/tap-pop-clouds/index.html",
+    icon: "☁️",
+    description: "Click or tap on floating clouds to pop them and collect rainbows. Simple, fun, and addictive!",
+    category: "Arcade",
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker", "tap", "pop"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
