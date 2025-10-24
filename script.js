@@ -195,6 +195,16 @@ const games = [
     tags: ["single player", "Solo", "Numbers", "fun"],
 
 },
+  {
+    name: "Tower of Hanoi Visualizer",
+    path: "games/tower-of-hanoi/index.html",
+    icon: "🗼",
+    description: "Interactive visualizer of the classic Tower of Hanoi puzzle. Auto-solve, manual moves, step controls, and learn recursion!",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "recursion", "algorithm", "logic", "educational"],
+},
+
 
 {
 
