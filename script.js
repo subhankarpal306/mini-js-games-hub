@@ -3,7 +3,7 @@ const games = [
     name: "Simon Says",
     path: "games/Simon-Says-Game/index.html",
     icon: "🧠",
-    description:
+    description: 
       "Challenge your memory and reflexes in this fast-paced color sequence game! Each round adds a new twist—can you keep up as the pattern grows? Perfect for puzzle lovers and focus masters seeking a brain-boosting thrill.",
     category: "Memory",
     duration: "Progressive",
@@ -34,6 +34,13 @@ const games = [
     category: "Puzzle",
     duration: "Unlimited",
     tags: ["puzzle", "emoji", "logic", "memory"],
+    name: "Tap & Pop Clouds",
+    path: "games/tap-pop-clouds/index.html",
+    icon: "☁️",
+    description: "Click or tap on floating clouds to pop them and collect rainbows. Simple, fun, and addictive!",
+    category: "Arcade",
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker", "tap", "pop"],
 },
 
   {
