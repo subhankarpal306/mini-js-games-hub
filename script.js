@@ -569,9 +569,18 @@ const games = [
   category: "Puzzle",
   duration: "3-5 min",
   tags: ["single player", "stealth", "puzzle", "logic", "drag-and-drop"]
-}
+},
+{
+  name: "Clicker Farmer",
+  path: "games/click-farmer/index.html",
+  icon: "🧑‍🌾",
+  category: "Simulation",
+  duration: "Endless",
+  tags: ["Farming", "Idle", "Management", "Upgrades"]
+},
+];
 
-];const container = document.getElementById("games-container");
+const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
 const emptyState = document.getElementById("empty-state");
 const clearSearchButton = document.getElementById("clear-search");
