@@ -3,7 +3,7 @@ const games = [
     name: "Simon Says",
     path: "games/Simon-Says-Game/index.html",
     icon: "🧠",
-    description:
+    description: 
       "Challenge your memory and reflexes in this fast-paced color sequence game! Each round adds a new twist—can you keep up as the pattern grows? Perfect for puzzle lovers and focus masters seeking a brain-boosting thrill.",
     category: "Memory",
     duration: "Progressive",
@@ -67,15 +67,14 @@ const games = [
     tags: ["reflex", "timed", "mouse"],
   },
   {
-    name: "Falling Leaves Collector",
-    path: "games/falling-leaves-collector/index.html",
-    icon: "🍂",
-    description:
-      "Collect falling leaves before they hit the ground. Test your reflexes and hand-eye coordination, and try to get the highest score!",
+    name: "Blink Catch",
+    path: "games/blink-catch/index.html",
+    icon: "⚡",
+    description: "Click the blinking icon as fast as you can! Speed increases as your score grows.",
     category: "Arcade",
     duration: "Unlimited",
-    tags: ["arcade", "reflex", "clicker", "catch", "reaction"],
-  },
+    tags: ["arcade", "reflex", "clicker", "speed", "reaction"],
+},
 
   {
     name: "Reaction Timer",
