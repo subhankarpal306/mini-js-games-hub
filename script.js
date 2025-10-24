@@ -27,6 +27,13 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+  name: "Shape Rotation Puzzle",
+  path: "games/shape-rotation-puzzle/index.html",
+  icon: "🟩",
+  description: "Rotate and fit falling shapes into correct positions. Complete rows or patterns to score points and level up!",
+  category: "Puzzle",
+  duration: "Unlimited",
+  tags: ["puzzle", "rotation", "logic", "blocks", "strategy"]
     name: "Painting Rush",
     path: "games/painting-rush/index.html",
     icon: "🖌️",
