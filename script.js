@@ -190,16 +190,14 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
-    name: "Endless Runner",
-    path: "games/endless-runner/index.html",
-    icon: "🏃‍♂️",
-    description:
-      "Run endlessly, dodge obstacles, and survive as the game speeds up!",
-    category: "Arcade",
-    duration: "Endless",
-    tags: ["arcade", "runner", "reflex", "jump", "dodge"],
-  },
-
+    name: "Trivia Showdown",
+    path: "games/trivia-showdown/index.html",
+    icon: "🧠",
+    description: "A fast-paced quiz and trivia game! Answer multiple-choice questions under time pressure to earn points. Play solo or in showdown mode against a friend.",
+    category: "Puzzle",
+    duration: "15 seconds per question",
+    tags: ["quiz", "trivia", "puzzle", "knowledge", "multiplayer"]
+},
   {
     name: "Pong",
     path: "games/pong/index.html",
@@ -809,9 +807,9 @@ function applyTheme(theme) {
 const savedTheme = localStorage.getItem(themeKey) || "dark"; // Default to dark
 applyTheme(savedTheme);
 
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener("click", () => {
-    const isLight = appBody.classList.contains("light-theme");
-    applyTheme(isLight ? "dark" : "light");
-  });
-}
+// Toggle on click
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const isLight = body.classList.contains('light-theme');
+  themeToggle.textContent = isLight
+});
