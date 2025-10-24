@@ -56,6 +56,16 @@ This project is open to everyone — from beginners to pros.
 
 ---
 
+## ⏳ Stale Issue & PR Policy  
+### To keep the repository clean and active, we automatically mark inactive issues and pull requests as stale:  
+- If an issue or PR has **no activity for 5 days**, it will be **marked as stale** with a comment.  
+- If it remains inactive for **another 2 days**, it may be **automatically closed**.
+- You can **remove the `stale` label** or **comment on the thread** to keep it open.
+
+### This helps contributors focus on active work and keeps the project manageable. 🚀 
+
+---
+
 ## 💬 Need Help?
 Open an [issue](https://github.com/ritaban06/mini-js-games-hub/issues) for questions or discussions.  
 We’re happy to guide you!
