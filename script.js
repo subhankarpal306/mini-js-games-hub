@@ -382,6 +382,16 @@ const games = [
 
 }
   },
+  {
+    name: "Fruit Slicer",
+    path: "games/fruit-slicer/index.html",
+    icon: "🍎",
+    description:
+      "Slice flying fruits with mouse or touch gestures; avoid bombs. Score based on accuracy and speed.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "action", "swipe", "fruit", "bombs", "mobile-friendly"],
+  },
 ];
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
