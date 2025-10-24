@@ -51,6 +51,16 @@ const games = [
     tags: ["reflex", "timed", "mouse"],
   },
   {
+    name: "Blink Catch",
+    path: "games/blink-catch/index.html",
+    icon: "⚡",
+    description: "Click the blinking icon as fast as you can! Speed increases as your score grows.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "clicker", "speed", "reaction"],
+},
+
+  {
     name: "Reaction Timer",
     path: "games/reaction-timer/index.html",
     icon: "⚡",
