@@ -21,6 +21,16 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Painting Rush",
+    path: "games/painting-rush/index.html",
+    icon: "🖌️",
+    description: "A fast-paced painting game where you must paint all targets before time runs out. Complete levels and earn points!",
+    category: "Arcade",
+    duration: "Timed",
+    tags: ["arcade", "reflex", "painting", "canvas", "speed", "precision"],
+},
+
+  {
     name: "Snake Game",
     path: "games/snake/index.html",
     icon: "🐍",
