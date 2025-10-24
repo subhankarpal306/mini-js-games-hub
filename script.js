@@ -225,6 +225,13 @@ const games = [
     tags: ["memory", "focus", "puzzle", "challenge"],
   },
   {
+    name: "Speedy Typing Game",
+    path: "games/speedy-typing/index.html",
+    icon: "⌨️",
+    description: "Test your typing speed and accuracy by typing words before time runs out!",
+    category: "Skill",
+    duration: "60 seconds",
+    tags: ["typing", "skill", "reflex", "speed"],
     name: "Spot the Odd Emoji",
     path: "games/spot-the-odd-emoji/index.html",
     icon: "🔎",
