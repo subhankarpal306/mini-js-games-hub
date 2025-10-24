@@ -121,6 +121,16 @@ const games = [
     tags: ["memory", "focus", "puzzle", "challenge"],
   },
   {
+    name: "Spot the Odd Emoji",
+    path: "games/spot-the-odd-emoji/index.html",
+    icon: "🔎",
+    description: "Find the one emoji that’s different from the rest before time runs out! Fun and challenging puzzle game.",
+    category: "Puzzle",
+    duration: "Timed",
+    tags: ["puzzle", "emoji", "attention", "speed", "pattern recognition"],
+},
+
+  {
     name: "Typing Test",
     path: "games/typing-test/index.html",
     icon: "⌨️",
