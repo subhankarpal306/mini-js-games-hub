@@ -12,6 +12,7 @@
   --text-300: #c9d1d9;
   --text-500: #94a3b8;
   --glass-border: rgba(148, 163, 184, 0.12);
+  --ui-border: rgba(255,255,255,0.22); /* stronger white border in dark mode */
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
@@ -31,7 +32,9 @@ body.light-theme {
   --text-300: #334155;
   --text-500: #64748b;
   --glass-border: rgba(148, 163, 184, 0.25);
+  --ui-border: rgba(10,10,10,0.12);
   background: radial-gradient(circle at top left, #f1f5f9, #e2e8f0);
+  --border-color: rgba(37, 99, 235, 0.3);
   color-scheme: light;
 }
 /* ===========================
@@ -55,14 +58,20 @@ body.light-theme {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 body.light-theme .game-card,
+body.light-theme .hero__nav,
 body.light-theme .preview-card,
-body.light-theme .hero__stats div {
+body.light-theme .hero__stats div,
+body.light-theme .logo,
+body.light-theme .pro-badges,
+body.light-theme .hub__controls,
+body.light-theme .search{
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 body.light-theme .game-card:hover,
+body.light-theme .hero__nav:hover,
 body.light-theme .preview-card:hover {
   background: rgba(250, 250, 255, 1);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
@@ -78,7 +87,7 @@ body.light-theme .preview-card:hover {
 
 .search,
 .hub__controls,
-.empty {
+.empty{
   background: rgba(255, 255, 255, 0.75); /* soft white glass */
   border: 1px solid rgba(200, 210, 230, 0.4); /* light border */
   backdrop-filter: blur(25px);
@@ -284,7 +293,10 @@ a {
   margin-top: 0.5rem;
 }
 
-.hero__eyebrow {
+.hero__label {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ui-border); /* Fix applied here by splitting border */
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--primary);
@@ -405,6 +417,12 @@ a {
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(3,6,18,0.28);
+  border: 1px solid var(--ui-border);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.hero__nav:hover {
+  border-color: rgba(255,255,255,0.36);
 }
 
 .hub {
@@ -439,9 +457,15 @@ a {
   border-radius: 999px;
   border: 1px solid rgba(88, 166, 255, 0.18);
   background: rgba(14, 20, 33, 0.85);
-  color: var(--text-100);
+  color: var(--text-100); /* This correctly toggles the text color */
   font-size: 1rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme .search input {
+  background: rgba(255, 255, 255, 0.85); /* Light background */
+  border-color: rgba(0, 0, 0, 0.1); /* Light border */
+  /* color: var(--text-100) is inherited and works perfectly */
 }
 
 .search input:focus-visible {
@@ -833,8 +857,7 @@ a {
 /* =====================
    🌗 THEME TOGGLE BUTTON
 ===================== */
-
-#theme-toggle {
+.theme-toggle {
   background: rgba(14, 20, 33, 0.85);
   border: 1px solid rgba(88, 166, 255, 0.3);
   color: var(--text-100);
@@ -849,16 +872,24 @@ a {
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-
-#theme-toggle:hover {
-  background: var(--primary);
-  color: #020305;
-  transform: scale(1.1);
+body.light-theme .theme-toggle {
+  background: rgba(245, 247, 255, 0.85);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  color: var(--text-100);
 }
+
+.theme-toggle:hover {
+  opacity: 0.85;
+  background: rgb(23, 34, 58, 0.85);
+  color: #020305;
+  transform: scale(1.05);
+  transform: translateY(-3px);
+}
+
 /* ===========================
    🌟 PRO PLAYER BADGES
 =========================== */
-#pro-badges {
+.pro-badges {
   margin-bottom: 2rem;
   padding: 1.5rem;
   border-radius: var(--radius-lg);
@@ -868,7 +899,7 @@ a {
   backdrop-filter: blur(18px) saturate(1.2);
 }
 
-#pro-badges h2 {
+.pro-badges h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--primary);
@@ -926,3 +957,48 @@ a {
     gap: 0.75rem;
   }
 }
+
+/* Scroll to Top/Bottom Buttons */
+.scroll-btn {
+  display: none; /* Hidden by default, JS will show when needed */
+  position: fixed;
+  right: 2rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  border: 1px solid var(--ui-border);
+  background: linear-gradient(135deg, rgba(88,166,255,0.92), rgba(168,85,247,0.85));
+  color: #fff;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.scroll-btn:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.scroll-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(88,166,255,0.12);
+  border-color: rgba(255,255,255,0.6);
+}
+#scroll-top {
+  bottom: 5.5rem;
+}
+#scroll-bottom {
+  bottom: 2rem;
+}
+@media (max-width: 600px) {
+  .scroll-btn {
+    right: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.2rem;
+  }
+  #scroll-top { bottom: 4.5rem; }
+  #scroll-bottom { bottom: 1rem; }
+}
+
