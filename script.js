@@ -27,6 +27,13 @@ const games = [
     tags: ["2 players", "grid", "classic"],
   },
   {
+    name: "Star Jump",
+    path: "games/star-jump/index.html",
+    icon: "⭐",
+    description: "Jump between floating stars and avoid black holes. Reach the highest score!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "jump", "reflex", "clicker"],
     name: "Emoji Connect",
     path: "games/emoji-connect/index.html",
     icon: "🧩",
