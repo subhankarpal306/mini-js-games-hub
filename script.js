@@ -91,6 +91,15 @@ const games = [
     tags: ["puzzle", "tiles", "spatial"],
   },
   {
+    name: "Trivia Showdown",
+    path: "games/trivia-showdown/index.html",
+    icon: "🧠",
+    description: "A fast-paced quiz and trivia game! Answer multiple-choice questions under time pressure to earn points. Play solo or in showdown mode against a friend.",
+    category: "Puzzle",
+    duration: "15 seconds per question",
+    tags: ["quiz", "trivia", "puzzle", "knowledge", "multiplayer"]
+},
+  {
     name: "Pong",
     path: "games/pong/index.html",
     icon: "🏓",
