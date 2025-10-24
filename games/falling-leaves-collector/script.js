@@ -9,6 +9,7 @@ let lives = 5;
 let leaves = [];
 let basket = { x: canvas.width / 2 - 40, y: canvas.height - 50, width: 80, height: 20, speed: 7 };
 let gameOver = false;
+let animationId; // store the animation frame id
 
 // Generate random leaves
 function createLeaf() {
@@ -62,18 +63,19 @@ function update() {
     // Add leaves randomly
     if (Math.random() < 0.02) createLeaf();
 
-    // Update leaf positions
-    leaves.forEach((leaf, index) => {
+    // Update leaf positions - iterate backwards for safe removal
+    for (let i = leaves.length - 1; i >= 0; i--) {
+        const leaf = leaves[i];
         leaf.y += leaf.speed;
         if (checkCollision(leaf)) {
             score += 10;
-            leaves.splice(index, 1);
+            leaves.splice(i, 1);
         } else if (leaf.y > canvas.height) {
             lives--;
-            leaves.splice(index, 1);
+            leaves.splice(i, 1);
             if (lives <= 0) gameOver = true;
         }
-    });
+    }
 
     drawLeaves();
     drawBasket();
@@ -88,7 +90,7 @@ function update() {
         ctx.fillText("Game Over!", canvas.width / 2, canvas.height / 2);
         ctx.fillText(`Score: ${score}`, canvas.width / 2, canvas.height / 2 + 40);
     } else {
-        requestAnimationFrame(update);
+        animationId = requestAnimationFrame(update);
     }
 }
 
@@ -108,13 +110,14 @@ canvas.addEventListener('mousemove', e => {
 
 // Restart button
 document.getElementById('restartBtn').addEventListener('click', () => {
+    cancelAnimationFrame(animationId); // Stop any existing loop
     score = 0;
     lives = 5;
     leaves = [];
     basket.x = canvas.width / 2 - 40;
     gameOver = false;
-    update();
+    animationId = requestAnimationFrame(update); // Start a fresh loop
 });
 
 // Start game
-update();
+animationId = requestAnimationFrame(update);
