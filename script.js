@@ -211,15 +211,14 @@ const games = [
     tags: ["memory", "focus", "puzzle", "challenge"],
   },
   {
-    name: "Color Sequence Memory",
-    path: "games/color-sequence-memory/index.html",
-    icon: "🎨",
-    description:
-      "Test your memory by following the color sequence shown on the screen. Repeat the pattern correctly to advance through increasingly challenging levels.",
+    name: "Spot the Odd Emoji",
+    path: "games/spot-the-odd-emoji/index.html",
+    icon: "🔎",
+    description: "Find the one emoji that’s different from the rest before time runs out! Fun and challenging puzzle game.",
     category: "Puzzle",
-    duration: "Unlimited",
-    tags: ["puzzle", "memory", "sequence", "logic", "challenge"],
-  },
+    duration: "Timed",
+    tags: ["puzzle", "emoji", "attention", "speed", "pattern recognition"],
+},
 
   {
     name: "Typing Test",
