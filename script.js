@@ -370,8 +370,6 @@ const games = [
     duration: "Variable",
     tags: ["puzzle", "word", "timer", "logic"],
   },
-
-},
   {
     name: "Tower of Hanoi Visualizer",
     path: "games/tower-of-hanoi/index.html",
@@ -397,43 +395,8 @@ const games = [
 
   duration: "Unlimited",
 
-  tags: ["relaxation", "meditation", "stars", "constellations", "mindfulness", "ambient", "breathing"],
-},
-{
-  name: "Precision Archer",
-  path: "games/precision-archer/index.html",
-  icon: "🏹",
-  description: "Test your aiming skills in this physics-based archery game! Adjust power and angle, account for wind effects, and hit moving targets for maximum points.",
-  category: "Skill",
-  duration: "10-15 min",
-  tags: ["archery", "physics", "precision", "aiming", "wind", "targets", "skill-based"],
-},
-{
-  name: "Color Switch",
-  path: "games/color-switch/index.html",
-  icon: "🎨",
-  description: "A fast-paced color-matching platformer! Switch the ball's color to match rotating platforms and survive as long as possible. Features smooth animations and increasing difficulty.",
-  category: "Arcade",
-  duration: "Endless",
-  tags: ["color-matching", "platformer", "timing", "reflexes", "endless", "mobile-friendly"],
-},
-{
-  name: "ShadowShift",
-  path: "games/shadowshift/index.html",
-  icon: "🕶️",
-  description: "Stealth puzzle: drag blocker panels to reshape shadows and sneak past lights to the goal.",
-  category: "Puzzle",
-  duration: "3-5 min",
-  tags: ["single player", "stealth", "puzzle", "logic", "drag-and-drop"]
-},
-{
-  name: "Clicker Farmer",
-  path: "games/click-farmer/index.html",
-  icon: "🧑‍🌾",
-  category: "Simulation",
-  description: "Plant and harvest crops to earn money and XP. Expand your farm, unlock new seeds, and watch your agricultural empire grow!",
-  duration: "Endless",
-  tags: ["Farming", "Idle", "Management", "Upgrades"]
+  tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
+
 },
   {
     name: "Fruit Slicer",
