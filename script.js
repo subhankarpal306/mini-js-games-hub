@@ -627,7 +627,7 @@ const games = [
   // --- Added Games Below ---
   {
     name: "Peglinko",
-    path: "games/peglinko/index.html", // Corrected path
+    path: "games/peglinko/index.html", // Corrected path from ' peglinko'
     icon: "🎯",
     description:
       "Drop balls and watch them bounce through pegs to score points.",
@@ -861,6 +861,196 @@ const games = [
     duration: "Timed",
     tags: ["memory", "matching", "puzzle"],
   },
+  // Newly added games from the folder list
+  {
+    name: "Blink Catch",
+    path: "games/blink-catch/index.html",
+    icon: "⚡",
+    description: "Click the blinking icon as fast as you can before it moves!",
+    category: "Reflex",
+    duration: "Endless",
+    tags: ["reflex", "speed", "clicker"],
+  },
+  {
+    name: "Boom",
+    path: "games/boom/index.html",
+    icon: "💣",
+    description: "Click the bombs before they explode!",
+    category: "Arcade",
+    duration: "Level-based",
+    tags: ["arcade", "clicker", "reflex"],
+  },
+  {
+    name: "Burger Builder",
+    path: "games/burger-builder/index.html",
+    icon: "🍔",
+    description: "Assemble the burger ingredients in the correct order.",
+    category: "Puzzle",
+    duration: "Quick",
+    tags: ["puzzle", "food", "sequence"],
+  },
+  {
+    name: "Catch the Ball",
+    path: "games/catch-the-ball/index.html",
+    icon: "🎯",
+    description: "Click the moving ball to score points.",
+    category: "Arcade",
+    duration: "Timed",
+    tags: ["arcade", "reflex", "clicker"],
+  },
+  {
+    name: "Catch the Falling Emoji",
+    path: "games/catch-the-falling-emoji/index.html",
+    icon: "🎯",
+    description: "Catch the target emoji falling from the sky.",
+    category: "Arcade",
+    duration: "Lives-based",
+    tags: ["arcade", "catching", "reflex", "emoji"],
+  },
+  {
+    name: "Catch the Stars",
+    path: "games/catch-the-stars/index.html",
+    icon: "🌟",
+    description: "Control a catcher to collect falling stars.",
+    category: "Arcade",
+    duration: "Lives-based",
+    tags: ["arcade", "catching", "reflex", "stars"],
+  },
+  {
+    name: "Clicker Farmer",
+    path: "games/Clicker Farmer/index.html",
+    icon: "🧑‍🌾",
+    description: "Plant crops, harvest them, and expand your farm.",
+    category: "Simulation",
+    duration: "Endless",
+    tags: ["clicker", "farming", "simulation", "idle"],
+  },
+  {
+    name: "Color Catch",
+    path: "games/color catch/index.html",
+    icon: "🎯",
+    description: "Click circles matching the target color.",
+    category: "Arcade",
+    duration: "Timed",
+    tags: ["arcade", "reflex", "color", "clicker"],
+  },
+  {
+    name: "Color Merge",
+    path: "games/color-merge/index.html",
+    icon: "🎨",
+    description: "Merge blocks of the same color to reach the target.",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["puzzle", "merge", "color", "casual"],
+  },
+  {
+    name: "Connect Four",
+    path: "games/Connect-four/index.html",
+    icon: "🔴🟡",
+    description: "Drop discs to connect four in a row.",
+    category: "Strategy",
+    duration: "Variable",
+    tags: ["strategy", "two-player", "classic", "grid"],
+  },
+  {
+    name: "Emoji Connect",
+    path: "games/emoji-connect/index.html",
+    icon: "🧩",
+    description: "Connect matching emojis without overlapping lines.",
+    category: "Puzzle",
+    duration: "Variable",
+    tags: ["puzzle", "emoji", "connecting", "logic"],
+  },
+  {
+    name: "Fast Finger Maze",
+    path: "games/fast-finger-maze/index.html",
+    icon: "👉",
+    description: "Navigate a maze using arrow keys before time runs out.",
+    category: "Arcade",
+    duration: "Timed",
+    tags: ["maze", "arcade", "speed", "keyboard"],
+  },
+  {
+    name: "Logic Grid",
+    path: "games/logic-grid/index.html",
+    icon: "🧩",
+    description: "Fill the grid based on logical clues.",
+    category: "Puzzle",
+    duration: "Variable",
+    tags: ["puzzle", "logic", "grid", "brain-teaser"],
+  },
+  {
+    name: "Memory Flip Game",
+    path: "games/Memory-Game/index.html",
+    icon: "🧠",
+    description: "Flip cards to find matching emoji pairs.",
+    category: "Memory",
+    duration: "Variable",
+    tags: ["memory", "puzzle", "matching", "emoji"],
+  },
+  {
+    name: "Number Pop",
+    path: "games/Number-Pop/index.html",
+    icon: "#️⃣",
+    description: "Click only the even numbers before they disappear.",
+    category: "Arcade",
+    duration: "Timed",
+    tags: ["arcade", "reflex", "numbers", "clicker"],
+  },
+  {
+    name: "Painting Rush",
+    path: "games/painting-rush/index.html",
+    icon: "🎨",
+    description: "Quickly paint the targets before time runs out.",
+    category: "Arcade",
+    duration: "Timed",
+    tags: ["arcade", "speed", "painting", "clicker"],
+  },
+  {
+    name: "Shape Rotation Puzzle",
+    path: "games/shape-rotation-puzzle/index.html",
+    icon: "🔄",
+    description: "Rotate and place falling shapes (like Tetris).",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["puzzle", "blocks", "rotation", "classic"],
+  },
+  {
+    name: "Star Jump",
+    path: "games/star-jump/index.html",
+    icon: "⭐",
+    description: "Jump between stars, avoid black holes.",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["arcade", "jumping", "platformer", "space"],
+  },
+  {
+    name: "Tap Pop Clouds",
+    path: "games/tap-pop-clouds/index.html",
+    icon: "☁️",
+    description: "Tap the rising clouds before they float away.",
+    category: "Arcade",
+    duration: "Lives-based",
+    tags: ["arcade", "clicker", "reflex", "casual"],
+  },
+  {
+    name: "Tower of Hanoi",
+    path: "games/tower-of-hanoi/index.html",
+    icon: "🗼",
+    description: "Move disks between pegs following the rules.",
+    category: "Puzzle",
+    duration: "Variable",
+    tags: ["puzzle", "logic", "strategy", "classic"],
+  },
+  {
+    name: "Trivia Showdown",
+    path: "games/trivia-showdown/index.html",
+    icon: "❓",
+    description: "Answer trivia questions from various categories.",
+    category: "Quiz",
+    duration: "Variable",
+    tags: ["quiz", "trivia", "knowledge"],
+  },
 ];
 
 const container = document.getElementById("games-container");
@@ -932,22 +1122,22 @@ function renderGames(list) {
     card.style.setProperty("--stagger", `${index * 60}ms`);
 
     card.innerHTML = `
-      <div class="card-header">
-        <span class="card-pill">${game.icon} ${game.category}</span>
-        <span class="card-timing">${game.duration}</span>
-      </div>
-      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
-      <p class="card-body">${game.description}</p>
-      <div class="card-tags">
-        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
-      </div>
-      <div class="card-actions">
-        <a class="play-button" href="${game.path}">Play now</a>
-        <a class="play-link" href="${
-      game.path
-    }" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
-      </div>
-    `;
+      <div class="card-header">
+        <span class="card-pill">${game.icon} ${game.category}</span>
+        <span class="card-timing">${game.duration}</span>
+      </div>
+      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
+      <p class="card-body">${game.description}</p>
+      <div class="card-tags">
+        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
+      </div>
+      <div class="card-actions">
+        <a class="play-button" href="${game.path}">Play now</a>
+        <a class="play-link" href="${
+          game.path
+        }" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
+      </div>
+    `;
 
     card.addEventListener("pointermove", handleCardTilt);
     card.addEventListener("pointerleave", resetCardTilt);
@@ -1037,5 +1227,40 @@ if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
     const isLight = appBody.classList.contains("light-theme");
     applyTheme(isLight ? "dark" : "light");
+  });
+}
+
+// Scroll Button Logic
+const scrollTopBtn = document.getElementById("scroll-top");
+const scrollBottomBtn = document.getElementById("scroll-bottom");
+let lastScrollTop = 0;
+
+window.addEventListener(
+  "scroll",
+  () => {
+    const st = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    // Show/Hide buttons based on scroll position
+    if (scrollTopBtn) scrollTopBtn.style.display = st > 100 ? "block" : "none";
+    if (scrollBottomBtn)
+      scrollBottomBtn.style.display =
+        st + clientHeight < scrollHeight - 100 ? "block" : "none";
+
+    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  },
+  false
+);
+
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+if (scrollBottomBtn) {
+  scrollBottomBtn.addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   });
 }
