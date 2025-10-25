@@ -409,6 +409,7 @@ const games = [
     tags: ["arcade", "action", "swipe", "fruit", "bombs", "mobile-friendly"],
   },
 ];
+
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
 const emptyState = document.getElementById("empty-state");
