@@ -370,8 +370,6 @@ const games = [
     duration: "Variable",
     tags: ["puzzle", "word", "timer", "logic"],
   },
-
-},
   {
     name: "Tower of Hanoi Visualizer",
     path: "games/tower-of-hanoi/index.html",
@@ -399,8 +397,7 @@ const games = [
 
   tags: ["single player", "Solo", "Numbers", "fun" , "brain"],
 
-}
-  },
+},
   {
     name: "Fruit Slicer",
     path: "games/fruit-slicer/index.html",
