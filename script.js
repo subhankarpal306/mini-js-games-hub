@@ -397,7 +397,6 @@ const games = [
     duration: "Variable",
     tags: ["puzzle", "word", "timer", "logic"],
   },
-
   {
     name: "Link Game",
     path: "games/link-game/index.html",
@@ -405,16 +404,6 @@ const games = [
     description:
       "Connect matching tiles before you run out of moves! A fun logic puzzle for quick thinkers.",
     category: "Puzzle",
-    duration: "3–5 minutes",
-    tags: ["puzzle", "memory", "logic", "connect"],
-  },
-  {
-    name: "Boom",
-    path: "games/boom/index.html",
-    icon: "💣",
-    description:
-      "Click the bombs before they explode! Test your reflexes and precision as difficulty increases with levels.",
-    category: "Arcade",
     duration: "Unlimited",
     tags: ["arcade", "reflex", "clicker", "speed"],
   },
@@ -446,9 +435,9 @@ const games = [
     tags: ["single player", "fun", "simulation"],
   },
   {
-    name: "Connect Four",
-    path: "games/Connect-four/index.html",
-    icon: "🟡",
+    name: "Fruit Slicer",
+    path: "games/fruit-slicer/index.html",
+    icon: "🍎",
     description:
       "Form a line of four of your own coloured discs - Outsmart your opponent",
     category: "Strategy",
@@ -873,6 +862,7 @@ const games = [
     tags: ["memory", "matching", "puzzle"],
   },
 ];
+
 const container = document.getElementById("games-container");
 const searchInput = document.getElementById("game-search");
 const emptyState = document.getElementById("empty-state");
