@@ -121,7 +121,16 @@ const games = [
     category: "Cooking",
     duration: "No time limit",
     tags: ["cooking", "food", "memory", "fun"],
-  },  
+  },
+  {
+    name: "ColorTap — Reflex Challenge",
+    path: "games/colortap/index.html",
+    icon: "🎨",
+    description: "Test your reflexes! Tap only the target color as fast as you can before time runs out. Avoid tapping the wrong colors!",
+    category: "Skill",
+    duration: "30 seconds",
+    tags: ["reflex", "speed", "color", "reaction", "challenge"]
+},
 ];
 
 const container = document.getElementById("games-container");
