@@ -1051,6 +1051,15 @@ const games = [
     duration: "Variable",
     tags: ["quiz", "trivia", "knowledge"],
   },
+  {
+    name: "Underwater Diver",
+    path: "games/underwater-diver/index.html",
+    icon: "🤿",
+    description: "Swim through an underwater world, avoid obstacles, collect pearls, and survive as long as possible.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade","reflex","action","underwater","diver"]
+},
 ];
 
 const container = document.getElementById("games-container");
