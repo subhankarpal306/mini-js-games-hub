@@ -1051,6 +1051,15 @@ const games = [
     duration: "Variable",
     tags: ["quiz", "trivia", "knowledge"],
   },
+  {
+    name: "Color Balance",
+    path: "games/color-balance/index.html",
+    icon: "🎨",
+    description: "Match the RGB sliders to the target color as closely as possible!",
+    category: "Puzzle",
+    duration: "30 seconds",
+    tags: ["puzzle", "color", "RGB", "logic"],
+},
 ];
 
 const container = document.getElementById("games-container");
