@@ -1059,6 +1059,13 @@ const games = [
   category: "Puzzle",
   duration: "Varies by level",
   tags: ["puzzle", "maze", "logic", "ice", "sliding"],
+  name: "Ocean Cleaner",
+  path: "games/ocean-cleaner/index.html",
+  icon: "🛶",
+  description: "Control a boat, collect floating trash, avoid sea creatures, deposit at recycling buoys. Unlock upgrades and beat your best score!",
+  category: "Arcade",
+  duration: "60s / level",
+  tags: ["arcade","enviro","collect","canvas","touch-friendly"]
 },
 ];
 
