@@ -1060,7 +1060,7 @@ const games = [
     duration: "Unlimited",
     tags: ["puzzle", "logic", "circuit", "interactive"],
 },
-
+  {
     name: "Snowball Rush",
     path: "games/snowball-rush/index.html",
     icon: "❄️",
