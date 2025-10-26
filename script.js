@@ -1051,6 +1051,52 @@ const games = [
     duration: "Variable",
     tags: ["quiz", "trivia", "knowledge"],
   },
+  {
+    name: "Circuit Connect",
+    path: "games/circuit-connect/index.html",
+    icon: "🔌",
+    description: "Connect the power source to the bulb avoiding obstacles. Rotate wires and toggle switches to light the bulb.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "circuit", "interactive"],
+},
+  {
+    name: "Snowball Rush",
+    path: "games/snowball-rush/index.html",
+    icon: "❄️",
+    description: "Roll a snowball downhill, collect flakes, avoid obstacles, and grow as big as possible!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "snow", "physics", "clicker", "puzzle"],
+    name: "Color Balance",
+    path: "games/color-balance/index.html",
+    icon: "🎨",
+    description: "Match the RGB sliders to the target color as closely as possible!",
+    category: "Puzzle",
+    duration: "30 seconds",
+    tags: ["puzzle", "color", "RGB", "logic"],
+    name: "Firefly Catcher",
+    path: "games/firefly-catcher/index.html",
+    icon: "✨",
+    description: "Catch as many glowing fireflies as you can within the time limit. Relaxing and visually stunning!",
+    category: "Arcade",
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker", "glow"],
+  name: "Ice Slide",
+  path: "games/ice-slide/index.html",
+  icon: "🧊",
+  description: "Slide the ice cube across the frozen maze to reach the goal!",
+  category: "Puzzle",
+  duration: "Varies by level",
+  tags: ["puzzle", "maze", "logic", "ice", "sliding"],
+  name: "Ocean Cleaner",
+  path: "games/ocean-cleaner/index.html",
+  icon: "🛶",
+  description: "Control a boat, collect floating trash, avoid sea creatures, deposit at recycling buoys. Unlock upgrades and beat your best score!",
+  category: "Arcade",
+  duration: "60s / level",
+  tags: ["arcade","enviro","collect","canvas","touch-friendly"]
+},
 ];
 
 const container = document.getElementById("games-container");
@@ -1060,9 +1106,15 @@ const clearSearchButton = document.getElementById("clear-search");
 const countTargets = document.querySelectorAll("[data-games-count]");
 const latestTargets = document.querySelectorAll("[data-latest-game]");
 const previewCount = document.querySelector("[data-preview-count]");
+const seeMoreContainer = document.getElementById("see-more-container");
 
 //Sorting the game array alphabetically for consistent order
 games.sort((a, b) => a.name.localeCompare(b.name));
+
+const INIT_GAMES_LIMIT = 9;
+const SEE_MORE_INCREMENT = 15;
+let displayedGamesCount = 0;
+let currGameList = games;
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -1072,7 +1124,7 @@ const observer = new IntersectionObserver(
       observer.unobserve(entry.target);
     });
   },
-  { threshold: 0.4 }
+  { threshold: 0.1 }
 );
 
 const latestGameName = games.length ? games[games.length - 1].name : "--";
@@ -1107,19 +1159,25 @@ if (clearSearchButton) {
 function renderGames(list) {
   container.innerHTML = "";
 
-  if (!list.length) {
+  if (!list.length && displayedGamesCount === 0) {
     if (emptyState) emptyState.hidden = false;
+    if (seeMoreContainer) seeMoreContainer.innerHTML = "";
     return;
   }
 
   if (emptyState) emptyState.hidden = true;
+
+  const fragment = document.createDocumentFragment();
 
   list.forEach((game, index) => {
     const card = document.createElement("article");
     card.className = "game-card";
     card.tabIndex = 0;
     card.dataset.name = game.name.toLowerCase();
-    card.style.setProperty("--stagger", `${index * 60}ms`);
+    card.style.setProperty(
+      "--stagger",
+      `${(displayedGamesCount + index) * 30}ms`
+    );
 
     card.innerHTML = `
       <div class="card-header">
@@ -1145,13 +1203,69 @@ function renderGames(list) {
     card.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
+      const gameName = card
+        .querySelector(".card-title")
+        ?.textContent.replace(game.icon, "")
+        .trim();
+      trackGamePlay(gameName);
       window.open(game.path, "_blank", "noopener,noreferrer");
     });
+    card.querySelector(".play-button")?.addEventListener("click", () => {
+      const gameName = card
+        .querySelector(".card-title")
+        ?.textContent.replace(game.icon, "")
+        .trim();
+      trackGamePlay(gameName);
+    });
 
-    container.appendChild(card);
+    fragment.appendChild(card);
     observer.observe(card);
   });
+  container.appendChild(fragment);
+
+  displayedGamesCount += list.length;
+  updateSeeMore(list);
 }
+
+function displayGames(reset = false) {
+  if (reset) {
+    container.innerHTML = "";
+    displayedGamesCount = 0;
+  }
+  const nextGames = currGameList.slice(
+    displayedGamesCount,
+    displayedGamesCount === 0
+      ? INIT_GAMES_LIMIT
+      : displayedGamesCount + SEE_MORE_INCREMENT
+  );
+  renderGames(nextGames);
+}
+
+function updateSeeMore() {
+  if (seeMoreContainer) {
+    seeMoreContainer.innerHTML = "";
+    if (displayedGamesCount < currGameList.length) {
+      const btn = document.createElement("button");
+      btn.className = "cta-button see-more-button";
+      btn.textContent = "See More Games";
+      btn.id = "see-more-btn";
+      btn.addEventListener("click", () => {
+        displayGames(false);
+      });
+      seeMoreContainer.appendChild(btn);
+    }
+  }
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    currGameList = filterGames(searchInput.value);
+    displayGames(true);
+  });
+}
+
+currGameList = games;
+displayGames(true);
 
 function filterGames(rawTerm) {
   const term = rawTerm.trim().toLowerCase();
