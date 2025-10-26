@@ -1052,6 +1052,13 @@ const games = [
     tags: ["quiz", "trivia", "knowledge"],
   },
   {
+    name: "Firefly Catcher",
+    path: "games/firefly-catcher/index.html",
+    icon: "✨",
+    description: "Catch as many glowing fireflies as you can within the time limit. Relaxing and visually stunning!",
+    category: "Arcade",
+    duration: "30 seconds",
+    tags: ["arcade", "reflex", "clicker", "glow"],
   name: "Ice Slide",
   path: "games/ice-slide/index.html",
   icon: "🧊",
