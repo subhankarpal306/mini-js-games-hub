@@ -4,7 +4,7 @@ Thank you for your interest in contributing! ❤️
 This project is open to everyone — from beginners to pros.
 
 ---
-
+ 
 ## 🧩 Ways You Can Contribute
 - Add a **new mini-game**
 - Fix **bugs or typos**
