@@ -1051,6 +1051,15 @@ const games = [
     duration: "Variable",
     tags: ["quiz", "trivia", "knowledge"],
   },
+  {
+  name: "Ice Slide",
+  path: "games/ice-slide/index.html",
+  icon: "🧊",
+  description: "Slide the ice cube across the frozen maze to reach the goal!",
+  category: "Puzzle",
+  duration: "Varies by level",
+  tags: ["puzzle", "maze", "logic", "ice", "sliding"],
+},
 ];
 
 const container = document.getElementById("games-container");
