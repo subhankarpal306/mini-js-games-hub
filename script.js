@@ -1051,6 +1051,15 @@ const games = [
     duration: "Variable",
     tags: ["quiz", "trivia", "knowledge"],
   },
+  {
+  name: "Light Orb Quest",
+  path: "games/light-orb-quest/index.html",
+  icon: "🔆",
+  description: "Navigate a glowing orb through dark ruins — light reveals only nearby tiles. Find treasures, avoid traps and solve light-based puzzles.",
+  category: "Puzzle",
+  duration: "Varies",
+  tags: ["puzzle","exploration","stealth","light","arcade"]
+},
 ];
 
 const container = document.getElementById("games-container");
