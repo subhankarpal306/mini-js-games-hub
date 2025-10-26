@@ -1052,6 +1052,13 @@ const games = [
     tags: ["quiz", "trivia", "knowledge"],
   },
   {
+    name: "Snowball Rush",
+    path: "games/snowball-rush/index.html",
+    icon: "❄️",
+    description: "Roll a snowball downhill, collect flakes, avoid obstacles, and grow as big as possible!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "snow", "physics", "clicker", "puzzle"],
     name: "Color Balance",
     path: "games/color-balance/index.html",
     icon: "🎨",
