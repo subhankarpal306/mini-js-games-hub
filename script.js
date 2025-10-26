@@ -1052,6 +1052,15 @@ const games = [
     tags: ["quiz", "trivia", "knowledge"],
   },
   {
+    name: "Circuit Connect",
+    path: "games/circuit-connect/index.html",
+    icon: "🔌",
+    description: "Connect the power source to the bulb avoiding obstacles. Rotate wires and toggle switches to light the bulb.",
+    category: "Puzzle",
+    duration: "Unlimited",
+    tags: ["puzzle", "logic", "circuit", "interactive"],
+},
+
     name: "Snowball Rush",
     path: "games/snowball-rush/index.html",
     icon: "❄️",
