@@ -1059,6 +1059,13 @@ const games = [
   category: "Puzzle",
   duration: "Varies",
   tags: ["puzzle","exploration","stealth","light","arcade"]
+  name: "Mirror Math",
+  path: "games/mirror-math/index.html",
+  icon: "🪞",
+  description: "Decode mirrored/rotated arithmetic equations before time runs out. Practice visual rotation, pattern recognition, and quick math.",
+  category: "Puzzle",
+  duration: "Varies",
+  tags: ["puzzle", "math", "visual", "rotation", "brain-train"],
 },
 ];
 
