@@ -1058,7 +1058,9 @@ const games = [
   description: "Navigate a glowing orb through dark ruins — light reveals only nearby tiles. Find treasures, avoid traps and solve light-based puzzles.",
   category: "Puzzle",
   duration: "Varies",
-  tags: ["puzzle","exploration","stealth","light","arcade"]
+  tags: ["puzzle","exploration","stealth","light","arcade"],
+  },
+  {
   name: "Mirror Math",
   path: "games/mirror-math/index.html",
   icon: "🪞",
