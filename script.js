@@ -1051,6 +1051,33 @@ const games = [
     duration: "Variable",
     tags: ["quiz", "trivia", "knowledge"],
   },
+  {
+    name: "Knife Thrower",
+    path: "games/knife-thrower/index.html",
+    icon: "🔪",
+    description: "Throw knives at a rotating board. Avoid hitting stuck knives and survive as long as possible!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "action", "skill"],
+  },
+  {
+  name: "Light Orb Quest",
+  path: "games/light-orb-quest/index.html",
+  icon: "🔆",
+  description: "Navigate a glowing orb through dark ruins — light reveals only nearby tiles. Find treasures, avoid traps and solve light-based puzzles.",
+  category: "Puzzle",
+  duration: "Varies",
+  tags: ["puzzle","exploration","stealth","light","arcade"],
+  },
+  {
+  name: "Mirror Math",
+  path: "games/mirror-math/index.html",
+  icon: "🪞",
+  description: "Decode mirrored/rotated arithmetic equations before time runs out. Practice visual rotation, pattern recognition, and quick math.",
+  category: "Puzzle",
+  duration: "Varies",
+  tags: ["puzzle", "math", "visual", "rotation", "brain-train"],
+},
 ];
 
 const container = document.getElementById("games-container");
@@ -1060,9 +1087,15 @@ const clearSearchButton = document.getElementById("clear-search");
 const countTargets = document.querySelectorAll("[data-games-count]");
 const latestTargets = document.querySelectorAll("[data-latest-game]");
 const previewCount = document.querySelector("[data-preview-count]");
+const seeMoreContainer = document.getElementById("see-more-container");
 
 //Sorting the game array alphabetically for consistent order
 games.sort((a, b) => a.name.localeCompare(b.name));
+
+const INIT_GAMES_LIMIT = 9;
+const SEE_MORE_INCREMENT = 15;
+let displayedGamesCount = 0;
+let currGameList = games;
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -1072,7 +1105,7 @@ const observer = new IntersectionObserver(
       observer.unobserve(entry.target);
     });
   },
-  { threshold: 0.4 }
+  { threshold: 0.1 }
 );
 
 const latestGameName = games.length ? games[games.length - 1].name : "--";
@@ -1107,19 +1140,25 @@ if (clearSearchButton) {
 function renderGames(list) {
   container.innerHTML = "";
 
-  if (!list.length) {
+  if (!list.length && displayedGamesCount === 0) {
     if (emptyState) emptyState.hidden = false;
+    if (seeMoreContainer) seeMoreContainer.innerHTML = "";
     return;
   }
 
   if (emptyState) emptyState.hidden = true;
+
+  const fragment = document.createDocumentFragment();
 
   list.forEach((game, index) => {
     const card = document.createElement("article");
     card.className = "game-card";
     card.tabIndex = 0;
     card.dataset.name = game.name.toLowerCase();
-    card.style.setProperty("--stagger", `${index * 60}ms`);
+    card.style.setProperty(
+      "--stagger",
+      `${(displayedGamesCount + index) * 30}ms`
+    );
 
     card.innerHTML = `
       <div class="card-header">
@@ -1145,13 +1184,69 @@ function renderGames(list) {
     card.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
+      const gameName = card
+        .querySelector(".card-title")
+        ?.textContent.replace(game.icon, "")
+        .trim();
+      trackGamePlay(gameName);
       window.open(game.path, "_blank", "noopener,noreferrer");
     });
+    card.querySelector(".play-button")?.addEventListener("click", () => {
+      const gameName = card
+        .querySelector(".card-title")
+        ?.textContent.replace(game.icon, "")
+        .trim();
+      trackGamePlay(gameName);
+    });
 
-    container.appendChild(card);
+    fragment.appendChild(card);
     observer.observe(card);
   });
+  container.appendChild(fragment);
+
+  displayedGamesCount += list.length;
+  updateSeeMore(list);
 }
+
+function displayGames(reset = false) {
+  if (reset) {
+    container.innerHTML = "";
+    displayedGamesCount = 0;
+  }
+  const nextGames = currGameList.slice(
+    displayedGamesCount,
+    displayedGamesCount === 0
+      ? INIT_GAMES_LIMIT
+      : displayedGamesCount + SEE_MORE_INCREMENT
+  );
+  renderGames(nextGames);
+}
+
+function updateSeeMore() {
+  if (seeMoreContainer) {
+    seeMoreContainer.innerHTML = "";
+    if (displayedGamesCount < currGameList.length) {
+      const btn = document.createElement("button");
+      btn.className = "cta-button see-more-button";
+      btn.textContent = "See More Games";
+      btn.id = "see-more-btn";
+      btn.addEventListener("click", () => {
+        displayGames(false);
+      });
+      seeMoreContainer.appendChild(btn);
+    }
+  }
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    currGameList = filterGames(searchInput.value);
+    displayGames(true);
+  });
+}
+
+currGameList = games;
+displayGames(true);
 
 function filterGames(rawTerm) {
   const term = rawTerm.trim().toLowerCase();
