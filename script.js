@@ -1052,6 +1052,15 @@ const games = [
     tags: ["quiz", "trivia", "knowledge"],
   },
   {
+    name: "Underwater Diver",
+    path: "games/underwater-diver/index.html",
+    icon: "🤿",
+    description: "Swim through an underwater world, avoid obstacles, collect pearls, and survive as long as possible.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade","reflex","action","underwater","diver"],
+  },
+  {
     name: "Knife Thrower",
     path: "games/knife-thrower/index.html",
     icon: "🔪",
