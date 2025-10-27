@@ -1052,6 +1052,15 @@ const games = [
     tags: ["quiz", "trivia", "knowledge"],
   },
   {
+    name: "Knife Thrower",
+    path: "games/knife-thrower/index.html",
+    icon: "🔪",
+    description: "Throw knives at a rotating board. Avoid hitting stuck knives and survive as long as possible!",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "reflex", "action", "skill"],
+  },
+  {
   name: "Light Orb Quest",
   path: "games/light-orb-quest/index.html",
   icon: "🔆",
