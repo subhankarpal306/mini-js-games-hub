@@ -8,6 +8,7 @@ What this prototype has
 - Canvas-based falling petals with pastel colors
 - Pointer/touch controls: drag/tilt the vase horizontally to catch petals
 - Combo counter that grows the vase slightly when you catch repeatedly
+- High score tracking with localStorage
 - Misses counter; after 5 misses the game ends and you can restart
 - Small WebAudio beeps for catch/miss (may require a first tap to enable audio)
 
