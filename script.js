@@ -1087,6 +1087,15 @@ const games = [
   duration: "Varies",
   tags: ["puzzle", "math", "visual", "rotation", "brain-train"],
 },
+{
+  name: "Math Rush — Addition Challenge",
+  path: "games/math-rush/index.html",
+  icon: "➕",
+  description: "Solve quick addition problems before time runs out! Test your reflexes and accuracy.",
+  category: "Math",
+  duration: "10 seconds per round",
+  tags: ["math", "addition", "speed", "challenge", "fun"],
+},
 ];
 
 const container = document.getElementById("games-container");
