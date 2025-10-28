@@ -6,6 +6,7 @@
   const ctx = canvas.getContext('2d');
   const comboEl = document.getElementById('combo');
   const missesEl = document.getElementById('miss-count');
+  const highScoreEl = document.getElementById('high-score-val');
   const overlay = document.getElementById('overlay');
   const restartBtn = document.getElementById('restart');
   const finalText = document.getElementById('final-text');
@@ -28,6 +29,10 @@
   let combo = 0;
   let misses = 0;
   const maxMisses = 5;
+  let highScore = localStorage.getItem('bloomCatchHighScore') || 0;
+
+  // set initial high score
+  highScoreEl.textContent = highScore;
 
   // vase (the player's catcher)
   const vase = {
@@ -155,6 +160,11 @@
         petals.splice(i,1);
         combo += 1;
         comboEl.textContent = combo;
+        if(combo > highScore){
+          highScore = combo;
+          highScoreEl.textContent = highScore;
+          localStorage.setItem('bloomCatchHighScore', highScore);
+        }
         vase.grow = Math.min(20, vase.grow + 1);
         // small pleasant sound
         beepy(880 + Math.random()*120, 0.05, 'sine', 0.03);
