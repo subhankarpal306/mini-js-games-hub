@@ -1121,6 +1121,15 @@ const games = [
   duration: "Endless",
   tags: ["Card", "Casino", "Strategy", "Classic"]
 },
+  {
+    name: "Bloom Catch",
+    path: "games/bloom-catch/index.html",
+    icon: "🌸",
+    description: "A calm arcade game where soft petals drift down a pastel-gradient sky. Tilt or drag a vase to catch them, collect combos to grow your vase into a blooming plant. Relaxing pace with subtle sound.",
+    category: "Arcade",
+    duration: "Unlimited",
+    tags: ["arcade", "relaxing", "mobile", "canvas", "petals", "combo"],
+  },
 
 ];
 
