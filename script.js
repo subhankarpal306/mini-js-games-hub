@@ -1112,6 +1112,15 @@ const games = [
   duration: "10 seconds per round",
   tags: ["math", "addition", "speed", "challenge", "fun"],
 },
+{
+  name: "Blackjack",
+  path: "games/blackjack/index.html",
+  description: "A classic card game where the goal is to get closer to 21 than the dealer. Features betting, doubling down, and a polished UI.",
+  icon: "🃏",
+  category: "Card Game",
+  duration: "Endless",
+  tags: ["Card", "Casino", "Strategy", "Classic"]
+},
   {
     name: "Bloom Catch",
     path: "games/bloom-catch/index.html",
