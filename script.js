@@ -97,6 +97,22 @@ const games = [
     tags: ["arcade", "retro", "keyboard"],
   },
   {
+    name: "Simon color memory game",
+    path: "games/simon_game/index.html",
+    icon: "🧠",
+   description: "Test your memory and quick thinking in this dynamic color pattern challenge! Each round adds a new twist to the sequence. Ideal for puzzle enthusiasts and sharp minds craving a stimulating mental workout.",
+    category: "Memory",
+    duration: "Progressive",
+    tags: [
+      "memory",
+      "focus",
+      "puzzle",
+      "challenge",
+      "reflex",
+      "brain-training",
+    ],
+  },
+  {
     name: "Memory Game",
     path: "games/memory/index.html",
     icon: "🧠",
@@ -1096,6 +1112,7 @@ const games = [
   duration: "10 seconds per round",
   tags: ["math", "addition", "speed", "challenge", "fun"],
 },
+
 ];
 
 const container = document.getElementById("games-container");
