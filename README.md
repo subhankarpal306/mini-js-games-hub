@@ -16,7 +16,7 @@ You can:
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure 
 ```
 mini-js-games-hub/
 │
