@@ -1,0 +1,85 @@
+body {
+  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-shadow: 0 0 20px cyan;
+  margin-bottom: 10px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.gradient-display {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.gradient-box {
+  width: 220px;
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+  transition: all 0.4s ease;
+}
+
+.sliders {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  color: #ffefef;
+  text-shadow: 0 0 5px #fff;
+}
+
+input[type="range"] {
+  width: 100px;
+  accent-color: cyan;
+  cursor: pointer;
+}
+
+.controls {
+  margin: 15px 0;
+}
+
+button {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 20px #00c6ff;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #00c6ff;
+}
+
+.scoreboard {
+  margin-top: 10px;
+  font-size: 18px;
+  text-shadow: 0 0 5px white;
+}
+
+.paused {
+  opacity: 0.4;
+  pointer-events: none;
+}
