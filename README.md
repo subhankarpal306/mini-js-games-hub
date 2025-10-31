@@ -1,5 +1,5 @@
-> **Note**  
-> <span style="color: purple;">All issues from 10 PM Kolkata, India time will be closed automatically as per the Open Odyssey event rules.</span>
+> [!NOTE]
+> All issues from **10 PM Kolkata, India time** will be closed automatically as per the **Open Odyssey** event rules.
 
 
 # 🎮 Mini JS Games Hub
