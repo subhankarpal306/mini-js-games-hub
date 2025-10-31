@@ -1168,6 +1168,15 @@ const games = [
     duration: "Endless",
     tags: ["Survival", "Arcade", "Fast-Paced", "Endless"]
   },
+  {
+    name: "Bubble Pop Adventure",
+    path: "games/bubble-pop-adventure/index.html",
+    icon: "🫧",
+    description: "Pop bubbles of different colors to score points in this relaxing game. Click on floating bubbles to burst them and earn points based on their color!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["relaxing", "clicker", "colorful", "casual", "bubble"]
+  },
 ];
 
 const container = document.getElementById("games-container");
