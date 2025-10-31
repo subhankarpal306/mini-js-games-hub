@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Guardian</title>
+    <!-- Load Tailwind CSS for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc; /* White */
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #game-area {
+            display: flex;
+            gap: 20px;
+        }
+        #canvas-container {
+            border: 4px solid #10b981; /* Emerald 500 */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body class="selection:bg-emerald-700 selection:text-white">
+
+    <h1 class="text-4xl font-extrabold mb-6 text-emerald-400">Forest Guardian: Ecosystem Manager</h1>
+
+    <div id="game-area">
+        
+        <!-- UI Panel: Tools and Resources -->
+        <div id="ui-panel" class="w-64 bg-slate-800 p-6 rounded-lg shadow-xl flex flex-col space-y-4">
+            <h2 class="text-2xl font-bold text-center text-emerald-300 border-b pb-2 border-slate-700">Tools & Status</h2>
+            
+            <div id="resource-status" class="space-y-2 text-sm">
+                <p class="font-semibold text-gray-300">Resources (Auto-Generated):</p>
+                <div class="flex justify-between"><span>💧 Water:</span><span id="res-water" class="font-bold text-blue-400">0</span></div>
+                <div class="flex justify-between"><span>🌱 Seedlings:</span><span id="res-seedling" class="font-bold text-green-400">0</span></div>
+                <div class="flex justify-between"><span>🧪 Repellent:</span><span id="res-repellent" class="font-bold text-purple-400">0</span></div>
+            </div>
+
+            <div class="border-t pt-4 border-slate-700">
+                <p class="font-semibold text-gray-300 mb-2">Select Tool (Cost: 1 Unit):</p>
+                <div class="grid grid-cols-3 gap-2">
+                    <button id="tool-water" data-tool="water" class="tool-button px-2 py-3 bg-blue-600 hover:bg-blue-700 rounded transition duration-150 text-xs active-tool">💧 Water</button>
+                    <button id="tool-seedling" data-tool="seedling" class="tool-button px-2 py-3 bg-green-600 hover:bg-green-700 rounded transition duration-150 text-xs">🌱 Seedling</button>
+                    <button id="tool-repellent" data-tool="repellent" class="tool-button px-2 py-3 bg-purple-600 hover:bg-purple-700 rounded transition duration-150 text-xs">🧪 Repellent</button>
+                </div>
+            </div>
+
+            <div id="game-stats" class="border-t pt-4 border-slate-700 text-sm">
+                <p class="font-semibold text-gray-300">Forest Stats:</p>
+                <div class="flex justify-between"><span>🌳 Healthy Trees:</span><span id="stat-healthy" class="font-bold text-emerald-400">0</span></div>
+                <div class="flex justify-between"><span>🔥 Fires:</span><span id="stat-fire" class="font-bold text-red-500">0</span></div>
+                <div class="flex justify-between"><span>🕷️ Pests:</span><span id="stat-pest" class="font-bold text-yellow-500">0</span></div>
+            </div>
+            
+            <button id="reset-button" class="mt-4 w-full py-3 bg-red-600 hover:bg-red-700 font-bold rounded-lg transition duration-200">
+                Reset Simulation
+            </button>
+        </div>
+        
+        <!-- Canvas Area -->
+        <div id="canvas-container">
+            <canvas id="gameCanvas" width="600" height="600"></canvas>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Setup Canvas and Context ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const CANVAS_SIZE = 600;
+        const GRID_SIZE = 30;
+        const TILE_SIZE = CANVAS_SIZE / GRID_SIZE;
+
+        // --- Game State Constants ---
+        const CELL_TYPES = {
+            EMPTY: 0,
+            HEALTHY_TREE: 1,
+            YOUNG_TREE: 2,
+            FIRE: 3,
+            PEST: 4,
+            REPELLED: 5 // Temporary state for tiles hit by repellent
+        };
+
+        const COLORS = {
+            [CELL_TYPES.EMPTY]: '#1e293b',      // Slate 800
+            [CELL_TYPES.HEALTHY_TREE]: '#10b981', // Emerald 500
+            [CELL_TYPES.YOUNG_TREE]: '#34d399',    // Emerald 400 (lighter)
+            [CELL_TYPES.FIRE]: '#ef4444',       // Red 500 (plus effect)
+            [CELL_TYPES.PEST]: '#fcd34d',       // Amber 300 (plus effect)
+            [CELL_TYPES.REPELLED]: '#a78bfa'    // Violet 400 (Repellent)
+        };
+        
+        // --- Game Variables ---
+        let forestGrid = [];
+        let resources = { water: 5, seedling: 5, repellent: 5 };
+        let selectedTool = 'water';
+        let simulationInterval;
+        const SIMULATION_SPEED = 500; // 500ms per simulation step
+
+        // --- DOM Elements ---
+        const resWater = document.getElementById('res-water');
+        const resSeedling = document.getElementById('res-seedling');
+        const resRepellent = document.getElementById('res-repellent');
+        const statHealthy = document.getElementById('stat-healthy');
+        const statFire = document.getElementById('stat-fire');
+        const statPest = document.getElementById('stat-pest');
+        const toolButtons = document.querySelectorAll('.tool-button');
+        const resetButton = document.getElementById('reset-button');
+        
+        // --- Grid Functions ---
+
+        function initializeGrid() {
+            forestGrid = [];
+            for (let y = 0; y < GRID_SIZE; y++) {
+                forestGrid[y] = [];
+                for (let x = 0; x < GRID_SIZE; x++) {
+                    forestGrid[y][x] = CELL_TYPES.EMPTY;
+                }
+            }
+            // Seed a few initial trees
+            for (let i = 0; i < 5; i++) {
+                const x = Math.floor(Math.random() * GRID_SIZE);
+                const y = Math.floor(Math.random() * GRID_SIZE);
+                forestGrid[y][x] = CELL_TYPES.HEALTHY_TREE;
+            }
+        }
+
+        function drawGrid() {
+            ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+            let healthyCount = 0;
+            let fireCount = 0;
+            let pestCount = 0;
+
+            for (let y = 0; y < GRID_SIZE; y++) {
+                for (let x = 0; x < GRID_SIZE; x++) {
+                    const type = forestGrid[y][x];
+                    
+                    // Count stats
+                    if (type === CELL_TYPES.HEALTHY_TREE || type === CELL_TYPES.YOUNG_TREE) healthyCount++;
+                    if (type === CELL_TYPES.FIRE) fireCount++;
+                    if (type === CELL_TYPES.PEST) pestCount++;
+
+                    // Draw basic tile color
+                    ctx.fillStyle = COLORS[type];
+                    ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+
+                    // Add visual effects for hazards
+                    if (type === CELL_TYPES.FIRE) {
+                        ctx.fillStyle = 'rgba(255, 140, 0, 0.5)'; // Darker orange overlay
+                        ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+                    } else if (type === CELL_TYPES.PEST) {
+                        ctx.fillStyle = 'rgba(255, 255, 0, 0.4)'; // Yellow overlay
+                        ctx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+                    }
+                    
+                    // Draw grid lines
+                    ctx.strokeStyle = '#0f172a';
+                    ctx.lineWidth = 0.5;
+                    ctx.strokeRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+                }
+            }
+            
+            // Update stats panel
+            statHealthy.textContent = healthyCount;
+            statFire.textContent = fireCount;
+            statPest.textContent = pestCount;
+        }
+        
+        function getNeighbors(x, y) {
+            const neighbors = [];
+            for (let dy = -1; dy <= 1; dy++) {
+                for (let dx = -1; dx <= 1; dx++) {
+                    if (dx === 0 && dy === 0) continue; // Skip self
+
+                    const nx = x + dx;
+                    const ny = y + dy;
+
+                    if (nx >= 0 && nx < GRID_SIZE && ny >= 0 && ny < GRID_SIZE) {
+                        neighbors.push({ x: nx, y: ny, type: forestGrid[ny][nx] });
+                    }
+                }
+            }
+            return neighbors;
+        }
+
+        // --- Simulation Logic ---
+
+        function runSimulationStep() {
+            if (document.hidden) return; // Pause simulation if tab is not active
+
+            // 1. Resource Generation (Passive income)
+            resources.water = Math.min(resources.water + 1, 99);
+            resources.seedling = Math.min(resources.seedling + 1, 99);
+            resources.repellent = Math.min(resources.repellent + 1, 99);
+
+            // Create a copy of the grid for safe state updates
+            const newGrid = forestGrid.map(row => [...row]); 
+
+            for (let y = 0; y < GRID_SIZE; y++) {
+                for (let x = 0; x < GRID_SIZE; x++) {
+                    const current = forestGrid[y][x];
+                    const neighbors = getNeighbors(x, y);
+
+                    // --- Tree Growth & Degradation ---
+                    if (current === CELL_TYPES.YOUNG_TREE) {
+                        // Young trees grow into healthy trees
+                        if (Math.random() < 0.2) { 
+                            newGrid[y][x] = CELL_TYPES.HEALTHY_TREE;
+                        }
+                    } else if (current === CELL_TYPES.HEALTHY_TREE) {
+                        // Healthy trees might spread if empty neighbors are abundant
+                        const emptyNeighbors = neighbors.filter(n => n.type === CELL_TYPES.EMPTY);
+                        if (emptyNeighbors.length >= 3 && Math.random() < 0.05) {
+                            const target = emptyNeighbors[Math.floor(Math.random() * emptyNeighbors.length)];
+                            newGrid[target.y][target.x] = CELL_TYPES.YOUNG_TREE;
+                        }
+                    }
+
+                    // --- Fire Spreading & Extinguishing (Self-Correction) ---
+                    if (current === CELL_TYPES.FIRE) {
+                        // Fire spreads to adjacent trees/empty ground
+                        neighbors.forEach(n => {
+                            if (n.type === CELL_TYPES.HEALTHY_TREE || n.type === CELL_TYPES.YOUNG_TREE || n.type === CELL_TYPES.EMPTY) {
+                                if (Math.random() < 0.1) {
+                                    newGrid[n.y][n.x] = CELL_TYPES.FIRE;
+                                }
+                            }
+                        });
+                        // Fire burns out sometimes, leaving empty land
+                        if (Math.random() < 0.02) {
+                             newGrid[y][x] = CELL_TYPES.EMPTY;
+                        }
+                    }
+
+                    // --- Pest Spreading & Damage ---
+                    if (current === CELL_TYPES.PEST) {
+                        // Pests degrade trees
+                        const treeNeighbors = neighbors.filter(n => n.type === CELL_TYPES.HEALTHY_TREE || n.type === CELL_TYPES.YOUNG_TREE);
+                        if (treeNeighbors.length > 0 && Math.random() < 0.3) {
+                            const target = treeNeighbors[Math.floor(Math.random() * treeNeighbors.length)];
+                            newGrid[target.y][target.x] = CELL_TYPES.EMPTY; // Tree is destroyed
+                        }
+                    }
+
+                    // --- Repellent Decay ---
+                    if (current === CELL_TYPES.REPELLED) {
+                        if (Math.random() < 0.3) {
+                            newGrid[y][x] = CELL_TYPES.EMPTY; // Repellent wears off
+                        }
+                    }
+                }
+            }
+            
+            // 2. Hazard Spawning (Global)
+            if (Math.random() < 0.03) { // Small chance of fire starting
+                const x = Math.floor(Math.random() * GRID_SIZE);
+                const y = Math.floor(Math.random() * GRID_SIZE);
+                if (newGrid[y][x] === CELL_TYPES.HEALTHY_TREE) {
+                    newGrid[y][x] = CELL_TYPES.FIRE;
+                }
+            }
+            if (Math.random() < 0.05) { // Small chance of pest infestation
+                const x = Math.floor(Math.random() * GRID_SIZE);
+                const y = Math.floor(Math.random() * GRID_SIZE);
+                if (newGrid[y][x] === CELL_TYPES.EMPTY || newGrid[y][x] === CELL_TYPES.HEALTHY_TREE) {
+                    newGrid[y][x] = CELL_TYPES.PEST;
+                }
+            }
+            
+            forestGrid = newGrid;
+            drawGrid();
+            updateResourceUI();
+        }
+
+        // --- User Interaction Logic ---
+
+        function handleToolSelect(event) {
+            const newTool = event.currentTarget.dataset.tool;
+            if (newTool) {
+                selectedTool = newTool;
+                toolButtons.forEach(btn => btn.classList.remove('active-tool', 'bg-emerald-600'));
+                event.currentTarget.classList.add('active-tool', 'bg-emerald-600');
+            }
+        }
+        
+        function handleCanvasClick(event) {
+            if (resources[selectedTool] < 1) {
+                console.log(`Not enough ${selectedTool} resource.`);
+                return;
+            }
+
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+
+            const x = Math.floor(mouseX / TILE_SIZE);
+            const y = Math.floor(mouseY / TILE_SIZE);
+            
+            // Check boundaries
+            if (x < 0 || x >= GRID_SIZE || y < 0 || y >= GRID_SIZE) return;
+
+            const targetCell = forestGrid[y][x];
+
+            // --- Tool Application Logic ---
+            let used = false;
+
+            if (selectedTool === 'water') {
+                if (targetCell === CELL_TYPES.FIRE) {
+                    forestGrid[y][x] = CELL_TYPES.EMPTY; // Extinguish fire
+                    used = true;
+                }
+            } else if (selectedTool === 'seedling') {
+                if (targetCell === CELL_TYPES.EMPTY || targetCell === CELL_TYPES.REPELLED) {
+                    forestGrid[y][x] = CELL_TYPES.YOUNG_TREE; // Plant a young tree
+                    used = true;
+                }
+            } else if (selectedTool === 'repellent') {
+                if (targetCell === CELL_TYPES.PEST) {
+                    forestGrid[y][x] = CELL_TYPES.REPELLED; // Repel pests
+                    used = true;
+                }
+            }
+
+            if (used) {
+                resources[selectedTool]--; // Deduct resource cost
+                drawGrid();
+                updateResourceUI();
+            }
+        }
+
+        // --- UI Update and Control ---
+
+        function updateResourceUI() {
+            resWater.textContent = resources.water;
+            resSeedling.textContent = resources.seedling;
+            resRepellent.textContent = resources.repellent;
+        }
+
+        function startGame() {
+            initializeGrid();
+            updateResourceUI();
+            
+            // Set initial tool
+            toolButtons.forEach(btn => btn.classList.remove('active-tool', 'bg-emerald-600'));
+            document.getElementById('tool-water').classList.add('active-tool', 'bg-emerald-600');
+            selectedTool = 'water';
+
+            // Clear any existing interval
+            clearInterval(simulationInterval);
+            simulationInterval = setInterval(runSimulationStep, SIMULATION_SPEED);
+            
+            drawGrid();
+        }
+
+        function resetGame() {
+            resources = { water: 5, seedling: 5, repellent: 5 };
+            startGame();
+        }
+
+        // --- Event Listeners ---
+        canvas.addEventListener('click', handleCanvasClick);
+        toolButtons.forEach(button => button.addEventListener('click', handleToolSelect));
+        resetButton.addEventListener('click', resetGame);
+        
+        // Initial setup on load
+        window.onload = startGame;
+
+    </script>
+</body>
+</html>
