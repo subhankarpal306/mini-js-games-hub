@@ -14,7 +14,7 @@ body {
 .game-container {
     text-align: center;
 }
-
+ 
 canvas {
     background-color: #0a0a0a;
     border: 2px solid #fff;
