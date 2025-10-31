@@ -1130,7 +1130,62 @@ const games = [
     duration: "Unlimited",
     tags: ["arcade", "relaxing", "mobile", "canvas", "petals", "combo"],
   },
+  // Add these objects to the end of the "games" array in the main script.js file
 
+  {
+    name: "Follow the Path",
+    path: "games/follow-the-path/index.html",
+    description: "A sleek memory game where players must repeat a progressively longer path on a grid. Features infinite levels and high-score saving.",
+    icon: "🧠",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["Memory", "Puzzle", "Logic", "Pattern"]
+  },
+  {
+    name: "Perfect Aim",
+    path: "games/perfect-aim/index.html",
+    description: "A minimalist arcade game of pure timing. Stop a rotating pointer inside a target sector that shrinks with each hit. Features a combo multiplier and 'perfect hit' bonuses.",
+    icon: "🎯",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["Timing", "Reflex", "Arcade", "Skill"]
+  },
+  {
+    name: "Un-tangle",
+    path: "games/un-tangle/index.html",
+    description: "A relaxing yet challenging logic puzzle. Drag the nodes to untangle a web of intersecting lines. Features procedurally generated levels of increasing difficulty.",
+    icon: "➰",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["Puzzle", "Logic", "Relaxing", "Lines"]
+  },
+  {
+    name: "The Floor is Lava",
+    path: "games/the-floor-is-lava/index.html",
+    description: "A fast-paced survival game where you must hop between safe tiles to avoid the rising lava. Features endless gameplay with a unique lava cooldown mechanic.",
+    icon: "🔥",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["Survival", "Arcade", "Fast-Paced", "Endless"]
+  },
+  {
+    name: "Star Collector",
+    path: "games/star-collector/index.html",
+    icon: "⭐",
+    description: "Navigate through space collecting stars while avoiding asteroids. Use arrow keys to move your spaceship and collect as many stars as possible!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["space", "arcade", "keyboard", "avoider", "stars"],
+  },
+  {
+    name: "Bubble Pop Adventure",
+    path: "games/bubble-pop-adventure/index.html",
+    icon: "🫧",
+    description: "Pop bubbles of different colors to score points in this relaxing game. Click on floating bubbles to burst them and earn points based on their color!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["relaxing", "clicker", "colorful", "casual", "bubble"]
+  },
 ];
 
 const container = document.getElementById("games-container");
