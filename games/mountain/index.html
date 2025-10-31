@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Conqueror</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0f172a; /* Dark background */
+            color: #e2e8f0; /* Light text */
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #game-wrapper {
+            display: flex;
+            gap: 20px;
+            border: 4px solid #9ca3af; /* Gray border for mountain look */
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(156, 163, 175, 0.4);
+        }
+        canvas {
+            display: block;
+            background: linear-gradient(#f0f9ff, #d1d5db); /* Sky to snow gradient */
+        }
+        .control-button {
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+        #ui-panel {
+            width: 200px;
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="select-none">
+
+    <h1 class="text-4xl font-extrabold mb-6 text-gray-300">Peak Conqueror</h1>
+    
+    <div id="game-wrapper">
+        
+        <!-- Canvas Area -->
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        
+        <!-- UI Panel: Stats and Controls -->
+        <div id="ui-panel" class="flex flex-col justify-between">
+            <div>
+                <h2 class="text-xl font-bold text-gray-300 border-b pb-2 mb-4 border-slate-700">Climber Status</h2>
+                
+                <div class="space-y-4">
+                    <!-- Stamina Bar -->
+                    <div>
+                        <p class="font-semibold text-red-400">⚡ Stamina (Space/Up):</p>
+                        <div class="h-4 w-full bg-slate-600 rounded-full">
+                            <div id="stamina-bar" class="h-full bg-green-500 rounded-full transition-all duration-300" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Altitude -->
+                    <div class="pt-2 border-t border-slate-700">
+                        <p class="font-semibold text-blue-300">▲ Altitude:</p>
+                        <span id="altitude-display" class="text-3xl font-extrabold text-blue-400">0m</span>
+                    </div>
+
+                    <!-- Flags -->
+                    <div class="pt-2">
+                        <p class="font-semibold text-yellow-300">🚩 Flags Collected:</p>
+                        <span id="flag-display" class="text-xl font-extrabold text-yellow-400">0 / 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <p id="message-display" class="text-center font-semibold text-sm h-6 text-red-400"></p>
+                
+                <div class="flex flex-col space-y-2">
+                    <button id="climb-button" class="control-button bg-green-600 hover:bg-green-700 active:bg-green-800">
+                        ▲ CLIMB (Space/Up/W)
+                    </button>
+                    <button id="rest-button" class="control-button bg-blue-600 hover:bg-blue-700 active:bg-blue-800">
+                        -- REST -- (Down/S)
+                    </button>
+                </div>
+
+                <button id="reset-button" class="w-full py-2 bg-slate-600 hover:bg-slate-700 font-bold rounded-lg transition duration-200">
+                    Restart Climb
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Setup Canvas and Context ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const CANVAS_WIDTH = canvas.width;
+        const CANVAS_HEIGHT = canvas.height;
+
+        // --- Game Constants ---
+        const MAX_STAMINA = 100;
+        const CLIMB_SPEED = 2; // Pixels the world scrolls down per frame (Climber moves up)
+        const STAMINA_DRAIN_RATE = 0.3; // Stamina lost per frame while climbing
+        const STAMINA_REGEN_RATE = 0.2; // Stamina gained per frame while resting
+        const CLIMBER_SIZE = 15;
+        const CLIMBER_X_SPEED = 4; // Horizontal speed
+        const NUM_FLAGS = 5;
+
+        // --- Entity Colors ---
+        const COLORS = {
+            CLIMBER: '#ff7f50',   // Orange
+            PLATFORM: '#9ca3af',  // Gray Rock
+            FLAG: '#fcd34d',      // Amber
+            AVALANCHE: 'rgba(255, 255, 255, 0.6)', // White Semi-transparent
+            CREVASSE: '#0f172a'   // Dark Blue/Black
+        };
+
+        // --- Game State ---
+        let climber = {};
+        let platforms = [];
+        let flags = [];
+        let hazards = []; // Avalanches and Crevasses
+        let worldYOffset = 0; // Total distance climbed (in pixels)
+        let gameActive = false;
+        let animationFrameId;
+
+        // --- DOM Elements ---
+        const staminaBar = document.getElementById('stamina-bar');
+        const altitudeDisplay = document.getElementById('altitude-display');
+        const flagDisplay = document.getElementById('flag-display');
+        const messageDisplay = document.getElementById('message-display');
+        const climbButton = document.getElementById('climb-button');
+        const restButton = document.getElementById('rest-button');
+        const resetButton = document.getElementById('reset-button');
+
+        // --- Entity Classes ---
+
+        class Climber {
+            constructor() {
+                this.x = CANVAS_WIDTH / 2;
+                this.y = CANVAS_HEIGHT * 0.75; // Fixed vertical position on screen
+                this.dx = 0;
+                this.stamina = MAX_STAMINA;
+                this.isClimbing = false;
+            }
+
+            draw() {
+                ctx.fillStyle = COLORS.CLIMBER;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, CLIMBER_SIZE, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                // Apply horizontal movement
+                this.x += this.dx;
+
+                // Clamp horizontal position
+                this.x = Math.min(Math.max(this.x, CLIMBER_SIZE), CANVAS_WIDTH - CLIMBER_SIZE);
+                
+                // Slow down horizontal movement when not pressing
+                this.dx *= 0.8; 
+
+                // Stamina Management
+                if (this.isClimbing) {
+                    this.stamina = Math.max(0, this.stamina - STAMINA_DRAIN_RATE);
+                } else if (!this.isClimbing) {
+                    this.stamina = Math.min(MAX_STAMINA, this.stamina + STAMINA_REGEN_RATE);
+                }
+
+                if (this.stamina < 10) {
+                    messageDisplay.textContent = "FATIGUE! Stamina dangerously low.";
+                } else if (this.stamina > 10 && messageDisplay.textContent === "FATIGUE! Stamina dangerously low.") {
+                    messageDisplay.textContent = "";
+                }
+            }
+        }
+
+        class Platform {
+            constructor(worldY, x, width, type = 'rock') {
+                this.worldY = worldY; // Vertical position in the world coordinates
+                this.x = x;
+                this.width = width;
+                this.height = 10;
+                this.type = type;
+                this.screenY = 0; // Calculated in game loop
+            }
+
+            draw() {
+                ctx.fillStyle = this.type === 'crevasse' ? COLORS.CREVASSE : COLORS.PLATFORM;
+                ctx.fillRect(this.x, this.screenY, this.width, this.height);
+                
+                if (this.type === 'crevasse') {
+                    // Draw a visual crack
+                    ctx.strokeStyle = '#64748b';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.screenY + 5);
+                    ctx.lineTo(this.x + this.width, this.screenY + 5);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        class Flag {
+            constructor(worldY, x) {
+                this.worldY = worldY;
+                this.x = x;
+                this.collected = false;
+                this.screenY = 0;
+            }
+
+            draw() {
+                if (this.collected) return;
+                ctx.fillStyle = COLORS.FLAG;
+                // Simple pole and flag
+                ctx.fillRect(this.x, this.screenY, 3, 15); // Pole
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.screenY);
+                ctx.lineTo(this.x + 15, this.screenY + 3);
+                ctx.lineTo(this.x, this.screenY + 6);
+                ctx.fill();
+            }
+        }
+        
+        class Avalanche {
+            constructor(worldY) {
+                this.worldY = worldY;
+                this.screenY = 0;
+                this.height = 80;
+                this.speed = 4; // Faster than climbing speed
+                this.active = true;
+            }
+            
+            draw() {
+                if (!this.active) return;
+                ctx.fillStyle = COLORS.AVALANCHE;
+                ctx.fillRect(0, this.screenY, CANVAS_WIDTH, this.height);
+            }
+            
+            update() {
+                // Avalanche always moves down
+                this.worldY -= this.speed;
+                // Deactivate when completely off screen (below the visible bottom)
+                if (this.screenY > CANVAS_HEIGHT) {
+                    this.active = false;
+                }
+            }
+        }
+
+        // --- Game Setup ---
+
+        function initializeGame() {
+            climber = new Climber();
+            platforms = [];
+            flags = [];
+            hazards = [];
+            worldYOffset = 0;
+            gameActive = true;
+            
+            generateInitialWorld(CANVAS_HEIGHT * 3); // Start with 3 screens worth of mountain
+            
+            messageDisplay.textContent = "Use Arrows/WASD to move, Space/Up to CLIMB.";
+            cancelAnimationFrame(animationFrameId);
+            gameLoop();
+        }
+
+        function generateInitialWorld(maxHeight) {
+            let lastY = 0;
+            let flagCount = 0;
+            
+            // Generate platforms and flags
+            while (lastY < maxHeight) {
+                lastY += Math.random() * 80 + 40; // Random gap size
+                
+                const width = Math.random() * 150 + 50;
+                const x = Math.random() * (CANVAS_WIDTH - width - 20) + 10;
+                
+                if (Math.random() < 0.2) { // 20% chance of a crevasse (fall hazard)
+                    platforms.push(new Platform(lastY, x, width, 'crevasse'));
+                } else {
+                    platforms.push(new Platform(lastY, x, width, 'rock'));
+                }
+
+                if (flagCount < NUM_FLAGS && Math.random() < 0.15) {
+                    flags.push(new Flag(lastY - 10, x + width / 2));
+                    flagCount++;
+                }
+            }
+            // Ensure final goal is set high up
+            flags.push(new Flag(maxHeight + 100, CANVAS_WIDTH / 2));
+        }
+
+
+        // --- Collision and Interaction ---
+
+        function checkCollisions() {
+            let onPlatform = false;
+
+            // 1. Platform Collision
+            platforms.forEach(p => {
+                if (p.type === 'rock' && climber.y + CLIMBER_SIZE >= p.screenY && climber.y + CLIMBER_SIZE <= p.screenY + p.height && climber.x > p.x && climber.x < p.x + p.width) {
+                    // Climber landed on a platform/ledge
+                    onPlatform = true;
+                }
+                
+                // Crevasse Hazard (fall)
+                if (p.type === 'crevasse' && climber.y + CLIMBER_SIZE >= p.screenY && climber.y + CLIMBER_SIZE <= p.screenY + p.height && climber.x > p.x && climber.x < p.x + p.width) {
+                    endGame("DEFEAT! Fell into a hidden crevasse!", 'red');
+                }
+            });
+            
+            // If climber is climbing and hits the top edge of the platform on the way up, they might block themselves.
+            // For this continuous climb, we simplify: if not on a platform, they are free to move/climb.
+
+            // 2. Flag Collection
+            flags.forEach(f => {
+                const distance = Math.sqrt(
+                    (climber.x - f.x) ** 2 + (climber.y - f.screenY) ** 2
+                );
+                if (!f.collected && distance < CLIMBER_SIZE + 15) {
+                    f.collected = true;
+                    climber.score++;
+                    messageDisplay.textContent = "🚩 Flag Collected!";
+                    
+                    if (climber.score === NUM_FLAGS) {
+                        endGame("VICTORY! You conquered the peak!", 'green');
+                    }
+                }
+            });
+
+            // 3. Avalanche Hazard
+            hazards.forEach(h => {
+                if (h.type === 'avalanche') {
+                    // If climber is within the vertical sweep zone
+                    if (climber.y > h.screenY && climber.y < h.screenY + h.height) {
+                        // Push the world down, simulating being swept downwards
+                        worldYOffset = Math.max(0, worldYOffset - 5);
+                        climber.stamina = Math.max(0, climber.stamina - 0.5); // Minor damage
+                        messageDisplay.textContent = "⚠️ AVALANCHE! Pushed back!";
+                    } else if (messageDisplay.textContent === "⚠️ AVALANCHE! Pushed back!") {
+                        messageDisplay.textContent = "";
+                    }
+                }
+            });
+        }
+
+        // --- Game Loop and Drawing ---
+
+        function draw() {
+            // Background is drawn automatically by CSS/Body color
+            ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            
+            // --- Draw Background/Mountain Features ---
+            
+            platforms.forEach(p => {
+                p.screenY = p.worldY - worldYOffset;
+                p.draw();
+            });
+            
+            flags.forEach(f => {
+                f.screenY = f.worldY - worldYOffset;
+                f.draw();
+            });
+            
+            hazards.forEach(h => {
+                h.screenY = h.worldY - worldYOffset;
+                h.draw();
+            });
+
+            // Draw climber
+            climber.draw();
+            
+            // Draw summit line
+            if (worldYOffset > 500) {
+                 ctx.fillStyle = '#f97316'; // Orange
+                 ctx.fillRect(0, 50, CANVAS_WIDTH, 5);
+                 ctx.font = 'bold 16px Inter';
+                 ctx.textAlign = 'center';
+                 ctx.fillText("SUMMIT NEAR!", CANVAS_WIDTH / 2, 40);
+            }
+        }
+
+        function spawnHazards() {
+            // Periodically spawn hazards above the viewport
+            if (Math.random() < 0.005) { // Avalanche
+                hazards.push(new Avalanche(worldYOffset + CANVAS_HEIGHT + 100));
+            }
+        }
+
+        function updateState() {
+            climber.update();
+            hazards.forEach(h => h.update());
+            checkCollisions();
+            spawnHazards();
+            
+            // --- World Scrolling / Climbing Movement ---
+            if (climber.isClimbing && climber.stamina > 0) {
+                // If climbing, increase world offset (scrolls features down)
+                worldYOffset += CLIMB_SPEED;
+            } else if (!climber.isClimbing) {
+                 // Slight auto-slide down if not resting (penalty for idling)
+                 worldYOffset = Math.max(0, worldYOffset - 0.2);
+            }
+            
+            // Clean up off-screen entities (above viewport)
+            platforms = platforms.filter(p => p.screenY < CANVAS_HEIGHT + p.height);
+            flags = flags.filter(f => f.screenY < CANVAS_HEIGHT + 10);
+            hazards = hazards.filter(h => h.active); // Avalanche class handles deactivation
+            
+            // Regenerate world above the visible area to allow continuous climbing
+            if (platforms.length < 20) {
+                generateInitialWorld(worldYOffset + CANVAS_HEIGHT * 2);
+            }
+
+            updateStatsUI();
+            
+            if (climber.stamina <= 0 && climber.isClimbing) {
+                 endGame("DEFEAT! Exhausted and unable to climb.", 'red');
+            }
+        }
+
+        function gameLoop() {
+            if (!gameActive) return;
+
+            updateState();
+            draw();
+            
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        // --- UI and Controls ---
+
+        function updateStatsUI() {
+            const staminaPercent = Math.max(0, (climber.stamina / MAX_STAMINA) * 100);
+            
+            staminaBar.style.width = `${staminaPercent}%`;
+            
+            if (staminaPercent > 50) {
+                staminaBar.style.backgroundColor = '#10b981'; // Green
+            } else if (staminaPercent > 20) {
+                staminaBar.style.backgroundColor = '#f59e0b'; // Yellow
+            } else {
+                staminaBar.style.backgroundColor = '#ef4444'; // Red
+            }
+
+            flagDisplay.textContent = `${climber.score} / ${NUM_FLAGS}`;
+            
+            // Altitude is based on total world offset
+            const altitude = Math.floor(worldYOffset / 10);
+            altitudeDisplay.textContent = `${altitude}m`;
+        }
+        
+        function endGame(message, color) {
+            gameActive = false;
+            cancelAnimationFrame(animationFrameId);
+            messageDisplay.textContent = message;
+            messageDisplay.classList.add(`text-${color}-500`);
+        }
+
+        // --- Input Handling ---
+
+        function setClimbing(isClimbing) {
+            if (!gameActive) return;
+            climber.isClimbing = isClimbing;
+        }
+
+        function setHorizontalMovement(direction) {
+            if (!gameActive) return;
+            if (direction === 'left') {
+                climber.dx = -CLIMBER_X_SPEED;
+            } else if (direction === 'right') {
+                climber.dx = CLIMBER_X_SPEED;
+            } else {
+                // Allows dx to decay naturally via update()
+            }
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'ArrowUp' || e.code === 'KeyW' || e.code === 'Space') setClimbing(true);
+            if (e.code === 'ArrowDown' || e.code === 'KeyS') setClimbing(false);
+            if (e.code === 'ArrowLeft' || e.code === 'KeyA') setHorizontalMovement('left');
+            if (e.code === 'ArrowRight' || e.code === 'KeyD') setHorizontalMovement('right');
+        });
+        document.addEventListener('keyup', (e) => {
+            if (e.code === 'ArrowUp' || e.code === 'KeyW' || e.code === 'Space') setClimbing(false);
+            if (e.code === 'ArrowLeft' || e.code === 'KeyA' || e.code === 'ArrowRight' || e.code === 'KeyD') setHorizontalMovement(null);
+        });
+        
+        // Mobile/Touch controls
+        climbButton.addEventListener('mousedown', () => setClimbing(true));
+        climbButton.addEventListener('mouseup', () => setClimbing(false));
+        restButton.addEventListener('mousedown', () => setClimbing(false));
+        restButton.addEventListener('mouseup', () => setClimbing(false));
+        
+        resetButton.addEventListener('click', initializeGame);
+
+        // Initial launch
+        window.onload = () => {
+            messageDisplay.textContent = "Press Restart Climb to begin.";
+            updateStatsUI();
+        };
+
+    </script>
+</body>
+</html>
