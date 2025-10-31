@@ -1175,7 +1175,16 @@ const games = [
     description: "Navigate through space collecting stars while avoiding asteroids. Use arrow keys to move your spaceship and collect as many stars as possible!",
     category: "Arcade",
     duration: "Endless",
-    tags: ["space", "arcade", "keyboard", "avoider", "stars"]
+    tags: ["space", "arcade", "keyboard", "avoider", "stars"],
+  },
+  {
+    name: "Bubble Pop Adventure",
+    path: "games/bubble-pop-adventure/index.html",
+    icon: "🫧",
+    description: "Pop bubbles of different colors to score points in this relaxing game. Click on floating bubbles to burst them and earn points based on their color!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["relaxing", "clicker", "colorful", "casual", "bubble"]
   },
 ];
 
