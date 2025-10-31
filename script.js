@@ -1158,7 +1158,16 @@ const games = [
     category: "Puzzle",
     duration: "Endless",
     tags: ["Puzzle", "Logic", "Relaxing", "Lines"]
-  }
+  },
+  {
+    name: "The Floor is Lava",
+    path: "games/the-floor-is-lava/index.html",
+    description: "A fast-paced survival game where you must hop between safe tiles to avoid the rising lava. Features endless gameplay with a unique lava cooldown mechanic.",
+    icon: "🔥",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["Survival", "Arcade", "Fast-Paced", "Endless"]
+  },
 ];
 
 const container = document.getElementById("games-container");
