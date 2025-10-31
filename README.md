@@ -1,3 +1,7 @@
+> [!NOTE]
+> All issues & PRs raised after **10 PM Kolkata, India time** will not be considered as per the **Open Odyssey** event rules.
+
+
 # 🎮 Mini JS Games Hub
 
 A fun collection of mini JavaScript games built using **HTML**, **CSS**, and **JavaScript**!  
