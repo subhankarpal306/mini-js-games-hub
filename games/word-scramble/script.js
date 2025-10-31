@@ -27,12 +27,18 @@ let timer;
 let timeLeft;
 let difficulty = "medium";
 let usedHint = false;
+let gameStarted = false;
 
 startBtn.addEventListener("click", startGame);
 submitBtn.addEventListener("click", checkAnswer);
 nextBtn.addEventListener("click", nextRound);
 hintBtn.addEventListener("click", showHint);
 restartBtn.addEventListener("click", restartGame);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    checkAnswer();
+  }
+});
 
 function startGame() {
   difficulty = difficultySelect.value;
@@ -40,7 +46,18 @@ function startGame() {
   gameSection.classList.remove("hidden");
   score = 0;
   scoreEl.textContent = score;
+  timeLeft = 60; // Overall game time
+  timerEl.textContent = timeLeft;
+  gameStarted = true;
   startRound();
+  timer = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      gameOver();
+    }
+  }, 1000);
 }
 
 function startRound() {
@@ -53,19 +70,6 @@ function startRound() {
   usedHint = false;
   nextBtn.classList.add("hidden");
   submitBtn.disabled = false;
-
-  timeLeft = difficulty === "easy" ? 30 : difficulty === "medium" ? 20 : 12;
-  timerEl.textContent = timeLeft;
-
-  clearInterval(timer);
-  timer = setInterval(() => {
-    timeLeft--;
-    timerEl.textContent = timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-      endRound(false);
-    }
-  }, 1000);
 }
 
 function shuffleWord(word) {
@@ -76,24 +80,14 @@ function checkAnswer() {
   const answer = userInput.value.trim().toLowerCase();
   if (!answer) return;
   if (answer === currentWord) {
-    clearInterval(timer);
-    let points = timeLeft * 2;
-    if (usedHint) points -= 5;
-    score += points;
+    score += 10;
+    if (usedHint) score -= 5;
     scoreEl.textContent = score;
-    endRound(true);
+    scrambledWordEl.textContent = "✅ Correct!";
+    submitBtn.disabled = true;
+    nextBtn.classList.remove("hidden");
   } else {
     hintText.textContent = "❌ Incorrect! Try again.";
-  }
-}
-
-function endRound(won) {
-  submitBtn.disabled = true;
-  nextBtn.classList.remove("hidden");
-  if (won) {
-    scrambledWordEl.textContent = "✅ Correct!";
-  } else {
-    scrambledWordEl.textContent = `❌ Time up! Word: ${currentWord}`;
   }
 }
 
@@ -112,11 +106,13 @@ function showHint() {
 function restartGame() {
   resultSection.classList.add("hidden");
   document.querySelector(".settings").classList.remove("hidden");
+  gameStarted = false;
+  clearInterval(timer);
 }
 
 function gameOver() {
   gameSection.classList.add("hidden");
   resultSection.classList.remove("hidden");
   finalScoreEl.textContent = score;
-  resultMessage.textContent = score > 100 ? "🎉 Amazing!" : "Keep practicing!";
+  resultMessage.textContent = score >= 100 ? "🎉 Amazing!" : score >= 50 ? "👍 Good job!" : "Keep practicing!";
 }
