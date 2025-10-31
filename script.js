@@ -1130,7 +1130,35 @@ const games = [
     duration: "Unlimited",
     tags: ["arcade", "relaxing", "mobile", "canvas", "petals", "combo"],
   },
+  // Add these objects to the end of the "games" array in the main script.js file
 
+  {
+    name: "Follow the Path",
+    path: "games/follow-the-path/index.html",
+    description: "A sleek memory game where players must repeat a progressively longer path on a grid. Features infinite levels and high-score saving.",
+    icon: "🧠",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["Memory", "Puzzle", "Logic", "Pattern"]
+  },
+  {
+    name: "Perfect Aim",
+    path: "games/perfect-aim/index.html",
+    description: "A minimalist arcade game of pure timing. Stop a rotating pointer inside a target sector that shrinks with each hit. Features a combo multiplier and 'perfect hit' bonuses.",
+    icon: "🎯",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["Timing", "Reflex", "Arcade", "Skill"]
+  },
+  {
+    name: "Un-tangle",
+    path: "games/un-tangle/index.html",
+    description: "A relaxing yet challenging logic puzzle. Drag the nodes to untangle a web of intersecting lines. Features procedurally generated levels of increasing difficulty.",
+    icon: "➰",
+    category: "Puzzle",
+    duration: "Endless",
+    tags: ["Puzzle", "Logic", "Relaxing", "Lines"]
+  }
 ];
 
 const container = document.getElementById("games-container");
