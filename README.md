@@ -1,3 +1,7 @@
+> **Note**  
+> <span style="color: purple;">All issues from 10 PM Kolkata, India time will be closed automatically as per the Open Odyssey event rules.</span>
+
+
 # 🎮 Mini JS Games Hub
 
 A fun collection of mini JavaScript games built using **HTML**, **CSS**, and **JavaScript**!  
