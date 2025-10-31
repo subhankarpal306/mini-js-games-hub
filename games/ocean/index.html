@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Sea Diver</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0f172a; /* Dark background */
+            color: #e2e8f0; /* Light text */
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #game-wrapper {
+            display: flex;
+            gap: 20px;
+            border: 4px solid #06b6d4; /* Cyan border */
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+        }
+        canvas {
+            display: block;
+            background: linear-gradient(#0c4a6e, #0f172a); /* Ocean depth gradient */
+        }
+        .control-button {
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+        #ui-panel {
+            width: 200px;
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="select-none">
+
+    <h1 class="text-4xl font-extrabold mb-6 text-cyan-400">Deep Sea Diver</h1>
+    
+    <div id="game-wrapper">
+        
+        <!-- Canvas Area -->
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        
+        <!-- UI Panel: Stats and Controls -->
+        <div id="ui-panel" class="flex flex-col justify-between">
+            <div>
+                <h2 class="text-xl font-bold text-cyan-300 border-b pb-2 mb-4 border-slate-700">Status</h2>
+                
+                <div class="space-y-4">
+                    <!-- Oxygen Bar -->
+                    <div>
+                        <p class="font-semibold text-blue-400">💨 Oxygen:</p>
+                        <div class="h-4 w-full bg-slate-600 rounded-full">
+                            <div id="oxygen-bar" class="h-full bg-blue-500 rounded-full transition-all duration-300" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Score -->
+                    <div class="pt-2 border-t border-slate-700">
+                        <p class="font-semibold text-yellow-300">💎 Score:</p>
+                        <span id="score-display" class="text-3xl font-extrabold text-yellow-400">0</span>
+                    </div>
+
+                    <!-- Depth -->
+                    <div class="pt-2">
+                        <p class="font-semibold text-gray-300">↓ Depth:</p>
+                        <span id="depth-display" class="text-xl font-extrabold text-gray-400">0m</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <p id="message-display" class="text-center font-semibold text-sm h-6 text-red-400"></p>
+                
+                <div class="flex flex-col space-y-2">
+                    <button id="ascend-button" class="control-button bg-green-600 hover:bg-green-700 active:bg-green-800">
+                        ▲ ASCEND (Up/W)
+                    </button>
+                    <button id="descend-button" class="control-button bg-red-600 hover:bg-red-700 active:bg-red-800">
+                        ▼ DESCEND (Down/S)
+                    </button>
+                </div>
+
+                <button id="reset-button" class="w-full py-2 bg-slate-600 hover:bg-slate-700 font-bold rounded-lg transition duration-200">
+                    Restart Dive
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Setup Canvas and Context ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const CANVAS_WIDTH = canvas.width;
+        const CANVAS_HEIGHT = canvas.height;
+
+        // --- Game Constants ---
+        const MAX_OXYGEN = 100;
+        const O2_DEPLETION_RATE = 0.05; // Base O2 lost per frame
+        const DEPTH_LIMIT = 500; // Total depth of the map (in pixels)
+        const DIVER_SIZE = 15;
+        const DIVER_ACCELERATION = 0.5;
+        const DIVER_FRICTION = 0.9;
+        const DIVER_MAX_SPEED = 5;
+
+        // --- Entity Colors and Spawning ---
+        const COLORS = {
+            DIVER: '#ff7f50',   // Coral
+            PEARL: '#f0f0f0',   // White/Pearl
+            SHARK: '#8b0000',   // Dark Red
+        };
+
+        const HAZARD_SPAWN_FREQUENCY = 150; // Every 150 frames
+
+        // --- Game State ---
+        let diver = {};
+        let artifacts = [];
+        let sharks = [];
+        let gameActive = false;
+        let animationFrameId;
+
+        // --- DOM Elements ---
+        const oxygenBar = document.getElementById('oxygen-bar');
+        const scoreDisplay = document.getElementById('score-display');
+        const depthDisplay = document.getElementById('depth-display');
+        const messageDisplay = document.getElementById('message-display');
+        const ascendButton = document.getElementById('ascend-button');
+        const descendButton = document.getElementById('descend-button');
+        const resetButton = document.getElementById('reset-button');
+
+        // --- Entity Classes ---
+
+        class Diver {
+            constructor() {
+                this.x = CANVAS_WIDTH / 2;
+                this.y = CANVAS_HEIGHT / 2;
+                this.dy = 0; // Vertical velocity
+                this.oxygen = MAX_OXYGEN;
+                this.score = 0;
+                this.keyUp = false;
+                this.keyDown = false;
+            }
+
+            draw() {
+                ctx.fillStyle = COLORS.DIVER;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, DIVER_SIZE, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                // Apply acceleration based on input
+                if (this.keyUp) {
+                    this.dy -= DIVER_ACCELERATION;
+                } else if (this.keyDown) {
+                    this.dy += DIVER_ACCELERATION;
+                }
+                
+                // Apply friction (slowdown when not pressing)
+                if (!this.keyUp && !this.keyDown) {
+                    this.dy *= DIVER_FRICTION;
+                }
+
+                // Clamp speed
+                this.dy = Math.min(Math.max(this.dy, -DIVER_MAX_SPEED), DIVER_MAX_SPEED);
+
+                // Update position
+                this.y += this.dy;
+
+                // Clamp to screen bounds (surface and max depth)
+                this.y = Math.min(Math.max(this.y, 0), CANVAS_HEIGHT - DIVER_SIZE);
+                
+                // Stop vertical movement if hitting the boundary
+                if (this.y === 0 || this.y === CANVAS_HEIGHT - DIVER_SIZE) {
+                    this.dy = 0;
+                }
+
+                // Oxygen Depletion (based on speed/effort)
+                let depletion = O2_DEPLETION_RATE;
+                if (Math.abs(this.dy) > 1) { // Faster movement costs more O2
+                    depletion *= 1.5;
+                }
+                this.oxygen -= depletion;
+            }
+        }
+
+        class Artifact {
+            constructor(y, sizeMultiplier = 1) {
+                this.x = Math.random() * (CANVAS_WIDTH - 20) + 10;
+                this.y = y;
+                this.radius = DIVER_SIZE * 0.4 * sizeMultiplier;
+                this.value = 10 * sizeMultiplier;
+                this.collected = false;
+            }
+
+            draw() {
+                if (this.collected) return;
+                ctx.fillStyle = COLORS.PEARL;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        class Shark {
+            constructor(y, direction) {
+                this.x = direction === 'left' ? CANVAS_WIDTH : -50;
+                this.y = y;
+                this.width = 50;
+                this.height = 25;
+                this.dx = direction === 'left' ? -2.5 : 2.5;
+                this.damage = 10; // Oxygen damage on hit
+                this.active = true;
+            }
+
+            draw() {
+                if (!this.active) return;
+                ctx.fillStyle = COLORS.SHARK;
+                // Simple triangle representation of a shark fin/body
+                ctx.fillRect(this.x, this.y, this.width, this.height); 
+            }
+
+            update() {
+                this.x += this.dx;
+                // Deactivate when off-screen
+                if (this.x < -this.width * 2 || this.x > CANVAS_WIDTH + this.width * 2) {
+                    this.active = false;
+                }
+            }
+        }
+
+        // --- Game Setup ---
+
+        function startGame() {
+            diver = new Diver();
+            artifacts = [];
+            sharks = [];
+            gameActive = true;
+            
+            // Initial artifacts (5 small, 2 large)
+            for (let i = 0; i < 5; i++) artifacts.push(new Artifact(Math.random() * CANVAS_HEIGHT * 0.8 + CANVAS_HEIGHT * 0.1));
+            artifacts.push(new Artifact(Math.random() * CANVAS_HEIGHT * 0.8 + CANVAS_HEIGHT * 0.1, 1.5));
+            artifacts.push(new Artifact(Math.random() * CANVAS_HEIGHT * 0.8 + CANVAS_HEIGHT * 0.1, 2));
+
+            messageDisplay.textContent = "";
+            cancelAnimationFrame(animationFrameId);
+            gameLoop(0);
+        }
+        
+        // --- Spawning and Environment ---
+        let frameCount = 0;
+        
+        function spawnHazards() {
+            if (frameCount % HAZARD_SPAWN_FREQUENCY === 0) {
+                // Randomly spawn shark or artifact in a new area
+                const y = Math.random() * (CANVAS_HEIGHT * 0.9) + CANVAS_HEIGHT * 0.05;
+                
+                if (Math.random() < 0.6) { // 60% chance for a shark
+                    const direction = Math.random() < 0.5 ? 'left' : 'right';
+                    sharks.push(new Shark(y, direction));
+                } else { // 40% chance for a new artifact
+                    artifacts.push(new Artifact(y, 1 + Math.random()));
+                }
+            }
+        }
+
+        // --- Collision and Interaction ---
+
+        function checkCollisions() {
+            // 1. Artifact Collection
+            artifacts.forEach(artifact => {
+                if (artifact.collected) return;
+
+                const distance = Math.sqrt(
+                    (diver.x - artifact.x) ** 2 + (diver.y - artifact.y) ** 2
+                );
+
+                if (distance < DIVER_SIZE + artifact.radius) {
+                    artifact.collected = true;
+                    diver.score += artifact.value;
+                }
+            });
+            
+            // 2. Shark Collision (Damage)
+            sharks.forEach(shark => {
+                if (!shark.active) return;
+
+                // Simple AABB collision for shark (rect) and diver (circle)
+                if (diver.x + DIVER_SIZE > shark.x &&
+                    diver.x - DIVER_SIZE < shark.x + shark.width &&
+                    diver.y + DIVER_SIZE > shark.y &&
+                    diver.y - DIVER_SIZE < shark.y + shark.height) {
+                    
+                    // Take damage, push diver away, and remove shark
+                    diver.oxygen = Math.max(0, diver.oxygen - shark.damage);
+                    messageDisplay.textContent = "🦈 Shark attack! -10 O2!";
+                    shark.active = false; 
+
+                    // Apply knockback
+                    diver.dy = shark.dx > 0 ? -DIVER_MAX_SPEED * 1.5 : DIVER_MAX_SPEED * 1.5;
+                }
+            });
+
+            // Clean up inactive entities
+            artifacts = artifacts.filter(a => !a.collected);
+            sharks = sharks.filter(s => s.active);
+        }
+
+        // --- Game Loop and Drawing ---
+
+        function draw() {
+            // Background gradient (draw every frame to clear)
+            const gradient = ctx.createLinearGradient(0, 0, 0, CANVAS_HEIGHT);
+            gradient.addColorStop(0, '#0c4a6e'); // Lighter at top (surface)
+            gradient.addColorStop(1, '#0f172a'); // Darker at bottom (depth)
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            
+            // Draw artifacts
+            artifacts.forEach(a => a.draw());
+            
+            // Draw hazards
+            sharks.forEach(s => s.draw());
+
+            // Draw diver
+            diver.draw();
+        }
+
+        function updateState() {
+            diver.update();
+            sharks.forEach(s => s.update());
+            checkCollisions();
+            spawnHazards();
+            
+            // Check Win/Loss conditions
+            if (diver.oxygen <= 0) {
+                endGame("DEFEAT! Your oxygen ran out.", 'red');
+            } else if (diver.score >= 300) {
+                endGame("VICTORY! You collected enough treasure!", 'green');
+            }
+
+            updateStatsUI();
+        }
+
+        function gameLoop() {
+            if (!gameActive) return;
+
+            updateState();
+            draw();
+            
+            frameCount++;
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        // --- UI and Controls ---
+
+        function updateStatsUI() {
+            const oxygenPercent = Math.max(0, (diver.oxygen / MAX_OXYGEN) * 100);
+            
+            oxygenBar.style.width = `${oxygenPercent}%`;
+            
+            // Change oxygen bar color based on level
+            if (oxygenPercent > 50) {
+                oxygenBar.style.backgroundColor = '#3b82f6'; // Blue
+            } else if (oxygenPercent > 20) {
+                oxygenBar.style.backgroundColor = '#f59e0b'; // Yellow
+            } else {
+                oxygenBar.style.backgroundColor = '#ef4444'; // Red
+            }
+
+            scoreDisplay.textContent = diver.score;
+            
+            // Depth approximation (0m at surface, 50m at max depth)
+            const depthInMeters = Math.floor((diver.y / CANVAS_HEIGHT) * 50);
+            depthDisplay.textContent = `${depthInMeters}m`;
+        }
+        
+        function endGame(message, color) {
+            gameActive = false;
+            cancelAnimationFrame(animationFrameId);
+            messageDisplay.textContent = message;
+            messageDisplay.classList.add(`text-${color}-500`);
+        }
+
+        // --- Input Handling ---
+
+        function setKey(key, isPressed) {
+            if (!gameActive) return;
+            switch (key) {
+                case 'ArrowUp':
+                case 'KeyW':
+                    diver.keyUp = isPressed;
+                    break;
+                case 'ArrowDown':
+                case 'KeyS':
+                    diver.keyDown = isPressed;
+                    break;
+            }
+        }
+        
+        document.addEventListener('keydown', (e) => setKey(e.code, true));
+        document.addEventListener('keyup', (e) => setKey(e.code, false));
+        
+        // Mobile/Touch controls
+        ascendButton.addEventListener('mousedown', () => setKey('KeyW', true));
+        ascendButton.addEventListener('mouseup', () => setKey('KeyW', false));
+        descendButton.addEventListener('mousedown', () => setKey('KeyS', true));
+        descendButton.addEventListener('mouseup', () => setKey('KeyS', false));
+        
+        resetButton.addEventListener('click', startGame);
+
+        // Initial launch
+        window.onload = () => {
+            messageDisplay.textContent = "Press Restart Dive to begin.";
+            updateStatsUI();
+        };
+
+    </script>
+</body>
+</html>
