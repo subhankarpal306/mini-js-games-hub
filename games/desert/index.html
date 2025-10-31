@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desert Explorer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1f2937; /* Dark Slate Background */
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 4px solid #f59e0b; /* Amber 500 */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+            margin-bottom: 20px;
+        }
+        canvas {
+            display: block;
+        }
+        .stat-bar {
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #4b5563;
+            overflow: hidden;
+        }
+        .stat-fill {
+            height: 100%;
+            transition: width 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="select-none">
+
+    <h1 class="text-4xl font-extrabold mb-6 text-yellow-400">Desert Explorer</h1>
+    
+    <div id="game-area">
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
+    </div>
+
+    <!-- UI Panel: Stats -->
+    <div id="stats-panel" class="w-[500px] p-4 bg-gray-800 rounded-lg shadow-xl space-y-3">
+        <div class="flex justify-between items-center">
+            <span class="text-xl font-bold text-blue-400">💧 Water Supply:</span>
+            <span id="water-percent" class="text-xl font-bold text-blue-400">100%</span>
+        </div>
+        <div class="stat-bar">
+            <div id="water-bar" class="stat-fill bg-blue-500" style="width: 100%;"></div>
+        </div>
+
+        <div class="flex justify-between pt-2 border-t border-gray-700">
+            <span class="text-lg text-yellow-300">💰 Score (Treasure):</span>
+            <span id="score-display" class="text-lg font-extrabold text-yellow-300">0</span>
+        </div>
+        
+        <p id="message-display" class="text-center font-semibold h-6 text-sm text-white pt-2"></p>
+        
+        <button id="reset-button" class="mt-4 w-full py-2 bg-red-600 hover:bg-red-700 font-bold rounded-lg transition duration-200">
+            Start / Restart Game
+        </button>
+        <p class="text-center text-xs text-gray-400 mt-2">Use Arrow Keys to move (WASD also works)</p>
+    </div>
+
+    <script>
+        // --- Setup Canvas and Context ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const CANVAS_SIZE = 500;
+
+        // --- Game Constants ---
+        const MAP_SIZE = 50; // 50x50 logical map tiles
+        const VIEWPORT_TILES = 10; // 10x10 tiles visible on screen
+        const TILE_SIZE = CANVAS_SIZE / VIEWPORT_TILES; // 50px per visible tile
+
+        const WATER_DEPLETION_RATE = 0.5; // Water lost per second
+        const WATER_TICK_INTERVAL = 100; // Check water every 100ms
+        const MAX_WATER = 100;
+
+        // --- Tile Types ---
+        const TILE_TYPES = {
+            DESERT: 0,
+            OASIS: 1,      // Replenishes water
+            TREASURE: 2    // Gives score
+        };
+
+        const COLORS = {
+            [TILE_TYPES.DESERT]: '#f59e0b',  // Amber 500
+            [TILE_TYPES.OASIS]: '#00bfff',   // Deep Sky Blue
+            [TILE_TYPES.TREASURE]: '#ffd700',// Gold
+            FOG: '#1f2937'                   // Dark gray for unexplored
+        };
+
+        // --- Game State ---
+        let mapGrid = [];
+        let visibilityGrid = [];
+        let player = { x: 0, y: 0, water: MAX_WATER, score: 0 };
+        let gameActive = false;
+        let waterInterval;
+
+        // --- DOM Elements ---
+        const waterBar = document.getElementById('water-bar');
+        const waterPercent = document.getElementById('water-percent');
+        const scoreDisplay = document.getElementById('score-display');
+        const messageDisplay = document.getElementById('message-display');
+        const resetButton = document.getElementById('reset-button');
+        
+        // --- Map and State Initialization ---
+
+        function initializeGame() {
+            // 1. Initialize Grids
+            mapGrid = [];
+            visibilityGrid = [];
+            for (let y = 0; y < MAP_SIZE; y++) {
+                mapGrid[y] = [];
+                visibilityGrid[y] = [];
+                for (let x = 0; x < MAP_SIZE; x++) {
+                    mapGrid[y][x] = TILE_TYPES.DESERT;
+                    visibilityGrid[y][x] = false; // All hidden initially
+                }
+            }
+            
+            // 2. Place features randomly
+            placeFeatures(TILE_TYPES.OASIS, 10); // 10 Oases
+            placeFeatures(TILE_TYPES.TREASURE, 5); // 5 Treasures
+
+            // 3. Reset Player State
+            player.x = Math.floor(MAP_SIZE / 2);
+            player.y = Math.floor(MAP_SIZE / 2);
+            player.water = MAX_WATER;
+            player.score = 0;
+            gameActive = true;
+            messageDisplay.textContent = "Find the Oasis to survive!";
+
+            // 4. Start Loops
+            clearInterval(waterInterval);
+            waterInterval = setInterval(depleteWater, WATER_TICK_INTERVAL);
+            
+            // 5. Initial Draw
+            revealArea(player.x, player.y, 1);
+            drawGame();
+            updateStatsUI();
+        }
+
+        function placeFeatures(type, count) {
+            for (let i = 0; i < count; i++) {
+                let x, y;
+                do {
+                    x = Math.floor(Math.random() * MAP_SIZE);
+                    y = Math.floor(Math.random() * MAP_SIZE);
+                } while (mapGrid[y][x] !== TILE_TYPES.DESERT); // Ensure we don't overwrite another feature
+                mapGrid[y][x] = type;
+            }
+        }
+
+        // --- Drawing and Camera (Viewport) ---
+
+        function drawGame() {
+            ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+
+            // Calculate viewport offset to center player
+            const offsetX = player.x - Math.floor(VIEWPORT_TILES / 2);
+            const offsetY = player.y - Math.floor(VIEWPORT_TILES / 2);
+
+            for (let vy = 0; vy < VIEWPORT_TILES; vy++) {
+                for (let vx = 0; vx < VIEWPORT_TILES; vx++) {
+                    const mapX = vx + offsetX;
+                    const mapY = vy + offsetY;
+                    
+                    const drawX = vx * TILE_SIZE;
+                    const drawY = vy * TILE_SIZE;
+
+                    if (mapX >= 0 && mapX < MAP_SIZE && mapY >= 0 && mapY < MAP_SIZE) {
+                        if (visibilityGrid[mapY][mapX]) {
+                            // Draw revealed tile
+                            const type = mapGrid[mapY][mapX];
+                            ctx.fillStyle = COLORS[type];
+                            ctx.fillRect(drawX, drawY, TILE_SIZE, TILE_SIZE);
+
+                            // Optional: Draw symbols for features
+                            if (type === TILE_TYPES.OASIS) {
+                                ctx.fillStyle = 'rgba(0, 0, 0, 0.4)'; // Dark overlay for text contrast
+                                ctx.font = `${TILE_SIZE * 0.5}px Arial`;
+                                ctx.textAlign = 'center';
+                                ctx.fillText('💧', drawX + TILE_SIZE / 2, drawY + TILE_SIZE * 0.7);
+                            } else if (type === TILE_TYPES.TREASURE) {
+                                ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+                                ctx.font = `${TILE_SIZE * 0.5}px Arial`;
+                                ctx.textAlign = 'center';
+                                ctx.fillText('💎', drawX + TILE_SIZE / 2, drawY + TILE_SIZE * 0.7);
+                            }
+
+                        } else {
+                            // Draw Fog of War
+                            ctx.fillStyle = COLORS.FOG;
+                            ctx.fillRect(drawX, drawY, TILE_SIZE, TILE_SIZE);
+                        }
+                    } else {
+                        // Draw deep desert outside map boundary
+                        ctx.fillStyle = COLORS.FOG;
+                        ctx.fillRect(drawX, drawY, TILE_SIZE, TILE_SIZE);
+                    }
+                }
+            }
+            
+            // Draw Player (always centered in the viewport)
+            drawPlayer();
+        }
+
+        function drawPlayer() {
+            // Player is always drawn in the center of the viewport (unless at map edge)
+            const playerDrawX = (VIEWPORT_TILES / 2) * TILE_SIZE;
+            const playerDrawY = (VIEWPORT_TILES / 2) * TILE_SIZE;
+
+            ctx.fillStyle = '#ff7f50'; // Coral for player
+            ctx.beginPath();
+            ctx.arc(playerDrawX, playerDrawY, TILE_SIZE * 0.3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // --- Fog of War and Interaction ---
+        
+        function revealArea(x, y, radius) {
+            for (let ry = y - radius; ry <= y + radius; ry++) {
+                for (let rx = x - radius; rx <= x + radius; rx++) {
+                    if (rx >= 0 && rx < MAP_SIZE && ry >= 0 && ry < MAP_SIZE) {
+                        visibilityGrid[ry][rx] = true;
+                    }
+                }
+            }
+        }
+
+        function checkInteraction(x, y) {
+            const tileType = mapGrid[y][x];
+            messageDisplay.textContent = "";
+
+            if (tileType === TILE_TYPES.OASIS) {
+                const replenished = MAX_WATER - player.water;
+                player.water = MAX_WATER;
+                mapGrid[y][x] = TILE_TYPES.DESERT; // Oasis is depleted
+                messageDisplay.textContent = `💧 Found an Oasis! Water replenished by ${replenished.toFixed(1)}!`;
+            } else if (tileType === TILE_TYPES.TREASURE) {
+                player.score += 100;
+                mapGrid[y][x] = TILE_TYPES.DESERT; // Treasure is collected
+                messageDisplay.textContent = `💎 Found ancient treasure! (+100 Score)`;
+            } else if (tileType === TILE_TYPES.DESERT) {
+                messageDisplay.textContent = "Just endless sand...";
+            }
+        }
+        
+        // --- Survival Loop ---
+
+        function depleteWater() {
+            if (!gameActive) return;
+
+            player.water -= WATER_DEPLETION_RATE * (WATER_TICK_INTERVAL / 1000);
+            
+            if (player.water <= 0) {
+                player.water = 0;
+                endGame(false);
+            }
+
+            updateStatsUI();
+        }
+
+        function updateStatsUI() {
+            const waterPercentValue = Math.max(0, (player.water / MAX_WATER) * 100);
+            
+            waterBar.style.width = `${waterPercentValue}%`;
+            waterPercent.textContent = `${waterPercentValue.toFixed(0)}%`;
+            scoreDisplay.textContent = player.score;
+            
+            // Color feedback for water level
+            if (waterPercentValue > 50) {
+                waterBar.className = 'stat-fill bg-blue-500';
+            } else if (waterPercentValue > 20) {
+                waterBar.className = 'stat-fill bg-yellow-500';
+            } else {
+                waterBar.className = 'stat-fill bg-red-600';
+            }
+        }
+
+        function endGame(won) {
+            gameActive = false;
+            clearInterval(waterInterval);
+            
+            if (won) {
+                messageDisplay.textContent = `VICTORY! All treasures collected! Final Score: ${player.score}`;
+            } else {
+                messageDisplay.textContent = `DEFEAT! You ran out of water. Final Score: ${player.score}`;
+            }
+        }
+
+        // --- Input Handling ---
+
+        document.addEventListener('keydown', handleInput);
+
+        function handleInput(e) {
+            if (!gameActive) return;
+
+            let newX = player.x;
+            let newY = player.y;
+
+            switch (e.code) {
+                case 'ArrowUp':
+                case 'KeyW':
+                    newY--;
+                    break;
+                case 'ArrowDown':
+                case 'KeyS':
+                    newY++;
+                    break;
+                case 'ArrowLeft':
+                case 'KeyA':
+                    newX--;
+                    break;
+                case 'ArrowRight':
+                case 'KeyD':
+                    newX++;
+                    break;
+                default:
+                    return; // Ignore other keys
+            }
+
+            // Boundary check
+            if (newX >= 0 && newX < MAP_SIZE && newY >= 0 && newY < MAP_SIZE) {
+                player.x = newX;
+                player.y = newY;
+                
+                checkInteraction(player.x, player.y);
+                revealArea(player.x, player.y, 1);
+                drawGame();
+            }
+            e.preventDefault(); // Prevent scrolling
+        }
+
+        // --- Game Flow ---
+
+        resetButton.addEventListener('click', initializeGame);
+
+        // Run on load
+        window.onload = initializeGame;
+    </script>
+</body>
+</html>
