@@ -12,7 +12,7 @@ const scoreDisplay = document.getElementById("scoreDisplay");
 const connectSound = document.getElementById("connectSound");
 const levelUpSound = document.getElementById("levelUpSound");
 
-let stars = [];
+let stars = []; 
 let connections = [];
 let obstacles = [];
 let level = 1;
