@@ -1168,6 +1168,15 @@ const games = [
     duration: "Endless",
     tags: ["Survival", "Arcade", "Fast-Paced", "Endless"]
   },
+  {
+    name: "Star Collector",
+    path: "games/star-collector/index.html",
+    icon: "⭐",
+    description: "Navigate through space collecting stars while avoiding asteroids. Use arrow keys to move your spaceship and collect as many stars as possible!",
+    category: "Arcade",
+    duration: "Endless",
+    tags: ["space", "arcade", "keyboard", "avoider", "stars"]
+  },
 ];
 
 const container = document.getElementById("games-container");
